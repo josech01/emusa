@@ -23,7 +23,10 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^clientes/', emba_views.clientes),
-    url(r'^contactos/', emba_views.contactanos),
+    url(r'^clientes.html', emba_views.clientes),
+    url(r'^contactanos.html', emba_views.contactanos),
+    url(r'^empacate.html', emba_views.empacate),
+    url(r'^tecnologia.html', emba_views.tecnologia),
+    url(r'^index.html', emba_views.index),
     url(r'^$', emba_views.index),
 ]

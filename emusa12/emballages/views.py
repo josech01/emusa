@@ -16,3 +16,13 @@ def index (request):
 	if request.method == 'GET':
 		return render(request, 'index.html')
 
+
+def empacate (request):
+	if request.method == 'GET':
+		return render(request, 'empacate.html')
+
+
+def tecnologia (request):
+	if request.method == 'GET':
+		return render(request, 'tecnologia.html')
+

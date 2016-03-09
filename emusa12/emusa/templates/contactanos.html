@@ -35,8 +35,11 @@
         <div id="navbar-fixed">
             <div class="container">
                 <div class="row" id="header">
-                    <div class="col s3 m4 right-align" id="intranet">
-                        <b>INTRANET</b><br><img class="fb-icon" src="{% static 'img/icons/fb-s.png' %}" width="36" height="30">
+                    <div class="col s3 m4 center-align" id="intranet">
+                        <div class="row">
+                            <div class="col s6"><a href="http://www.quimpac.com.pe:8082/webcomprobantes/Formularios/frmAutenticacionUsuario.aspx" target="_blank"><b>FACTURA<br>ELECTRÓNICA</b></a></div>
+                            <div class="col s6 border-left"><a href="https://sites.google.com/a/emusa.com.pe/intranet/home" target="_blank"><b>INTRANET</b></a><br><a href="https://www.facebook.com/EmusaPeruSAC/" target="_blank"><img class="fb-icon" src="{% static 'img/icons/fb-s.png' %}" width="36" height="30"></a></div>
+                        </div>
                     </div>
                     <div class="col s4 m4 center-col">
                         <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b> Español</span>
@@ -55,30 +58,33 @@
         
             <nav>
                 <div class="nav-wrapper">
-                    <a href="index.html" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
-                    <a href="index.html" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <a href="#!" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="index.html">INICIO</a></li>
-                        <li><a href="empacate.html">EMPÁCATE</a></li>
-                        <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                        <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                        <li class="active"><a href="contactanos.html">CONTÁCTANOS</a></li>
+                       <li><a href="index.html">INICIO</a></li>
+                       <li><a href="empacate.html">EMPÁCATE</a></li>
+                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
+                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
+                       <li class="active"><a href="contactanos.html">CONTÁCTANOS</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="index.html">INICIO</a></li>
-                        <li><a href="empacate.html">EMPÁCATE</a></li>
-                        <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                        <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                        <li><a href="contactanos.html">CONTÁCTANOS</a></li>
-                    </ul>
+                       <li><a href="empacate.html">EMPÁCATE</a></li>
+                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
+                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
+                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                       </ul>
                 </div>
             </nav>
         </div>
         <main>
             <div class="section top-section" id="contactanos">
                 <div class="container">
-                    <div class="row balign-wrapper">
-                        <div class="col m6 l4 push-m6 push-l4 center-align">
+                    <div class="row valign-wrapper">
+                        <div class="col s12 m6 l8 center-align valign map-col">
+                            <div id="map-canvas"></div>
+                        </div>
+                        <div class="col s12 m6 l4 center-align valign">
                             <h3>CONTÁCTANOS</h3>
                             <form>
                               <div class="row">
@@ -112,13 +118,7 @@
                               </div>
                             </form>
                         </div>
-                        <div class="col m6 pull-m6 l4 pull-l4 center-align balign">
-                            <img class="responsive-img" src="{% static 'img/assets/tec03.png' %}">
-                        </div>
                         
-                        <div class="col l4 center-align  balign hide-on-med-and-down">
-                            <img class="responsive-img" src="{% static 'img/assets/tec04.png' %}">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -139,8 +139,25 @@
         <script src="{% static 'js/plugins.js' %}"></script>
         <script src="{% static 'js/materialize.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
+    <script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      function initMap() {
+        var myLatLng = {lat: -12.17874, lng: -77.01782};
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'), {
+          zoom: 16,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'EMUSA'
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiikAAVWj8Tg9RRGZlpmyvLvTi-U9VhZU&callback=initMap">
+    </script>
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

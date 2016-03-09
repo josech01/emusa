@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -6,25 +7,26 @@
         <title>EMUSA | Great Packaging For Great Ideas</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="{% static 'icons/apple-touch-icon.png' %}" />
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'icons/apple-touch-icon-57x57.png' %}" />
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'icons/apple-touch-icon-72x72.png' %}" />
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'icons/apple-touch-icon-76x76.png' %}" />
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'icons/apple-touch-icon-114x114.png' %}" />
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'icons/apple-touch-icon-120x120.png' %}" />
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'icons/apple-touch-icon-144x144.png' %}" />
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'icons/apple-touch-icon-152x152.png' %}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'icons/apple-touch-icon-180x180.png' %}" />
 
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Nunito:400' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/materialize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}">
 
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>    
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -33,42 +35,45 @@
         <div id="navbar-fixed">
             <div class="container">
                 <div class="row" id="header">
-                    <div class="col s3 m4 right-align" id="intranet">
-                        <b>INTRANET</b><br><img class="fb-icon" src="img/icons/fb-s.png" width="36" height="30">
+                    <div class="col s3 m4 center-align" id="intranet">
+                        <div class="row">
+                            <div class="col s6"><a href="http://www.quimpac.com.pe:8082/webcomprobantes/Formularios/frmAutenticacionUsuario.aspx" target="_blank"><b>FACTURA<br>ELECTRÓNICA</b></a></div>
+                            <div class="col s6 border-left"><a href="https://sites.google.com/a/emusa.com.pe/intranet/home" target="_blank"><b>INTRANET</b></a><br><a href="https://www.facebook.com/EmusaPeruSAC/" target="_blank"><img class="fb-icon" src="{% static 'img/icons/fb-s.png' %}" width="36" height="30"></a></div>
+                        </div>
                     </div>
                     <div class="col s4 m4 center-col">
-                        <span><img src="img/icons/lang.png" class="lang-icon"><b>IDIOMA:</b> Español</span>
+                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b> Español</span>
                         <br>
-                        <span class="truncate"><img src="img/icons/mail.png" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">customerservice@emusa.com.pe</a></span>
+                        <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">customerservice@emusa.com.pe</a></span>
                     </div>
                     <div class="col s5 m4" id="phones">
-                        <span><img src="img/icons/phone.png" class="phone-icon"><b>PERÚ:</b> (511) 6176700</span>
+                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>PERÚ:</b> (511) 6176700</span>
                         <br>
-                        <span><img src="img/icons/phone.png" class="phone-icon"><b>GUATEMALA:</b> (502) 65450500</span>
+                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>GUATEMALA:</b> (502) 65450500</span>
                         <br>
-                        <span class="truncate"><img src="img/icons/phone.png" class="phone-icon"><b>BRASIL:</b> (55) 19-3113-3131</span>
+                        <span class="truncate"><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>BRASIL:</b> (55) 19-3113-3131</span>
                     </div>
                 </div>
             </div>
         
             <nav>
                 <div class="nav-wrapper">
-                    <a href="index.html" class="brand-logo"><img src="img/logo.png"></a>
-                    <a href="index.html" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <a href="#!" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="index.html">INICIO</a></li>
-                        <li class="active"><a href="empacate.html">EMPÁCATE</a></li>
-                        <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                        <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                        <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                       <li><a href="index.html">INICIO</a></li>
+                       <li class="active"><a href="empacate.html">EMPÁCATE</a></li>
+                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
+                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
+                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="index.html">INICIO</a></li>
-                        <li><a href="empacate.html">EMPÁCATE</a></li>
-                        <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                        <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                        <li><a href="contactanos.html">CONTÁCTANOS</a></li>
-                    </ul>
+                       <li><a href="empacate.html">EMPÁCATE</a></li>
+                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
+                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
+                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                       </ul>
                 </div>
             </nav>
         </div>
@@ -78,16 +83,16 @@
                     <div class="row balign-wrapper">
                         <div class="col m6 l4 push-m6 push-l4 center-align">
                             <h3>EMPÁCATE CON</h3>
-                            <img class="responsive-img" src="img/assets/text-nosotros.png">
+                            <img class="responsive-img" src="{% static 'img/assets/text-nosotros.png' %}">
                             <p class="text-justify mt30">Te ayudamos a encontrar el empaque perfecto y hecho a tu medida, ven con nosotros y súmate a esta nueva experiencia, sientiéndote parte del proceso de tu empaque soñado.</p>
                             <a href="#empaques" class="waves-effect waves-light btn-large btn-start">EMPEZAR</a>
                         </div>
                         <div class="col m6 pull-m6 l4 pull-l4 center-align balign">
-                            <img class="responsive-img" src="img/assets/emp-12.png">
+                            <img class="responsive-img" src="{% static 'img/assets/emp-12.png' %}">
                         </div>
                         
                         <div class="col l4 center-align  balign hide-on-med-and-down">
-                            <img class="responsive-img" src="img/assets/emp-13.png">
+                            <img class="responsive-img" src="{% static 'img/assets/emp-13.png' %}">
                         </div>
                         
                     </div>
@@ -102,7 +107,7 @@
                                 <h3>EMPAQUES<br>AGRO</h3>
                                 <div class="empaques-p">
                                     <p>Empaques para frutas, vegetales  (procesados o no) que se van a refrigerar, congelar y usar en microondas (respirables).</p>
-                                    <img class="responsive-img" src="img/assets/emp-14.png">
+                                    <img class="responsive-img" src="{% static 'img/assets/emp-14.png' %}">
                                 </div>
                             </div>
                         </a>
@@ -111,7 +116,7 @@
                                 <h3>EMPAQUES<br>FOOD</h3>
                                 <div class="empaques-p">
                                     <p>Todo tipo de empaques para alimentos, desde dulces hasta pastas, snacks, etc.</p>
-                                    <img class="responsive-img" src="img/assets/emp-15.png">
+                                    <img class="responsive-img" src="{% static 'img/assets/emp-15.png' %}">
                                 </div>
                             </div>
                         </a>
@@ -120,7 +125,7 @@
                                 <h3>EMPAQUES<br>NON FOOD</h3>
                                 <div class="empaques-p">
                                     <p>Empaques para productos farmacéuticos y químicos.</p>
-                                    <img class="responsive-img" src="img/assets/emp-16.png">
+                                    <img class="responsive-img" src="{% static 'img/assets/emp-16.png' %}">
                                 </div>
                             </div>
                         </a>
@@ -133,7 +138,7 @@
                 <div class="container">
                     <div class="row valign-wrapper">
                         <div class="col m12 l4 push-l4 valign center-align">
-                            <img class="responsive-img" src="img/assets/eligeemp.png">
+                            <img class="responsive-img" src="{% static 'img/assets/eligeemp.png' %}">
                             
                         </div>
                         <div class="col m12 l4 pull-l4 center-align mini-img">
@@ -141,19 +146,19 @@
                                 <a href="#elegir">
                                     <div class="col s4 center-align">
                                         <h6>EMPAQUE<br>DE CHOCOLATE</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp1.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp1.png' %}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
                                     <div class="col s4 center-align">
                                         <h6>EMPAQUE<br>DE GALLETA</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp2.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp2.png' %}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
                                     <div class="col s4 center-align">
                                         <h6>EMPAQUE<br>DE SNACKS</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp3.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp3.png' %}">
                                     </div>
                                 </a>
                             </div>
@@ -161,13 +166,13 @@
                                 <a href="#elegir">
                                     <div class="col s4 offset-s2 center-align">
                                         <h6>EMPAQUE<br>DE ACEITE</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp4.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp4.png' %}">
                                     </div>
                                 </a>
                                 <a href="##elegir">
                                     <div class="col s4 center-align">
                                         <h6>EMPAQUE<br>DE SALSAS</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp5.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp5.png' %}">
                                     </div>
                                 </a>
                             </div>
@@ -178,19 +183,19 @@
                                 <a href="#elegir">
                                     <div class="col s4 center-align">
                                         <h6>EMPAQUE<br>DE GOLOSINAS</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp6.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp6.png' %}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
                                     <div class="col s4 center-align">
                                         <h6>EMPAQUE<br>DE CEREALES</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp7.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp7.png' %}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
                                     <div class="col s4 center-align">
                                         <h6>EMPAQUE<br>DE PASTAS</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp8.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp8.png' %}">
                                     </div>
                                 </a>
                             </div>
@@ -198,13 +203,13 @@
                                 <a href="#elegir">
                                     <div class="col s4 offset-s2 center-align">
                                         <h6>EMPAQUE<br>DE GRANOS</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp9.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp9.png' %}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
                                     <div class="col s4 center-align">
                                         <h6>EMPAQUE DE<br>POLVOS Y MEZCLAS</h6>
-                                        <img class="responsive-img" src="img/assets/mini-emp10.png">
+                                        <img class="responsive-img" src="{% static 'img/assets/mini-emp10.png' %}">
                                     </div>
                                 </a>
                             </div>
@@ -219,28 +224,28 @@
                     <a href="#elegir">
                         <div class="row valign-wrapper">
                             <div class="col m12 l4 valign center-align">
-                                <img class="responsive-img" src="img/assets/text-detergente.png">
+                                <img class="responsive-img" src="{% static 'img/assets/text-detergente.png' %}">
                             </div>
                             <div class="col l2 center-align valign hide-on-med-and-down">
-                                <img class="responsive-img" src="img/assets/flecha.png">
+                                <img class="responsive-img" src="{% static 'img/assets/flecha.png' %}">
                             </div>
                             
                             <div class="col l6 center-align valign">
-                                <img class="responsive-img" src="img/assets/emp-deterg.png">
+                                <img class="responsive-img" src="{% static 'img/assets/emp-deterg.png' %}">
                             </div>
                         </div>
                     </a>
                     <a href="#elegir">
                         <div class="row valign-wrapper">
                             <div class="col m12 l4 valign center-align">
-                                <img class="responsive-img" src="img/assets/text-aseo.png">
+                                <img class="responsive-img" src="{% static 'img/assets/text-aseo.png' %}">
                             </div>
                             <div class="col l2 center-align valign hide-on-med-and-down">
-                                <img class="responsive-img" src="img/assets/flecha.png">
+                                <img class="responsive-img" src="{% static 'img/assets/flecha.png' %}">
                             </div>
                             
                             <div class="col l6 center-align valign">
-                                <img class="responsive-img" src="img/assets/emp-aseo.png">
+                                <img class="responsive-img" src="{% static 'img/assets/emp-aseo.png' %}">
                             </div>
                         </div>
                     </a>
@@ -253,22 +258,22 @@
                         <a href="#elegir">
                             <div class="col s12 m4 center-align">
                                 <h5>EMPAQUES AGRO</h5>
-                                <img class="responsive-img" src="img/assets/text-congelados.png">
-                                <img class="responsive-img empaque-agro" src="img/assets/emp-17.png">
+                                <img class="responsive-img" src="{% static 'img/assets/text-congelados.png' %}">
+                                <img class="responsive-img empaque-agro" src="{% static 'img/assets/emp-17.png' %}">
                             </div>
                         </a>
                         <a href="#elegir">
                              <div class="col s12 m4 center-align border-col">
                                 <h5>EMPAQUES AGRO</h5>
-                                <img class="responsive-img" src="img/assets/text-microondables.png">
-                                <img class="responsive-img empaque-agro" src="img/assets/emp-18.png">
+                                <img class="responsive-img" src="{% static 'img/assets/text-microondables.png' %}">
+                                <img class="responsive-img empaque-agro" src="{% static 'img/assets/emp-18.png' %}">
                             </div>
                         </a>
                         <a href="#elegir">
                              <div class="col s12 m4 center-align">
                                 <h5>EMPAQUES AGRO</h5>
-                                <img class="responsive-img" src="img/assets/text-refrigerados.png">
-                                <img class="responsive-img empaque-agro" src="img/assets/emp-19.png">
+                                <img class="responsive-img" src="{% static 'img/assets/text-refrigerados.png' %}">
+                                <img class="responsive-img empaque-agro" src="{% static 'img/assets/emp-19.png' %}">
                             </div>
                         </a>
                     </div>
@@ -291,7 +296,7 @@
                                 <a class="waves-effect waves-light btn-large" id="visit-you">NOSOTROS TE<br>VISITAMOS</a>
                             </div>
                              <div class="col s12 m4 valign center-align">
-                                <img class="responsive-img" src="img/assets/empaque.png">
+                                <img class="responsive-img" src="{% static 'img/assets/empaque.png' %}">
                             </div>
                              <div class="col s12 m4 valign center-align">
                                 <div class="row">
@@ -346,12 +351,12 @@
         </main>
 
         
-         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
-        <script src="js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/materialize.min.js"></script>
-        <script src="js/main.js"></script>
+         <!-- <script src="//{% static 'ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+        <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>
+        <script src="{% static 'js/plugins.js' %}"></script>
+        <script src="{% static 'js/materialize.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
