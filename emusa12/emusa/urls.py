@@ -29,4 +29,6 @@ urlpatterns = [
     url(r'^tecnologia.html', emba_views.tecnologia),
     url(r'^index.html', emba_views.index),
     url(r'^$', emba_views.index),
+    url(r'^login', emba_views.userlogin),
+    url(r'^form', emba_views.add_new_form),
 ]
