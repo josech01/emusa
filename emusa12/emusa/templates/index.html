@@ -42,37 +42,39 @@
                         </div>
                     </div>
                     <div class="col s4 m4 center-col">
-                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b> Español</span>
+                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b> {{index.idioma}}</span>
                         <br>
-                        <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">customerservice@emusa.com.pe</a></span>
+                        <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">{{index.correo}}</a></span>
                     </div>
                     <div class="col s5 m4" id="phones">
-                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>PERÚ:</b> (511) 6176700</span>
+                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>PERÚ:</b>{{index.telf1}}</span>
                         <br>
-                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>GUATEMALA:</b> (502) 65450500</span>
+                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>GUATEMALA:</b> {{index.telf2}}</span>
                         <br>
-                        <span class="truncate"><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>BRASIL:</b> (55) 19-3113-3131</span>
+                        <span class="truncate"><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>BRASIL:</b>{{index.telf3}}</span>
                     </div>
                 </div>
             </div>
         
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
+                    <a href="#!" class="brand-logo"><img src="{{index.logo.url}}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                       <li class="active"><a href="index.html">INICIO</a></li>
-                       <li><a href="empacate.html">EMPÁCATE</a></li>
-                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                       <li class="active"><a href="index.html">{{index.menu1}}</a></li>
+                       <li><a href="empacate.html">{{index.menu2}}</a></li>
+                       <li><a href="tecnologia.html">{{index.menu3}}</a></li>
+                       <li><a href="#">{{index.menu4}}</a></li>
+                       <li><a href="clientes.html">{{index.menu5}}</a></li>
+                       <li><a href="contactanos.html">{{index.menu6}}</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <li><a href="index.html">INICIO</a></li>
-                       <li><a href="empacate.html">EMPÁCATE</a></li>
-                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                        <li><a href="index.html">{{index.menu1}}</a></li>
+                       <li><a href="empacate.html">{{index.menu2}}</a></li>
+                       <li><a href="tecnologia.html">{{index.menu3}}</a></li>
+                       <li><a href="#">{{index.menu4}}</a></li>
+                       <li><a href="clientes.html">{{index.menu4}}</a></li>
+                       <li><a href="contactanos.html">{{index.menu6}}</a></li>
                        </ul>
                 </div>
             </nav>
@@ -82,16 +84,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col s12 center-align">
-                            <h3>BIENVENIDOS A EMUSA</h3>
-                            <p>Somos una compañía que ofrece soluciones de empaques flexibles con altos estándares de calidad, con operaciones en Brasil, Perú y Guatemala.</p>
+                            <h3>{{index.titulo_111}}</h3>
+                            <p>{{index.text_secundario111}}</p>
                         </div>
                         <div class="col s12 center-align" id="emp-img">
-                            <img src="{% static 'img/assets/emp-1.png' %}">
-                            <img src="{% static 'img/assets/emp-2.png' %}">
-                            <img src="{% static 'img/assets/emp-3.png' %}">
-                            <img class="hide-on-small-only" src="{% static 'img/assets/emp-4.png' %}">
-                            <img class="hide-on-small-only" src="{% static 'img/assets/emp-5.png' %}">
-                            <img class="hide-on-med-and-down" src="{% static 'img/assets/emp-6.png' %}">
+                            <img src="{{index.imagen111}}">
+                            <img src="{{index.imagen112}}">
+                            <img src="{{index.imagen113}}">
+                            <img class="hide-on-small-only" src="{{index.imagen114}}">
+                            <img class="hide-on-small-only" src="{{index.imagen115}}">
+                            <img class="hide-on-med-and-down" src="{{index.imagen116}}">
                         </div>
                     </div>
                 </div>
@@ -101,15 +103,15 @@
                 <div class="container">
                     <div class="row valign-wrapper">
                         <div class="col m6 push-m3 center-align">
-                            <h3>QUIÉNES SOMOS</h3>
-                            <p class="text-justify">Somos una compañía con más de 30 años de experiencia que ofrece soluciones de empaques flexibles en los sectores Food, Non Food y Agro con altos estándares de calidad. Tenemos operaciones en Brasil, Perú y Guatemala, y con un alcance a más de 22 países. Pertenecemos a una holding de empresas con presencia a nivel mundial con negocios en los mercados de papel, químicos, agroindustrial, energía, gestión portuaria, entre otros.</p>
+                            <h3>{{index.titulo_121}}</h3>
+                            <p class="text-justify">{{index.text_secundario121}}</p>
                         </div>
                         <div class="col s6 m3 pull-m6 center-align valign">
-                            <img class="responsive-img" src="{% static 'img/assets/emp-5-b.png' %}">
+                            <img class="responsive-img" src="{{index.imagen121}}">
                         </div>
                         
                         <div class="col s6 m3 center-align valign">
-                            <img class="responsive-img" src="{% static 'img/assets/emp-4-6-b.png' %}">
+                            <img class="responsive-img" src="{{index.imagen122}}">
                         </div>
                         
                     </div>
@@ -124,15 +126,15 @@
                             
                         </div>
                         <div class="col m4 pull-m4 center-align">
-                            <h3>VISIÓN</h3>
-                            <p class="text-justify">Consolidar a Emusa como un productor regional de empaques flexibles.</p>
-                            <img id="img-7" class="responsive-img" src="{% static 'img/assets/emp-9.png' %}">
+                            <h3>{{index.subtitulo131}}</h3>
+                            <p class="text-justify">{{index.text_secundario131}}</p>
+                            <img id="img-7" class="responsive-img" src="{{index.imagen131}}">
                         </div>
                         
                         <div class="col m4 center-align">
-                            <h3>MISIÓN</h3>
-                            <p>Proveer empaques flexibles a diversos sectores industriales (Food, Non Food y Agro), producidos con una excelente calidad gráfica, inocuidad, una alta productividad y eficiencia en costos; generando finalmente valor para sus clientes, colaboradores y accionistas.</p>
-                            <img class="responsive-img" src="{% static 'img/assets/emp-8.png' %}">
+                            <h3>{{index.subtitulo132}}</h3>
+                            <p>{{index.text_secundario132}}</p>
+                            <img class="responsive-img" src="{{index.imagen134}}">
                         </div>
                         
                     </div>
@@ -147,7 +149,7 @@
                         </div>
                         
                         <div class="col m4 center-align valign">
-                            <img id="img-paises" class="responsive-img" src="{% static 'img/assets/paises.png' %}">
+                            <img id="img-paises" class="responsive-img" src="{{index.imagen141}}">
                         </div>
                         
                     </div>
@@ -158,16 +160,9 @@
                 <div class="container">
                     <div class="row valign-wrapper">
                         <div class="col m6 l4 center-align valign">
-                            <h3>ESTÁNDARES DE</h3>
+                            <h3>{{index.titulo_151}}</h3>
                             <img class="responsive-img" src="{% static 'img/assets/text-calidad.png' %}">
-                            <p class="text-justify">Poseemos un sistema de control de calidad basado en la norma ISO9001:2000, GMP y HACCP, nuestro principal propósito es cuidar la salud de los consumidores finales y asegurar buenas practicas en la manipulación de los envases.</p>
-                            <p class="text-justify">Este sistema nos ha permitido obtener:</p>
-                            <p class="text-justify">
-                                <ol>
-                                    <li>Q.S.E. (Evaluación de Sistemas de Calidad), acreditación basada en AIB (The American Institute of Baking)  requisitos internacionales.</li>
-                                    <li>Certificación de S.G.S. a nombre de algunos de nuestros clientes.</li>
-                                    <li>Hemos superado con éxito auditorias de nuestros clientes.</li>
-                                </ol>
+                            <p class="text-justify">{{index.text_secundario151}}
                             </p>
                             
                         </div>
@@ -177,8 +172,8 @@
                         
                         <div class="col m6 l4 center-align valign">
                             <img class="responsive-img" src="{% static 'img/assets/text-certificacion.png' %}">
-                            <p class="text-justify">Contamos con certificación AIB que eleva nuestra capacidades de proceso de producción  e inocuidad alimentaria.</p>
-                            <img class="responsive-img" src="{% static 'img/assets/calidad.png' %}">
+                            <p class="text-justify">{{index.text_secundario152}}</p>
+                            <img class="responsive-img" src="{{index.img_certificado}}">
                         </div>
                     </div>
                 </div>
@@ -187,7 +182,7 @@
             <footer class="page-footer">
                 <div class="footer-copyright">
                     <div class="container">
-                    © 2016 Copyright Emusa
+                    {{footer.titulo_601}}
                     </div>
                 </div>
             </footer>

@@ -17,7 +17,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 from emballages import views as emba_views
-
+from django.conf import settings
 admin.autodiscover()
 
 
@@ -32,3 +32,9 @@ urlpatterns = [
     url(r'^login', emba_views.userlogin),
     url(r'^form', emba_views.add_new_form),
 ]
+if settings.DEBUG:
+    urlpatterns += patterns("",
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT,}
+        ),
+    )

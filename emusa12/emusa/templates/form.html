@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Formulario</title>
 </head>
 <body>
-	<h2>Formulario</h2>
-	<form action="" method="POST">{% csrf_token %}
+	<h1>Formulario</h1>
+	<h2>1.0 DATOS E INFORMACIÓN DE LA EMPRESA</h2>
+	<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
 		<ul>
-			{{form.as_ul}}
+			{{form1.as_ul}}
+			{{form2.as_ul}}
+			{{form3.as_ul}}
+			{{form4.as_ul}}
+			{{form5.as_ul}}
+			{{form6.as_ul}}
 		</ul>
 		<input type="submit" value="Guardar">
 	</form>

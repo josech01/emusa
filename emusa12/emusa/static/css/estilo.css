@@ -1,0 +1,10 @@
+.container-login{
+	margin-top: 50px;
+}
+
+.panel-footer{
+	text-align: center;
+	margin-top: 80px;
+	bottom: 0;
+	position: fixed;
+}

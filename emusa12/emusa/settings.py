@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+from unipath import Path
+BASE_DIR = Path(__file__).ancestor(1)
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,16 +33,22 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
+os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
 )
 
 STATICFILES_DIRS = (
-   os.path.join(os.path.dirname(__file__), 'static').replace('\\','/'),
+os.path.join(os.path.dirname(__file__), 'static').replace('\\','/'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = '/static/'
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR.child('media')
+STATIC_ROOT = 'staticfiles'
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -78,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'emusadb',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'joseuser',
+        'USER': 'joseuser1',
         'PASSWORD': 'S3rv3r1',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
