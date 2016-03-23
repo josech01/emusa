@@ -98,6 +98,101 @@ class add_form1(forms.ModelForm):
 				'class' : 'form-control', 
 				}),
 
+			 'imagen111' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+
+			 'imagen112' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+
+			 'imagen113' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+
+			 'imagen114' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+
+			 'imagen115' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+
+			 'imagen116' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen121' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen122' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen131' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen132' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen133' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen134' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen135' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen136' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen141' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen151' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen152' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen153' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen154' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen155' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'imagen156' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+			 'img_certificado' : forms.ClearableFileInput(attrs = 
+				{
+				'class' : 'form-control', 
+				}),
+
+
 			 'titulo_111' : forms.TextInput(attrs = 
 				{
 				'class' : 'form-control', 
