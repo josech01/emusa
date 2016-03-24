@@ -32,7 +32,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="navbar-fixed">
+<div id="navbar-fixed">
             <div class="container">
                 <div class="row" id="header">
                     <div class="col s3 m4 center-align" id="intranet">
@@ -42,37 +42,39 @@
                         </div>
                     </div>
                     <div class="col s4 m4 center-col">
-                        <span><img src="{% static 'img/icons/lang.png" class="lang-icon"><b>IDIOMA:</b> Español</span>
+                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% endif %}</span>
                         <br>
-                        <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">customerservice@emusa.com.pe</a></span>
+                        <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">{{index.correo}}</a></span>
                     </div>
                     <div class="col s5 m4" id="phones">
-                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>PERÚ:</b> (511) 6176700</span>
+                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>PERÚ:</b>{{index.telf1}}</span>
                         <br>
-                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>GUATEMALA:</b> (502) 65450500</span>
+                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>GUATEMALA:</b> {{index.telf2}}</span>
                         <br>
-                        <span class="truncate"><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>BRASIL:</b> (55) 19-3113-3131</span>
+                        <span class="truncate"><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>BRASIL:</b>{{index.telf3}}</span>
                     </div>
                 </div>
             </div>
         
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
+                    <a href="#!" class="brand-logo"><img src="{{index.logo.url}}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                       <li><a href="index.html">INICIO</a></li>
-                       <li><a href="empacate.html">EMPÁCATE</a></li>
-                       <li class="active"><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                       <li class="active"><a href="index.html">{{index.menu1}}</a></li>
+                       <li><a href="empacate.html">{{index.menu2}}</a></li>
+                       <li><a href="tecnologia.html">{{index.menu3}}</a></li>
+                       <li><a href="#">{{index.menu4}}</a></li>
+                       <li><a href="clientes.html">{{index.menu5}}</a></li>
+                       <li><a href="contactanos.html">{{index.menu6}}</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <li><a href="index.html">INICIO</a></li>
-                       <li><a href="empacate.html">EMPÁCATE</a></li>
-                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                        <li><a href="index.html">{{index.menu1}}</a></li>
+                       <li><a href="empacate.html">{{index.menu2}}</a></li>
+                       <li><a href="tecnologia.html">{{index.menu3}}</a></li>
+                       <li><a href="#">{{index.menu4}}</a></li>
+                       <li><a href="clientes.html">{{index.menu4}}</a></li>
+                       <li><a href="contactanos.html">{{index.menu6}}</a></li>
                        </ul>
                 </div>
             </nav>
@@ -82,9 +84,9 @@
                 <div class="container">
                     <div class="row balign-wrapper">
                         <div class="col m6 l4 push-m6 push-l4 center-align center-col">
-                            <h2>TECNOLOGÍA</h2>
-                            <p class="mt30">Conocenos un poco más y mira nuestro método de trabajo y todo lo que tenemos para ofrecerte</p>
-                            <a href="#tec1" class="waves-effect waves-light btn-large btn-start">EMPEZAR</a>
+                            <h2>{{tecnologys.titulo_301}}</h2>
+                            <p class="mt30">{{tecnologys.text_secundario301}}</p>
+                            <a href="#tec1" class="waves-effect waves-light btn-large btn-start">{{tecnologys.boton_301}}</a>
                         </div>
                         <div class="col m6 pull-m6 l4 pull-l4 center-align balign">
                             <img class="responsive-img" src="{% static 'img/assets/tec01.png' %}">
@@ -102,13 +104,13 @@
                 <div class="container">
                     <div class="row balign-wrapper">
                         <div class="col m6 l4 push-m6 push-l4 center-align center-col">
-                            <p class="mt30 tec-p">La calidad de impresión de un empaque se define por la parte gráfica (Preprensa).</p>
+                            <p class="mt30 tec-p">{{tecnologys.subtitulo311}}</p>
                             <div class="card">
                                 <div class="card-content white-text text-justify">
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>1</h2></div>
                                         <div class="col s11 valign">
-                                            <p>Nuestra preprensa esta basada en tecnología Kodak Flexcel NX Digital (software y hardware).</p>
+                                            <p>{{tecnologys.text_secundario311}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +120,7 @@
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>2</h2></div>
                                         <div class="col s11 valign">
-                                            <p>La aprobación del diseño (inicio a fin) se administra a través de ESKO Web Center.</p>
+                                            <p>{{tecnologys.text_secundario312}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +130,7 @@
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>3</h2></div>
                                         <div class="col s11 valign">
-                                            <p>Las pruebas de color son digitales en el material (sustrato de empaque real Approval).</p>
+                                            <p>{{tecnologys.text_secundario313}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +140,7 @@
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>4</h2></div>
                                         <div class="col s11 valign">
-                                            <p>Desarrollo de empaques usando realidad aumentada (Studio Viewer).</p>
+                                            <p>{{tecnologys.text_secundario314}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +167,7 @@
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>5</h2></div>
                                         <div class="col s11 valign">
-                                            <p>Prensas flexográficas de 8 colores (Comexi – Uteco).</p>
+                                            <p>{{tecnologys.text_secundario315}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +177,7 @@
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>6</h2></div>
                                         <div class="col s11 valign">
-                                            <p>Extrusión y coextrusión para monocapas y PEBD extrusión y coestrusión 1, 2, y 3 capas (OXO-BIO) certificadas por Symphony.</p>
+                                            <p>{{tecnologys.text_secundario316}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +187,7 @@
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>7</h2></div>
                                         <div class="col s11 valign">
-                                            <p>Laminación Solvent y Solventless (Uteco).</p>
+                                            <p>{{tecnologys.text_secundario317}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -195,7 +197,7 @@
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>8</h2></div>
                                         <div class="col s11 valign">
-                                            <p>Selladoras para bolsas Pouch (Totani, Roan).</p>
+                                            <p>{{tecnologys.text_secundario318}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +207,7 @@
                                     <div class="row valign-wrapper">
                                         <div class="col s1 valign"><h2>9</h2></div>
                                         <div class="col s11 valign">
-                                            <p>Cortadoras laser (Comexi).</p>
+                                            <p>{{tecnologys.text_secundario319}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -223,12 +225,10 @@
             <div class="section" id="responsabilidad">
                 <div class="container">
                     <div class="row center-align">
-                        <img class="responsive-img" src="{% static 'img/assets/rs-top.png' %}">
+                        <img class="responsive-img" src="{{tecnologys.imagen321.url}}">
                         <h3>RESPONSABILIDAD SOCIAL</h3>
                         <div class="text-justify">
-                            <p>Como proveedor regional de empaques, entendemos nuestra responsabilidad en la sociedad y trabajamos continuamente para ser un buen ciudadano corporativo en los paises que actuamos.</p>
-                            <p>Hemos adoptado un compromiso de tener practicas empresariales  responsables, seguras y eticas.  Basadas en los ambitos economicos, medioambientales y sociales.</p>
-                            <p>Invertimos en equipos y procesos que reduzcan las emisiones de gases y/o desperdicios industriales, implementando mecanismos de reciclaje y el uso de materiales biodegradables y amigables al medio ambiente.</p>
+                            <p>{{tecnologys.text_secundario321}}</p>
                         </div>
                         <img class="responsive-img" src="{% static 'img/assets/rs-bottom.png' %}">
                     </div>
@@ -240,7 +240,7 @@
             <footer class="page-footer">
                 <div class="footer-copyright">
                     <div class="container">
-                    © 2016 Copyright Emusa
+                    {{footer.titulo_601}}
                     </div>
                 </div>
             </footer>

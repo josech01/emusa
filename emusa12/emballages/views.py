@@ -17,16 +17,18 @@ from emballages import models
 # Create your views here.
 def clientes (request):
 	if request.method == 'GET':
+		index = models.index.objects.last()
 		clients = models.client.objects.last()
 		footer = models.footer.objects.last()
-		context_data = {'clients': clients,'footer': footer}
+		context_data = {'index': index, 'clients': clients,'footer': footer}
 		return render(request, 'clientes.html', context_data)
 
 def contactanos (request):
 	if request.method == 'GET':
+		index = models.index.objects.last()
 		contacts = models.contact.objects.last()
 		footer = models.footer.objects.last()
-		context_data = {'contacts': contacts,'footer': footer}
+		context_data = {'index': index, 'contacts': contacts,'footer': footer}
 		return render(request, 'contactanos.html', context_data)
 
 def index (request):
@@ -39,35 +41,42 @@ def index (request):
 
 def empacate (request):
 	if request.method == 'GET':
+		index = models.index.objects.last()
 		empacar = models.emballage.objects.last()
 		footer = models.footer.objects.last()
-		context_data = {'empacar': empacar,'footer': footer}
+		context_data = {'index': index, 'empacar': empacar,'footer': footer}
 		return render(request, 'empacate.html',context_data)
 
 
 def tecnologia (request):
 	if request.method == 'GET':
+		index = models.index.objects.last()
 		tecnologys = models.tecnology.objects.last()
 		footer = models.footer.objects.last()
-		context_data = {'tecnologys': tecnologys,'footer': footer}
+		context_data = {'index': index, 'tecnologys': tecnologys,'footer': footer}
 		return render(request, 'tecnologia.html', context_data)
 
 def add_new_form (request):
 	if request.method == "POST":
-		instance = models.index.objects.last()
-		modelform1 = add_form1(request.POST, request.FILES, instance= instance)
-		modelform2 = add_form2(request.POST, request.FILES)
-		modelform3 = add_form3(request.POST, request.FILES)
-		modelform4 = add_form4(request.POST, request.FILES)
-		modelform5 = add_form5(request.POST, request.FILES)
-		modelform6 = add_form6(request.POST, request.FILES)
+		instance1 = models.index.objects.last()
+		instance2 = models.emballage.objects.last()
+		instance3 = models.tecnology.objects.last()
+		instance4 = models.client.objects.last()
+		instance5 = models.contact.objects.last()
+		instance6 = models.footer.objects.last()
+		modelform1 = add_form1(request.POST, request.FILES, instance= instance1)
+		modelform2 = add_form2(request.POST, request.FILES, instance= instance2)
+		modelform3 = add_form3(request.POST, request.FILES, instance= instance3)
+		modelform4 = add_form4(request.POST, request.FILES, instance= instance4)
+		modelform5 = add_form5(request.POST, request.FILES, instance= instance5)
+		modelform6 = add_form6(request.POST, request.FILES, instance= instance6)
 		if modelform1.is_valid() and modelform2.is_valid() and modelform3.is_valid() and modelform4.is_valid() and modelform5.is_valid() and modelform6.is_valid():	
 			modelform1.save()
-			# modelform2.save()
-			# modelform3.save()
-			# modelform4.save()
-			# modelform5.save()
-			# modelform6.save()
+			modelform2.save()
+			modelform3.save()
+			modelform4.save()
+			modelform5.save()
+			modelform6.save()
 			return redirect("/form/")
 	else:
 		modelform1 = add_form1()

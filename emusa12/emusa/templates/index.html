@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="col s4 m4 center-col">
-                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b> {{index.idioma}}</span>
+                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% endif %}</span>
                         <br>
                         <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">{{index.correo}}</a></span>
                     </div>

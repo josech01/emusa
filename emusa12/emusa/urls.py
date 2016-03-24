@@ -29,8 +29,10 @@ urlpatterns = [
     url(r'^tecnologia.html', emba_views.tecnologia),
     url(r'^index.html', emba_views.index),
     url(r'^$', emba_views.index),
-    url(r'^login', emba_views.userlogin),
+    url(r'^login/$', emba_views.userlogin, name="login"),
     url(r'^form', emba_views.add_new_form),
+    url(r'^salir/$', emba_views.LogOut, name = 'logout'),
+    
 ]
 if settings.DEBUG:
     urlpatterns += patterns("",

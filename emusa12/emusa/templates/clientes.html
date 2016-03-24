@@ -42,37 +42,39 @@
                         </div>
                     </div>
                     <div class="col s4 m4 center-col">
-                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b> Español</span>
+                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% endif %}</span>
                         <br>
-                        <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">customerservice@emusa.com.pe</a></span>
+                        <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">{{index.correo}}</a></span>
                     </div>
                     <div class="col s5 m4" id="phones">
-                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>PERÚ:</b> (511) 6176700</span>
+                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>PERÚ:</b>{{index.telf1}}</span>
                         <br>
-                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>GUATEMALA:</b> (502) 65450500</span>
+                        <span><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>GUATEMALA:</b> {{index.telf2}}</span>
                         <br>
-                        <span class="truncate"><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>BRASIL:</b> (55) 19-3113-3131</span>
+                        <span class="truncate"><img src="{% static 'img/icons/phone.png' %}" class="phone-icon"><b>BRASIL:</b>{{index.telf3}}</span>
                     </div>
                 </div>
             </div>
         
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
+                    <a href="#!" class="brand-logo"><img src="{{index.logo.url}}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                       <li><a href="index.html">INICIO</a></li>
-                       <li><a href="empacate.html">EMPÁCATE</a></li>
-                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                       <li class="active"><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                       <li class="active"><a href="index.html">{{index.menu1}}</a></li>
+                       <li><a href="empacate.html">{{index.menu2}}</a></li>
+                       <li><a href="tecnologia.html">{{index.menu3}}</a></li>
+                       <li><a href="#">{{index.menu4}}</a></li>
+                       <li><a href="clientes.html">{{index.menu5}}</a></li>
+                       <li><a href="contactanos.html">{{index.menu6}}</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <li><a href="index.html">INICIO</a></li>
-                       <li><a href="empacate.html">EMPÁCATE</a></li>
-                       <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-                       <li><a href="clientes.html">NUESTROS CLIENTES</a></li>
-                       <li><a href="contactanos.html">CONTÁCTANOS</a></li>
+                        <li><a href="index.html">{{index.menu1}}</a></li>
+                       <li><a href="empacate.html">{{index.menu2}}</a></li>
+                       <li><a href="tecnologia.html">{{index.menu3}}</a></li>
+                       <li><a href="#">{{index.menu4}}</a></li>
+                       <li><a href="clientes.html">{{index.menu4}}</a></li>
+                       <li><a href="contactanos.html">{{index.menu6}}</a></li>
                        </ul>
                 </div>
             </nav>
@@ -82,7 +84,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col s12">
-                            <img class="responsive-img" src="{% static 'img/assets/nuestros-clientes-b.png' %}">
+                            <img class="responsive-img" src="{{clients.imagen401.url}}">
                         </div>
                         <!-- <div class="col s12 hide-on-large-only">
                             <img class="responsive-img" src="{% static 'img/assets/nuestros-clientes-m.png">
@@ -94,7 +96,7 @@
             <footer class="page-footer">
                 <div class="footer-copyright">
                     <div class="container">
-                    © 2016 Copyright Emusa
+                    {{footer.titulo_601}}
                     </div>
                 </div>
             </footer>
