@@ -1,0 +1,1546 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: auth_group; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE auth_group (
+    id integer NOT NULL,
+    name character varying(80) NOT NULL
+);
+
+
+ALTER TABLE public.auth_group OWNER TO joseuser1;
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE auth_group_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_id_seq OWNER TO joseuser1;
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE auth_group_id_seq OWNED BY auth_group.id;
+
+
+--
+-- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE auth_group_permissions (
+    id integer NOT NULL,
+    group_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_group_permissions OWNER TO joseuser1;
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE auth_group_permissions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO joseuser1;
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE auth_group_permissions_id_seq OWNED BY auth_group_permissions.id;
+
+
+--
+-- Name: auth_permission; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE auth_permission (
+    id integer NOT NULL,
+    name character varying(50) NOT NULL,
+    content_type_id integer NOT NULL,
+    codename character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.auth_permission OWNER TO joseuser1;
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE auth_permission_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_permission_id_seq OWNER TO joseuser1;
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE auth_permission_id_seq OWNED BY auth_permission.id;
+
+
+--
+-- Name: auth_user; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE auth_user (
+    id integer NOT NULL,
+    password character varying(128) NOT NULL,
+    last_login timestamp with time zone NOT NULL,
+    is_superuser boolean NOT NULL,
+    username character varying(30) NOT NULL,
+    first_name character varying(30) NOT NULL,
+    last_name character varying(30) NOT NULL,
+    email character varying(75) NOT NULL,
+    is_staff boolean NOT NULL,
+    is_active boolean NOT NULL,
+    date_joined timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.auth_user OWNER TO joseuser1;
+
+--
+-- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE auth_user_groups (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    group_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_user_groups OWNER TO joseuser1;
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE auth_user_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_groups_id_seq OWNER TO joseuser1;
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE auth_user_groups_id_seq OWNED BY auth_user_groups.id;
+
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE auth_user_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_id_seq OWNER TO joseuser1;
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
+
+
+--
+-- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE auth_user_user_permissions (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_user_user_permissions OWNER TO joseuser1;
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE auth_user_user_permissions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO joseuser1;
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE auth_user_user_permissions_id_seq OWNED BY auth_user_user_permissions.id;
+
+
+--
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE django_admin_log (
+    id integer NOT NULL,
+    action_time timestamp with time zone NOT NULL,
+    object_id text,
+    object_repr character varying(200) NOT NULL,
+    action_flag smallint NOT NULL,
+    change_message text NOT NULL,
+    content_type_id integer,
+    user_id integer NOT NULL,
+    CONSTRAINT django_admin_log_action_flag_check CHECK ((action_flag >= 0))
+);
+
+
+ALTER TABLE public.django_admin_log OWNER TO joseuser1;
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE django_admin_log_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_admin_log_id_seq OWNER TO joseuser1;
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
+
+
+--
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE django_content_type (
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    app_label character varying(100) NOT NULL,
+    model character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.django_content_type OWNER TO joseuser1;
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE django_content_type_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_content_type_id_seq OWNER TO joseuser1;
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE django_content_type_id_seq OWNED BY django_content_type.id;
+
+
+--
+-- Name: django_migrations; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE django_migrations (
+    id integer NOT NULL,
+    app character varying(255) NOT NULL,
+    name character varying(255) NOT NULL,
+    applied timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_migrations OWNER TO joseuser1;
+
+--
+-- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE django_migrations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_migrations_id_seq OWNER TO joseuser1;
+
+--
+-- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE django_migrations_id_seq OWNED BY django_migrations.id;
+
+
+--
+-- Name: django_session; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE django_session (
+    session_key character varying(40) NOT NULL,
+    session_data text NOT NULL,
+    expire_date timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_session OWNER TO joseuser1;
+
+--
+-- Name: emballages_client; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE emballages_client (
+    id integer NOT NULL,
+    titulo_401 character varying(50) NOT NULL,
+    imagen401 character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.emballages_client OWNER TO joseuser1;
+
+--
+-- Name: emballages_client_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE emballages_client_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.emballages_client_id_seq OWNER TO joseuser1;
+
+--
+-- Name: emballages_client_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE emballages_client_id_seq OWNED BY emballages_client.id;
+
+
+--
+-- Name: emballages_contact; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE emballages_contact (
+    id integer NOT NULL,
+    titulo_501 character varying(50) NOT NULL,
+    pregunta51 character varying(50) NOT NULL,
+    pregunta52 character varying(50) NOT NULL,
+    pregunta53 character varying(50) NOT NULL,
+    pregunta54 character varying(50) NOT NULL,
+    boton_501 character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.emballages_contact OWNER TO joseuser1;
+
+--
+-- Name: emballages_contact_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE emballages_contact_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.emballages_contact_id_seq OWNER TO joseuser1;
+
+--
+-- Name: emballages_contact_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE emballages_contact_id_seq OWNED BY emballages_contact.id;
+
+
+--
+-- Name: emballages_emballage; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE emballages_emballage (
+    id integer NOT NULL,
+    titulo_201 character varying(50) NOT NULL,
+    text_secundario201 text NOT NULL,
+    boton_201 character varying(20) NOT NULL,
+    imagen201 character varying(100) NOT NULL,
+    titulo_211 character varying(50) NOT NULL,
+    text_secundario211 text NOT NULL,
+    titulo_212 character varying(50) NOT NULL,
+    text_secundario212 text NOT NULL,
+    titulo_213 character varying(50) NOT NULL,
+    text_secundario213 text NOT NULL,
+    imagen211 character varying(100) NOT NULL,
+    imagen212 character varying(100) NOT NULL,
+    imagen213 character varying(100) NOT NULL,
+    imagen214 character varying(100) NOT NULL,
+    imagen215 character varying(100) NOT NULL,
+    imagen216 character varying(100) NOT NULL,
+    titulo_221 character varying(50) NOT NULL,
+    empaque_220 character varying(50) NOT NULL,
+    empaque_221 character varying(50) NOT NULL,
+    empaque_222 character varying(50) NOT NULL,
+    empaque_223 character varying(50) NOT NULL,
+    empaque_224 character varying(50) NOT NULL,
+    empaque_225 character varying(50) NOT NULL,
+    empaque_226 character varying(50) NOT NULL,
+    empaque_227 character varying(50) NOT NULL,
+    empaque_228 character varying(50) NOT NULL,
+    empaque_229 character varying(50) NOT NULL,
+    empaque_img220 character varying(100) NOT NULL,
+    empaque_img221 character varying(100) NOT NULL,
+    empaque_img222 character varying(100) NOT NULL,
+    empaque_img223 character varying(100) NOT NULL,
+    empaque_img224 character varying(100) NOT NULL,
+    empaque_img225 character varying(100) NOT NULL,
+    empaque_img226 character varying(100) NOT NULL,
+    empaque_img227 character varying(100) NOT NULL,
+    empaque_img228 character varying(100) NOT NULL,
+    empaque_img229 character varying(100) NOT NULL,
+    titulo_231 character varying(50) NOT NULL,
+    imagen231 character varying(100) NOT NULL,
+    imagen232 character varying(100) NOT NULL,
+    imagen233 character varying(100) NOT NULL,
+    titulo_232 character varying(50) NOT NULL,
+    imagen234 character varying(100) NOT NULL,
+    imagen235 character varying(100) NOT NULL,
+    imagen236 character varying(100) NOT NULL,
+    titulo_241 character varying(50) NOT NULL,
+    imagen241 character varying(100) NOT NULL,
+    titulo_242 character varying(50) NOT NULL,
+    imagen242 character varying(100) NOT NULL,
+    titulo_243 character varying(50) NOT NULL,
+    imagen243 character varying(100) NOT NULL,
+    titulo_251 character varying(50) NOT NULL,
+    subtitulo2501 character varying(50) NOT NULL,
+    imagen2501 character varying(100) NOT NULL,
+    imagen2502 character varying(100) NOT NULL,
+    imagen2503 character varying(100) NOT NULL,
+    text_secundario2501 text NOT NULL,
+    subtitulo2502 character varying(50) NOT NULL,
+    imagen2504 character varying(100) NOT NULL,
+    imagen2505 character varying(100) NOT NULL,
+    imagen2506 character varying(100) NOT NULL,
+    text_secundario2502 text NOT NULL,
+    subtitulo2503 character varying(50) NOT NULL,
+    imagen2507 character varying(100) NOT NULL,
+    imagen2508 character varying(100) NOT NULL,
+    imagen2509 character varying(100) NOT NULL,
+    text_secundario2503 text NOT NULL,
+    subtitulo2504 character varying(50) NOT NULL,
+    imagen2510 character varying(100) NOT NULL,
+    imagen2511 character varying(100) NOT NULL,
+    imagen2512 character varying(100) NOT NULL,
+    text_secundario2504 text NOT NULL,
+    subtitulo2505 character varying(50) NOT NULL,
+    imagen2513 character varying(100) NOT NULL,
+    imagen2514 character varying(100) NOT NULL,
+    imagen2515 character varying(100) NOT NULL,
+    text_secundario2505 text NOT NULL,
+    subtitulo2506 character varying(50) NOT NULL,
+    imagen2516 character varying(100) NOT NULL,
+    imagen2517 character varying(100) NOT NULL,
+    imagen2518 character varying(100) NOT NULL,
+    text_secundario2506 text NOT NULL,
+    subtitulo2507 character varying(50) NOT NULL,
+    imagen2519 character varying(100) NOT NULL,
+    imagen2520 character varying(100) NOT NULL,
+    imagen2521 character varying(100) NOT NULL,
+    text_secundario2507 text NOT NULL,
+    subtitulo2508 character varying(50) NOT NULL,
+    imagen2522 character varying(100) NOT NULL,
+    imagen2523 character varying(100) NOT NULL,
+    imagen2524 character varying(100) NOT NULL,
+    text_secundario2508 text NOT NULL,
+    subtitulo2509 character varying(50) NOT NULL,
+    imagen2525 character varying(100) NOT NULL,
+    imagen2526 character varying(100) NOT NULL,
+    imagen2527 character varying(100) NOT NULL,
+    text_secundario2509 text NOT NULL,
+    subtitulo2510 character varying(50) NOT NULL,
+    imagen2528 character varying(100) NOT NULL,
+    imagen2529 character varying(100) NOT NULL,
+    imagen2530 character varying(100) NOT NULL,
+    text_secundario2510 text NOT NULL,
+    subtitulo2511 character varying(50) NOT NULL,
+    imagen2531 character varying(100) NOT NULL,
+    imagen2532 character varying(100) NOT NULL,
+    imagen2533 character varying(100) NOT NULL,
+    text_secundario2511 text NOT NULL,
+    subtitulo2512 character varying(50) NOT NULL,
+    imagen2534 character varying(100) NOT NULL,
+    imagen2535 character varying(100) NOT NULL,
+    imagen2536 character varying(100) NOT NULL,
+    text_secundario2512 text NOT NULL,
+    subtitulo2513 character varying(50) NOT NULL,
+    imagen2537 character varying(100) NOT NULL,
+    imagen2538 character varying(100) NOT NULL,
+    imagen2539 character varying(100) NOT NULL,
+    text_secundario2513 text NOT NULL,
+    subtitulo2514 character varying(50) NOT NULL,
+    imagen2540 character varying(100) NOT NULL,
+    imagen2541 character varying(100) NOT NULL,
+    imagen2542 character varying(100) NOT NULL,
+    text_secundario2514 text NOT NULL,
+    subtitulo2515 character varying(50) NOT NULL,
+    imagen2543 character varying(100) NOT NULL,
+    imagen2544 character varying(100) NOT NULL,
+    imagen2545 character varying(100) NOT NULL,
+    text_secundario2515 text NOT NULL,
+    boton_251 character varying(20) NOT NULL,
+    boton_252 character varying(20) NOT NULL,
+    cuestionario character varying(50) NOT NULL,
+    pregunta21 character varying(50) NOT NULL,
+    pregunta22 character varying(50) NOT NULL,
+    pregunta23 character varying(50) NOT NULL,
+    pregunta24 character varying(50) NOT NULL,
+    boton_253 character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.emballages_emballage OWNER TO joseuser1;
+
+--
+-- Name: emballages_emballage_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE emballages_emballage_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.emballages_emballage_id_seq OWNER TO joseuser1;
+
+--
+-- Name: emballages_emballage_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE emballages_emballage_id_seq OWNED BY emballages_emballage.id;
+
+
+--
+-- Name: emballages_footer; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE emballages_footer (
+    id integer NOT NULL,
+    titulo_601 character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.emballages_footer OWNER TO joseuser1;
+
+--
+-- Name: emballages_footer_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE emballages_footer_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.emballages_footer_id_seq OWNER TO joseuser1;
+
+--
+-- Name: emballages_footer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE emballages_footer_id_seq OWNED BY emballages_footer.id;
+
+
+--
+-- Name: emballages_index; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE emballages_index (
+    id integer NOT NULL,
+    titulo_111 character varying(50) NOT NULL,
+    text_secundario111 text NOT NULL,
+    imagen111 character varying(100) NOT NULL,
+    imagen112 character varying(100) NOT NULL,
+    imagen113 character varying(100) NOT NULL,
+    imagen114 character varying(100) NOT NULL,
+    imagen115 character varying(100) NOT NULL,
+    imagen116 character varying(100) NOT NULL,
+    titulo_121 character varying(50) NOT NULL,
+    text_secundario121 text NOT NULL,
+    imagen121 character varying(100) NOT NULL,
+    imagen122 character varying(100) NOT NULL,
+    titulo_131 character varying(50) NOT NULL,
+    subtitulo131 character varying(50) NOT NULL,
+    text_secundario131 text NOT NULL,
+    subtitulo132 character varying(50) NOT NULL,
+    text_secundario132 text NOT NULL,
+    imagen131 character varying(100) NOT NULL,
+    imagen132 character varying(100) NOT NULL,
+    imagen133 character varying(100) NOT NULL,
+    imagen134 character varying(100) NOT NULL,
+    imagen135 character varying(100) NOT NULL,
+    imagen136 character varying(100) NOT NULL,
+    titulo_141 character varying(50) NOT NULL,
+    text_secundario141 text NOT NULL,
+    imagen141 character varying(100) NOT NULL,
+    titulo_151 character varying(50) NOT NULL,
+    text_secundario151 text NOT NULL,
+    titulo_152 character varying(50) NOT NULL,
+    text_secundario152 text NOT NULL,
+    imagen151 character varying(100) NOT NULL,
+    imagen152 character varying(100) NOT NULL,
+    imagen153 character varying(100) NOT NULL,
+    imagen154 character varying(100) NOT NULL,
+    imagen155 character varying(100) NOT NULL,
+    imagen156 character varying(100) NOT NULL,
+    img_certificado character varying(100) NOT NULL,
+    correo character varying(75) NOT NULL,
+    idioma character varying(2) NOT NULL,
+    logo character varying(100) NOT NULL,
+    menu1 character varying(20) NOT NULL,
+    menu2 character varying(20) NOT NULL,
+    menu3 character varying(20) NOT NULL,
+    menu4 character varying(20) NOT NULL,
+    menu5 character varying(20) NOT NULL,
+    menu6 character varying(20) NOT NULL,
+    telf1 character varying(250) NOT NULL,
+    telf2 character varying(250) NOT NULL,
+    telf3 character varying(250) NOT NULL
+);
+
+
+ALTER TABLE public.emballages_index OWNER TO joseuser1;
+
+--
+-- Name: emballages_index_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE emballages_index_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.emballages_index_id_seq OWNER TO joseuser1;
+
+--
+-- Name: emballages_index_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE emballages_index_id_seq OWNED BY emballages_index.id;
+
+
+--
+-- Name: emballages_tecnology; Type: TABLE; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE TABLE emballages_tecnology (
+    id integer NOT NULL,
+    titulo_301 character varying(50) NOT NULL,
+    text_secundario301 text NOT NULL,
+    boton_301 character varying(20) NOT NULL,
+    imagen301 character varying(100) NOT NULL,
+    subtitulo311 character varying(50) NOT NULL,
+    text_secundario311 text NOT NULL,
+    text_secundario312 text NOT NULL,
+    text_secundario313 text NOT NULL,
+    text_secundario314 text NOT NULL,
+    imagen311 character varying(100) NOT NULL,
+    text_secundario315 text NOT NULL,
+    text_secundario316 text NOT NULL,
+    text_secundario317 text NOT NULL,
+    text_secundario318 text NOT NULL,
+    text_secundario319 text NOT NULL,
+    imagen312 character varying(100) NOT NULL,
+    titulo_321 character varying(50) NOT NULL,
+    imagen321 character varying(100) NOT NULL,
+    text_secundario321 text NOT NULL
+);
+
+
+ALTER TABLE public.emballages_tecnology OWNER TO joseuser1;
+
+--
+-- Name: emballages_tecnology_id_seq; Type: SEQUENCE; Schema: public; Owner: joseuser1
+--
+
+CREATE SEQUENCE emballages_tecnology_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.emballages_tecnology_id_seq OWNER TO joseuser1;
+
+--
+-- Name: emballages_tecnology_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joseuser1
+--
+
+ALTER SEQUENCE emballages_tecnology_id_seq OWNED BY emballages_tecnology.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_group ALTER COLUMN id SET DEFAULT nextval('auth_group_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('auth_group_permissions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_permission ALTER COLUMN id SET DEFAULT nextval('auth_permission_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_user ALTER COLUMN id SET DEFAULT nextval('auth_user_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_user_groups ALTER COLUMN id SET DEFAULT nextval('auth_user_groups_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_user_user_permissions ALTER COLUMN id SET DEFAULT nextval('auth_user_user_permissions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY django_admin_log ALTER COLUMN id SET DEFAULT nextval('django_admin_log_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY django_content_type ALTER COLUMN id SET DEFAULT nextval('django_content_type_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY django_migrations ALTER COLUMN id SET DEFAULT nextval('django_migrations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY emballages_client ALTER COLUMN id SET DEFAULT nextval('emballages_client_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY emballages_contact ALTER COLUMN id SET DEFAULT nextval('emballages_contact_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY emballages_emballage ALTER COLUMN id SET DEFAULT nextval('emballages_emballage_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY emballages_footer ALTER COLUMN id SET DEFAULT nextval('emballages_footer_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY emballages_index ALTER COLUMN id SET DEFAULT nextval('emballages_index_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY emballages_tecnology ALTER COLUMN id SET DEFAULT nextval('emballages_tecnology_id_seq'::regclass);
+
+
+--
+-- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY auth_group (id, name) FROM stdin;
+\.
+
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('auth_group_id_seq', 1, false);
+
+
+--
+-- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
+\.
+
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('auth_group_permissions_id_seq', 1, false);
+
+
+--
+-- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
+1	Can add log entry	1	add_logentry
+2	Can change log entry	1	change_logentry
+3	Can delete log entry	1	delete_logentry
+4	Can add permission	2	add_permission
+5	Can change permission	2	change_permission
+6	Can delete permission	2	delete_permission
+7	Can add group	3	add_group
+8	Can change group	3	change_group
+9	Can delete group	3	delete_group
+10	Can add user	4	add_user
+11	Can change user	4	change_user
+12	Can delete user	4	delete_user
+13	Can add content type	5	add_contenttype
+14	Can change content type	5	change_contenttype
+15	Can delete content type	5	delete_contenttype
+16	Can add session	6	add_session
+17	Can change session	6	change_session
+18	Can delete session	6	delete_session
+19	Can add index	7	add_index
+20	Can change index	7	change_index
+21	Can delete index	7	delete_index
+22	Can add emballage	8	add_emballage
+23	Can change emballage	8	change_emballage
+24	Can delete emballage	8	delete_emballage
+25	Can add tecnology	9	add_tecnology
+26	Can change tecnology	9	change_tecnology
+27	Can delete tecnology	9	delete_tecnology
+28	Can add client	10	add_client
+29	Can change client	10	change_client
+30	Can delete client	10	delete_client
+31	Can add contact	11	add_contact
+32	Can change contact	11	change_contact
+33	Can delete contact	11	delete_contact
+34	Can add footer	12	add_footer
+35	Can change footer	12	change_footer
+36	Can delete footer	12	delete_footer
+\.
+
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('auth_permission_id_seq', 36, true);
+
+
+--
+-- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
+1	pbkdf2_sha256$15000$2zDQTz2H59xt$DYgA+5IbQhUispGLdPpcHlqT+kDl7H86gGqXB//JQC8=	2016-03-23 09:35:30.409051-05	t	josech			jose@gmail.com	t	t	2016-03-23 09:35:01.400593-05
+\.
+
+
+--
+-- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY auth_user_groups (id, user_id, group_id) FROM stdin;
+\.
+
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('auth_user_groups_id_seq', 1, false);
+
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('auth_user_id_seq', 1, true);
+
+
+--
+-- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
+\.
+
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('auth_user_user_permissions_id_seq', 1, false);
+
+
+--
+-- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY django_admin_log (id, action_time, object_id, object_repr, action_flag, change_message, content_type_id, user_id) FROM stdin;
+1	2016-03-23 19:16:17.92184-05	1	1 - EMPÁCATE CON	2	Changed titulo_251, subtitulo2501, text_secundario2501, subtitulo2502, text_secundario2502, subtitulo2503, text_secundario2503, subtitulo2504, text_secundario2504, subtitulo2505, text_secundario2505, subtitulo2506, text_secundario2506, subtitulo2507, text_secundario2507, subtitulo2508, text_secundario2508, subtitulo2509, text_secundario2509, subtitulo2510, text_secundario2510, subtitulo2511, text_secundario2511, subtitulo2512, text_secundario2512, subtitulo2513, text_secundario2513, subtitulo2514, text_secundario2514, subtitulo2515, text_secundario2515, boton_251, boton_252, cuestionario and boton_253.	8	1
+2	2016-03-23 19:20:36.08617-05	1	1 - EMPÁCATE CON	2	Changed imagen231, imagen234, imagen241, imagen242 and imagen243.	8	1
+3	2016-03-23 19:32:07.844047-05	1	1 - EMPÁCATE CON	2	Changed subtitulo2503, subtitulo2505, subtitulo2509 and subtitulo2515.	8	1
+4	2016-03-23 19:37:07.896849-05	1	1 - TECNOLOGÍA	1		9	1
+5	2016-03-23 19:38:41.124114-05	1	1 - 	1		10	1
+6	2016-03-23 19:39:36.75484-05	1	1 - CONTÁCTANOS	1		11	1
+7	2016-03-23 19:40:00.285947-05	1	1 - © 2016 Copyright Emusa	1		12	1
+8	2016-03-23 21:49:05.179747-05	1	1 - EMPÁCATE CON	2	Changed text_secundario201 and subtitulo2515.	8	1
+9	2016-03-24 00:16:37.436157-05	1	1 - EMPÁCATE CON	2	Changed imagen2501.	8	1
+\.
+
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('django_admin_log_id_seq', 9, true);
+
+
+--
+-- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY django_content_type (id, name, app_label, model) FROM stdin;
+1	log entry	admin	logentry
+2	permission	auth	permission
+3	group	auth	group
+4	user	auth	user
+5	content type	contenttypes	contenttype
+6	session	sessions	session
+7	index	emballages	index
+8	emballage	emballages	emballage
+9	tecnology	emballages	tecnology
+10	client	emballages	client
+11	contact	emballages	contact
+12	footer	emballages	footer
+\.
+
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('django_content_type_id_seq', 12, true);
+
+
+--
+-- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY django_migrations (id, app, name, applied) FROM stdin;
+1	contenttypes	0001_initial	2016-03-23 09:34:18.676148-05
+2	auth	0001_initial	2016-03-23 09:34:19.591207-05
+3	admin	0001_initial	2016-03-23 09:34:19.802287-05
+4	emballages	0001_initial	2016-03-23 09:34:20.485004-05
+5	emballages	0002_auto_20160323_1332	2016-03-23 09:34:20.616586-05
+6	emballages	0003_auto_20160323_1359	2016-03-23 09:34:22.634381-05
+7	emballages	0004_auto_20160323_1428	2016-03-23 09:34:23.145205-05
+8	sessions	0001_initial	2016-03-23 09:34:23.388904-05
+9	emballages	0005_auto_20160324_0029	2016-03-23 19:29:50.683833-05
+\.
+
+
+--
+-- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('django_migrations_id_seq', 9, true);
+
+
+--
+-- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY django_session (session_key, session_data, expire_date) FROM stdin;
+suvpmp8y15slqy58crxk7goxfau9jh6c	ZGQ5MGRkOTkzYzU3NWM0MjM3MzM5MzgyNjgzNmIzMGVhZDliNDkyOTp7Il9hdXRoX3VzZXJfaGFzaCI6ImNlMTZkYzVhNzI3OWFhNjNiZTRhNTNjYTE4ZjFiNjZjYTYxZTNmZGMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9	2016-04-06 09:35:30.437581-05
+\.
+
+
+--
+-- Data for Name: emballages_client; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY emballages_client (id, titulo_401, imagen401) FROM stdin;
+1		imgs/nuestros-clientes-b.png
+\.
+
+
+--
+-- Name: emballages_client_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('emballages_client_id_seq', 1, true);
+
+
+--
+-- Data for Name: emballages_contact; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY emballages_contact (id, titulo_501, pregunta51, pregunta52, pregunta53, pregunta54, boton_501) FROM stdin;
+1	CONTÁCTANOS					ENVIAR
+\.
+
+
+--
+-- Name: emballages_contact_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('emballages_contact_id_seq', 1, true);
+
+
+--
+-- Data for Name: emballages_emballage; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY emballages_emballage (id, titulo_201, text_secundario201, boton_201, imagen201, titulo_211, text_secundario211, titulo_212, text_secundario212, titulo_213, text_secundario213, imagen211, imagen212, imagen213, imagen214, imagen215, imagen216, titulo_221, empaque_220, empaque_221, empaque_222, empaque_223, empaque_224, empaque_225, empaque_226, empaque_227, empaque_228, empaque_229, empaque_img220, empaque_img221, empaque_img222, empaque_img223, empaque_img224, empaque_img225, empaque_img226, empaque_img227, empaque_img228, empaque_img229, titulo_231, imagen231, imagen232, imagen233, titulo_232, imagen234, imagen235, imagen236, titulo_241, imagen241, titulo_242, imagen242, titulo_243, imagen243, titulo_251, subtitulo2501, imagen2501, imagen2502, imagen2503, text_secundario2501, subtitulo2502, imagen2504, imagen2505, imagen2506, text_secundario2502, subtitulo2503, imagen2507, imagen2508, imagen2509, text_secundario2503, subtitulo2504, imagen2510, imagen2511, imagen2512, text_secundario2504, subtitulo2505, imagen2513, imagen2514, imagen2515, text_secundario2505, subtitulo2506, imagen2516, imagen2517, imagen2518, text_secundario2506, subtitulo2507, imagen2519, imagen2520, imagen2521, text_secundario2507, subtitulo2508, imagen2522, imagen2523, imagen2524, text_secundario2508, subtitulo2509, imagen2525, imagen2526, imagen2527, text_secundario2509, subtitulo2510, imagen2528, imagen2529, imagen2530, text_secundario2510, subtitulo2511, imagen2531, imagen2532, imagen2533, text_secundario2511, subtitulo2512, imagen2534, imagen2535, imagen2536, text_secundario2512, subtitulo2513, imagen2537, imagen2538, imagen2539, text_secundario2513, subtitulo2514, imagen2540, imagen2541, imagen2542, text_secundario2514, subtitulo2515, imagen2543, imagen2544, imagen2545, text_secundario2515, boton_251, boton_252, cuestionario, pregunta21, pregunta22, pregunta23, pregunta24, boton_253) FROM stdin;
+1	EMPÁCATE CON	Te ayudamos a encontrar el empaque perfecto y hecho a tu medida, ven con nosotros y súmate a esta nueva experiencia, sientiéndote parte del proceso de tu empaque soñado.	Empezar	imgs/emp-12.png	EMPAQUES AGRO	Empaques para frutas, vegetales  (procesados o no) que se van a refrigerar, congelar y usar en microondas (respirables).	EMPAQUES FOOD	Todo tipo de empaques para alimentos, desde dulces hasta pastas, snacks, etc.	EMPAQUES NON FOOD		imgs/emp-14.png		imgs/emp-15.png		imgs/emp-16.png			EMPAQUE DE CHOCOLATE	EMPAQUE DE GALLETA	EMPAQUE DE SNACKS	EMPAQUE DE ACEITE	EMPAQUE DE SALSAS	EMPAQUE DE GOLOSINAS	EMPAQUE DE CEREALES	EMPAQUE DE PASTAS	EMPAQUE DE GRANOS	EMPAQUE DE POLVOS Y MEZCLAS	imgs/mini-emp1.png	imgs/mini-emp2.png	imgs/mini-emp3.png	imgs/mini-emp4.png	imgs/mini-emp5.png	imgs/mini-emp6.png	imgs/mini-emp7.png	imgs/mini-emp8.png	imgs/mini-emp9.png	imgs/mini-emp10.png		imgs/emp-deterg.png				imgs/emp-aseo.png				imgs/emp-2_SArZXAr.png		imgs/emp-4_MP4Nx9X.png		imgs/emp-6_3LrfgNH.png	EMPAQUE ELEGIDO	EMPAQUES DE ASEO PERSONAL				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE DETERGETES				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES AGRO CONGELADOS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES AGROMICROONDABLE				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES AGRO REFRIGERADOS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE CHOCOLATES				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE GALLETAS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE SNACKS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE ACEITES				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE SALSAS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE GOLOSINAS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE CEREALES				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE PASTAS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE GRANOS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	EMPAQUES DE POLVOS Y MEZCLAS				Aquí te mostramos un prototipo del empaque que has escogido, si deseas saber mas de tu empaque y que te hagamos una propuesta de valor elige una de estas alternativas.	VISITANOS	NOSOTROS TE VISITAMO	CONTACTANOS					Enviar
+\.
+
+
+--
+-- Name: emballages_emballage_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('emballages_emballage_id_seq', 1, true);
+
+
+--
+-- Data for Name: emballages_footer; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY emballages_footer (id, titulo_601) FROM stdin;
+1	© 2016 Copyright Emusa
+\.
+
+
+--
+-- Name: emballages_footer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('emballages_footer_id_seq', 1, true);
+
+
+--
+-- Data for Name: emballages_index; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY emballages_index (id, titulo_111, text_secundario111, imagen111, imagen112, imagen113, imagen114, imagen115, imagen116, titulo_121, text_secundario121, imagen121, imagen122, titulo_131, subtitulo131, text_secundario131, subtitulo132, text_secundario132, imagen131, imagen132, imagen133, imagen134, imagen135, imagen136, titulo_141, text_secundario141, imagen141, titulo_151, text_secundario151, titulo_152, text_secundario152, imagen151, imagen152, imagen153, imagen154, imagen155, imagen156, img_certificado, correo, idioma, logo, menu1, menu2, menu3, menu4, menu5, menu6, telf1, telf2, telf3) FROM stdin;
+1																																							es										
+2																																							es	imgs/logo_EjDAx2m.png									
+3																																						customerservice@emusa.com.pe	es		Inicio	Empácate	Tecnología	Galería	Nuestros Clientes	Contáctanos	PERÚ:(511) 6176700	GUATEMALA: (502) 65450500	BRASIL: (55) 19-3500-4937 / (55) 19-3500-4938
+4	Bienvenidos a Emusa	Somos una compañía que ofrece soluciones de empaques flexibles con altos estándares de calidad, con operaciones en Brasil, Perú y Guatemala.\r\n	imgs/emp-1.png	imgs/emp-2_mLN4fwN.png	imgs/emp-3_k0aCr1X.png	imgs/emp-4_D3dCB6y.png	imgs/emp-5_MrLJbIg.png	imgs/emp-6_tpBwoks.png	QUIÉNES SOMOS	Somos una compañía con más de 30 años de experiencia que ofrece soluciones de empaques flexibles en los sectores Food, Non Food y Agro con altos estándares de calidad. Tenemos operaciones en Brasil, Perú y Guatemala, y con un alcance a más de 22 países. Pertenecemos a una holding de empresas con presencia a nivel mundial con negocios en los mercados de papel, químicos, agroindustrial, energía, gestión portuaria, entre otros.\r\n	imgs/emp-5-b_HC7gygy.png	imgs/emp-4-6-b_dfg76At.png		VISIÓN	Consolidar a Emusa como un productor regional de empaques flexibles.\r\n	MISIÓN	Proveer empaques flexibles a diversos sectores industriales (Food, Non Food y Agro), producidos con una excelente calidad gráfica, inocuidad, una alta productividad y eficiencia en costos; generando finalmente valor para sus clientes, colaboradores y accionistas.\r\n	imgs/emp-9_tGx2OJZ.png			imgs/emp-8_kV9FaEe.png					imgs/paises_vfWgfqk.png	ESTÁNDARES DE	Poseemos un sistema de control de calidad basado en la norma ISO9001:2000, GMP y HACCP, nuestro principal propósito es cuidar la salud de los consumidores finales y asegurar buenas practicas en la manipulación de los envases.\r\n\r\nEste sistema nos ha permitido obtener:\r\n\r\nQ.S.E. (Evaluación de Sistemas de Calidad), acreditación basada en AIB (The American Institute of Baking) requisitos internacionales.\r\nCertificación de S.G.S. a nombre de algunos de nuestros clientes.\r\nHemos superado con éxito auditorias de nuestros clientes.		Contamos con certificación AIB que eleva nuestra capacidades de proceso de producción e inocuidad alimentaria.\r\n	imgs/paises.png						imgs/calidad.png	customerservice@emusa.com.pe	es	imgs/logo_i69Uywt.png	Inicio	Empácate	Tecnología	Galería	Nuestros Clientes	Contáctanos	PERÚ:(511) 6176700	GUATEMALA: (502) 65450500	BRASIL: (55) 19-3500-4937 / (55) 19-3500-4938
+\.
+
+
+--
+-- Name: emballages_index_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('emballages_index_id_seq', 4, true);
+
+
+--
+-- Data for Name: emballages_tecnology; Type: TABLE DATA; Schema: public; Owner: joseuser1
+--
+
+COPY emballages_tecnology (id, titulo_301, text_secundario301, boton_301, imagen301, subtitulo311, text_secundario311, text_secundario312, text_secundario313, text_secundario314, imagen311, text_secundario315, text_secundario316, text_secundario317, text_secundario318, text_secundario319, imagen312, titulo_321, imagen321, text_secundario321) FROM stdin;
+1	TECNOLOGÍA	Conocenos un poco más y mira nuestro método de trabajo y todo lo que tenemos para ofrecerte\r\n	EMPEZAR	imgs/fondo1.jpg	La calidad de impresión de un empaque se define po	Nuestra preprensa esta basada en tecnología Kodak Flexcel NX Digital (software y hardware).\r\n	La aprobación del diseño (inicio a fin) se administra a través de ESKO Web Center.\r\n	Las pruebas de color son digitales en el material (sustrato de empaque real Approval).\r\n	Desarrollo de empaques usando realidad aumentada (Studio Viewer).\r\n	imgs/fondo2.jpg	Prensas flexográficas de 8 colores (Comexi – Uteco).\r\n	Extrusión y coextrusión para monocapas y PEBD extrusión y coestrusión 1, 2, y 3 capas (OXO-BIO) certificadas por Symphony.\r\n	Laminación Solvent y Solventless (Uteco).\r\n	Selladoras para bolsas Pouch (Totani, Roan).\r\n	Cortadoras laser (Comexi).\r\n	imgs/fondo3.jpg	RESPONSABILIDAD SOCIAL	imgs/rs-top.png	Como proveedor regional de empaques, entendemos nuestra responsabilidad en la sociedad y trabajamos continuamente para ser un buen ciudadano corporativo en los paises que actuamos.\r\n\r\nHemos adoptado un compromiso de tener practicas empresariales responsables, seguras y eticas. Basadas en los ambitos economicos, medioambientales y sociales.\r\n\r\nInvertimos en equipos y procesos que reduzcan las emisiones de gases y/o desperdicios industriales, implementando mecanismos de reciclaje y el uso de materiales biodegradables y amigables al medio ambiente.
+\.
+
+
+--
+-- Name: emballages_tecnology_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joseuser1
+--
+
+SELECT pg_catalog.setval('emballages_tecnology_id_seq', 1, true);
+
+
+--
+-- Name: auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group
+    ADD CONSTRAINT auth_group_name_key UNIQUE (name);
+
+
+--
+-- Name: auth_group_permissions_group_id_permission_id_key; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_group_id_permission_id_key UNIQUE (group_id, permission_id);
+
+
+--
+-- Name: auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group
+    ADD CONSTRAINT auth_group_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_permission_content_type_id_codename_key; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_permission_content_type_id_codename_key UNIQUE (content_type_id, codename);
+
+
+--
+-- Name: auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_permission_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT auth_user_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_groups_user_id_group_id_key; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT auth_user_groups_user_id_group_id_key UNIQUE (user_id, group_id);
+
+
+--
+-- Name: auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user
+    ADD CONSTRAINT auth_user_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_user_permissions_user_id_permission_id_key; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_user_id_permission_id_key UNIQUE (user_id, permission_id);
+
+
+--
+-- Name: auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user
+    ADD CONSTRAINT auth_user_username_key UNIQUE (username);
+
+
+--
+-- Name: django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT django_admin_log_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_content_type_app_label_45f3b1d93ec8c61c_uniq; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY django_content_type
+    ADD CONSTRAINT django_content_type_app_label_45f3b1d93ec8c61c_uniq UNIQUE (app_label, model);
+
+
+--
+-- Name: django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY django_content_type
+    ADD CONSTRAINT django_content_type_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY django_migrations
+    ADD CONSTRAINT django_migrations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY django_session
+    ADD CONSTRAINT django_session_pkey PRIMARY KEY (session_key);
+
+
+--
+-- Name: emballages_client_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY emballages_client
+    ADD CONSTRAINT emballages_client_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: emballages_contact_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY emballages_contact
+    ADD CONSTRAINT emballages_contact_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: emballages_emballage_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY emballages_emballage
+    ADD CONSTRAINT emballages_emballage_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: emballages_footer_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY emballages_footer
+    ADD CONSTRAINT emballages_footer_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: emballages_index_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY emballages_index
+    ADD CONSTRAINT emballages_index_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: emballages_tecnology_pkey; Type: CONSTRAINT; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+ALTER TABLE ONLY emballages_tecnology
+    ADD CONSTRAINT emballages_tecnology_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group_name_253ae2a6331666e8_like; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_group_name_253ae2a6331666e8_like ON auth_group USING btree (name varchar_pattern_ops);
+
+
+--
+-- Name: auth_group_permissions_0e939a4f; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_group_permissions_0e939a4f ON auth_group_permissions USING btree (group_id);
+
+
+--
+-- Name: auth_group_permissions_8373b171; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_group_permissions_8373b171 ON auth_group_permissions USING btree (permission_id);
+
+
+--
+-- Name: auth_permission_417f1b1c; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_permission_417f1b1c ON auth_permission USING btree (content_type_id);
+
+
+--
+-- Name: auth_user_groups_0e939a4f; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_user_groups_0e939a4f ON auth_user_groups USING btree (group_id);
+
+
+--
+-- Name: auth_user_groups_e8701ad4; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_user_groups_e8701ad4 ON auth_user_groups USING btree (user_id);
+
+
+--
+-- Name: auth_user_user_permissions_8373b171; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_user_user_permissions_8373b171 ON auth_user_user_permissions USING btree (permission_id);
+
+
+--
+-- Name: auth_user_user_permissions_e8701ad4; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_user_user_permissions_e8701ad4 ON auth_user_user_permissions USING btree (user_id);
+
+
+--
+-- Name: auth_user_username_51b3b110094b8aae_like; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX auth_user_username_51b3b110094b8aae_like ON auth_user USING btree (username varchar_pattern_ops);
+
+
+--
+-- Name: django_admin_log_417f1b1c; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX django_admin_log_417f1b1c ON django_admin_log USING btree (content_type_id);
+
+
+--
+-- Name: django_admin_log_e8701ad4; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX django_admin_log_e8701ad4 ON django_admin_log USING btree (user_id);
+
+
+--
+-- Name: django_session_de54fa62; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX django_session_de54fa62 ON django_session USING btree (expire_date);
+
+
+--
+-- Name: django_session_session_key_461cfeaa630ca218_like; Type: INDEX; Schema: public; Owner: joseuser1; Tablespace: 
+--
+
+CREATE INDEX django_session_session_key_461cfeaa630ca218_like ON django_session USING btree (session_key varchar_pattern_ops);
+
+
+--
+-- Name: auth_content_type_id_508cf46651277a81_fk_django_content_type_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_content_type_id_508cf46651277a81_fk_django_content_type_id FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_group_permissio_group_id_689710a9a73b7457_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissio_group_id_689710a9a73b7457_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_group_permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_user__permission_id_384b62483d7071f0_fk_auth_permission_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT auth_user__permission_id_384b62483d7071f0_fk_auth_permission_id FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_user_user_permiss_user_id_7f0938558328534a_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permiss_user_id_7f0938558328534a_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: djan_content_type_id_697914295151027a_fk_django_content_type_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT djan_content_type_id_697914295151027a_fk_django_content_type_id FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: joseuser1
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
