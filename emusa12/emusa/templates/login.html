@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="col-md-push-3 col-md-3 text-center">
-                    <form role="form" method="POST">{% csrf_token %}
+                    <form role="form" method="POST" enctype="multipart/form-data">{% csrf_token %}
                         <p class="text-center"><h3>Accede al formulario:</h3></p>
                         <div class="form-group">
                             {{ login_form.username }}

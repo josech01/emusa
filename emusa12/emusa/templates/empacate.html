@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>    
+        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -43,8 +43,14 @@
                     </div>
                     <div class="col s4 m4 center-col">
                         <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon">
-                        <b>IDIOMA:</b>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% endif %}</span>
-                        <br>
+                        <b>IDIOMA: </b><!-- <a class='dropdown-button btn' href='#' data-activates='dropdown1'>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% elif "pt" == index.idioma  %}Portugues{% endif %}</a> -->
+                         <a class="dropdown-button btn" href="#" data-activates="dropdown1">Español</a>
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="empacate.html">Español</a></li>
+                            <li><a href="empacate_en.html">Ingles</a></li>
+                            <li><a href="empacate_pt.html">Portugues</a></li>
+                          </ul>
+                        </span>
                         <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">{{index.correo}}</a></span>
                     </div>
                     <div class="col s5 m4" id="phones">
@@ -56,7 +62,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <nav>
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo"><img src="{{index.logo.url}}"></a>
@@ -86,18 +92,18 @@
                     <div class="row balign-wrapper">
                         <div class="col m6 l4 push-m6 push-l4 center-align">
                             <h3>{{empacar.titulo201}}</h3>
-                            <img class="responsive-img" src="{% static 'img/assets/text-nosotros.png' %}">
+                            <img class="responsive-img" src="{{index.imagen201.url}}">
                             <p class="text-justify mt30">{{empacar.text_secundario201}}</p>
                             <a href="#empaques" class="waves-effect waves-light btn-large btn-start">{{empacar.boton_201}}</a>
                         </div>
                         <div class="col m6 pull-m6 l4 pull-l4 center-align balign">
-                            <img class="responsive-img" src="{{empacar.imagen201.url}}">
+                            <img class="responsive-img" src="{{empacar.imagen202.url}}">
                         </div>
-                        
+
                         <div class="col l4 center-align  balign hide-on-med-and-down">
-                            <img class="responsive-img" src="{% static 'img/assets/emp-13.png' %}">
+                            <img class="responsive-img" src="{{empacar.imagen203.url}}">
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -141,8 +147,8 @@
                 <div class="container">
                     <div class="row valign-wrapper">
                         <div class="col m12 l4 push-l4 valign center-align">
-                            <img class="responsive-img" src="{% static 'img/assets/eligeemp.png' %}">
-                            
+                            <img class="responsive-img" src="{{empacar.imagen221.url}}">
+
                         </div>
                         <div class="col m12 l4 pull-l4 center-align mini-img">
                             <div class="row">
@@ -180,7 +186,7 @@
                                 </a>
                             </div>
                         </div>
-                        
+
                         <div class="col m12 l4 center-align mini-img">
                             <div class="row">
                                 <a href="#elegir">
@@ -217,7 +223,7 @@
                                 </a>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -227,28 +233,28 @@
                     <a href="#elegir">
                         <div class="row valign-wrapper">
                             <div class="col m12 l4 valign center-align">
-                                <img class="responsive-img" src="{% static 'img/assets/text-detergente.png' %}">
+                                <img class="responsive-img" src="{{empacar.imagen231.url}}">
                             </div>
                             <div class="col l2 center-align valign hide-on-med-and-down">
-                                <img class="responsive-img" src="{% static 'img/assets/flecha.png' %}">
+                                <img class="responsive-img" src="{{empacar.flecha.url}}">
                             </div>
-                            
+
                             <div class="col l6 center-align valign">
-                                <img class="responsive-img" src="{{empacar.imagen231.url}}">
+                                <img class="responsive-img" src="{{empacar.imagen232.url}}">
                             </div>
                         </div>
                     </a>
                     <a href="#elegir">
                         <div class="row valign-wrapper">
                             <div class="col m12 l4 valign center-align">
-                                <img class="responsive-img" src="{% static 'img/assets/text-aseo.png' %}">
+                                <img class="responsive-img" src="{{empacar.imagen235.url}}">
                             </div>
                             <div class="col l2 center-align valign hide-on-med-and-down">
-                                <img class="responsive-img" src="{% static 'img/assets/flecha.png' %}">
+                                <img class="responsive-img" src="{{empacar.flecha.url}}">
                             </div>
-                            
+
                             <div class="col l6 center-align valign">
-                                <img class="responsive-img" src="{{empacar.imagen234.url}}">
+                                <img class="responsive-img" src="{{empacar.imagen236.url}}">
                             </div>
                         </div>
                     </a>
@@ -260,27 +266,27 @@
                     <div class="row">
                         <a href="#elegir">
                             <div class="col s12 m4 center-align">
-                                <h5>EMPAQUES AGRO</h5>
-                                <img class="responsive-img" src="{% static 'img/assets/text-congelados.png' %}">
-                                <img class="responsive-img empaque-agro" src="{{empacar.imagen241.url}}">
-                            </div>
-                        </a>
-                        <a href="#elegir">
-                             <div class="col s12 m4 center-align border-col">
-                                <h5>EMPAQUES AGRO</h5>
-                                <img class="responsive-img" src="{% static 'img/assets/text-microondables.png' %}">
+                                <h5>{{empacar.titulo_241}}</h5>
+                                <img class="responsive-img" src="{{empacar.imagen241.url}}">
                                 <img class="responsive-img empaque-agro" src="{{empacar.imagen242.url}}">
                             </div>
                         </a>
                         <a href="#elegir">
+                             <div class="col s12 m4 center-align border-col">
+                                <h5>{{empacar.titulo_242}}</h5>
+                                <img class="responsive-img" src="{{empacar.imagen243}}">
+                                <img class="responsive-img empaque-agro" src="{{empacar.imagen244.url}}">
+                            </div>
+                        </a>
+                        <a href="#elegir">
                              <div class="col s12 m4 center-align">
-                                <h5>EMPAQUES AGRO</h5>
-                                <img class="responsive-img" src="{% static 'img/assets/text-refrigerados.png' %}">
-                                <img class="responsive-img empaque-agro" src="{{empacar.imagen243.url}}">
+                                <h5>{{empacar.titulo_243}}</h5>
+                                <img class="responsive-img" src="{{empacar.imagen245}}">
+                                <img class="responsive-img empaque-agro" src="{{empacar.imagen246.url}}">
                             </div>
                         </a>
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -445,7 +451,7 @@
                                 <a class="waves-effect waves-light btn-large" id="visit-you">{{empacar.boton_252}}</a>
                             </div>
                              <div class="col s12 m4 valign center-align">
-                                <img class="responsive-img" src="{% static 'img/assets/empaque.png' %}">
+                                <img class="responsive-img" src="{{empacar.imagen251.url}}">
                             </div>
                              <div class="col s12 m4 valign center-align">
                                 <div class="row">
@@ -485,7 +491,7 @@
                             </div>
                         </a>
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -493,13 +499,13 @@
             <footer class="page-footer">
                 <div class="footer-copyright">
                     <div class="container">
-                    © 2016 Copyright Emusa
+                    {{footer.titulo_601}}
                     </div>
                 </div>
             </footer>
         </main>
 
-        
+
          <!-- <script src="//{% static 'ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
          <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
         <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>

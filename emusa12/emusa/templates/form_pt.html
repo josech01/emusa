@@ -1,0 +1,1751 @@
+{% load staticfiles %}
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>EMUSA | Great Packaging For Great Ideas</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="{% static 'icons/apple-touch-icon.png' %}" />
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'icons/apple-touch-icon-57x57.png' %}" />
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'icons/apple-touch-icon-72x72.png' %}" />
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'icons/apple-touch-icon-76x76.png' %}" />
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'icons/apple-touch-icon-114x114.png' %}" />
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'icons/apple-touch-icon-120x120.png' %}" />
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'icons/apple-touch-icon-144x144.png' %}" />
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'icons/apple-touch-icon-152x152.png' %}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'icons/apple-touch-icon-180x180.png' %}" />
+
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
+                    <ul class="right">
+                       <li class="active"><a href="index.html">Edição</a></li>
+                       <li><a href="#logout">Saída</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+          <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <ul>
+            <div class="section top-section form-group">
+              <div class="container">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" class="browser-default">
+                      <option value="" disabled selected>Elige el idioma</option>
+                      <option value="form.html">Español</option>
+                      <option value="form_en.html">Inglés</option>
+                      <option value="form_pt.html">Portugués</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col s12">
+                    <ul class="collapsible popout" data-collapsible="expandable">
+                      <li>
+                        <div class="collapsible-header">INFORMACIÓN DE LA EMPRESA</div>
+                        <div class="collapsible-body">
+                          <div class="container">
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.correo}}
+                                  <!-- <input id="email" type="email" class="validate" value="customerservice@emusa.com.pe"> -->
+                                  <label class="active" for="email">Correo</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <label class="active" for="number">Teléfonos</label>
+                                  <!-- <input id="number1" type="tel" class="validate" value="(511) 6176700">
+                                  <input id="number2" type="tel" class="validate" value="(502) 65450500">
+                                  <input id="number3" type="tel" class="validate" value="(55) 19-3113-3131"> -->
+                                  {{form1.telf1}}
+                                  {{form1.telf2}}
+                                  {{form1.telf3}}
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Logo</span>
+                                    <input type="file">
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <!-- <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG"> -->
+                                    {{form1.logo}}
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <label class="active" for="menu">Menú</label>
+                                  {{form1.menu1}}
+                                  {{form1.menu2}}
+                                  {{form1.menu3}}
+                                  {{form1.menu4}}
+                                  {{form1.menu5}}
+                                  {{form1.menu6}}
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">INICIO</div>
+                        <div class="collapsible-body">
+                          <div class="container">
+                              <h5>SECCIÓN 1</h5>
+                              <div class="row first-row">
+                                <div class="input-field col s12">
+                                  {{form1.titulo_111}}
+                                  <label class="active" for="text">Texto Título 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.text_secundario111}}
+                                  <label class="active" for="textarea">Texto Secundario 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Empaque 1</span>
+                                    {{form1.imagen111}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Empaque 2</span>
+                                    {{form1.imagen112}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Empaque 3</span>
+                                    {{form1.imagen113}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Empaque 4</span>
+                                    {{form1.imagen114}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Empaque 5</span>
+                                    {{form1.imagen115}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Empaque 6</span>
+                                    {{form1.imagen116}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 2</h5>
+                              <div class="row first-row">
+                                <div class="input-field col s12">
+                                  {{form1.titulo_121}}
+                                  <label class="active" for="text">Texto Título 2</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.text_secundario121}}
+                                  <label class="active" for="textarea">Texto Secundario 2</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen 1</span>
+                                    {{form1.imagen121}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen 2</span>
+                                    {{form1.imagen122}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 3</h5>
+                              <div class="row first-row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen Título Central:</span>
+                                    {{form1.imagen131}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.subtitulo131}}
+                                  <label class="active" for="text">Imagen Titulo 1:</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.text_secundario131}}
+                                  <label class="active" for="textarea">Texto Secundario 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen 1</span>
+                                    {{form1.imagen132}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.subtitulo132}}
+                                  <label class="active" for="text">Texto Título 2</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.text_secundario132}}
+                                  <label class="active" for="textarea">Texto Secundario 2</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen 2</span>
+                                    {{form1.imagen133}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <h5>SECCIÓN 4</h5>
+                              <div class="row first-row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen Paises Sección 4 :</span>
+                                    {{form1.imagen141}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+															<div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen Paises Sección 4: </span>
+                                    {{form1.imagen142}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+															
+                              <h5>SECCIÓN 5</h5>
+                              <div class="row first-row">
+                                <div class="input-field col s12">
+                                  {{form1.titulo_151}}
+                                  <label class="active" for="text">Texto Título 5</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen Título 5</span>
+                                  {{form1.imagen151}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.text_secundario151}}
+                                  <label class="active" for="textarea">Texto Secundario 5 :</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen Central 5</span>
+                                    {{form1.imagen152}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen Subtítulo 5</span>
+                                    {{form1.imagen153}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form1.text_secundario152}}
+                                  <label class="active" for="textarea">Texto Secundario Sub5</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="file-field input-field">
+                                  <div class="btn">
+                                    <span>Imagen Certificado:</span>
+                                    {{form1.img_certificado}}
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- <div class="row">
+                                <div class="col s12 center-align">
+                                    <a class="waves-effect waves-light btn-large">GUARDAR</a>
+                                </div>
+                              </div> -->
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">EMPÁCATE</div>
+                        <div class="collapsible-body">
+                          <div class="container">
+                            <h5>SECCIÓN 2.0</h5>
+                            <div class="row first-row">
+                              <div class="input-field col s12">
+                                {{form2.titulo_201}}
+                                <label class="active" for="text">Texto Título 1</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen titulo:</span>
+                                  {{form2.imagen201}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.text_secundario201}}
+                                <label class="active" for="textarea">Texto Secundario 1</label>
+                              </div>
+                            </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.boton_201}}
+                                  <label class="active" for="text">BOTÓN 1:</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Empaque 1</span>
+                                  {{form2.imagen202}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Empaque 2</span>
+                                  {{form2.imagen203}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 2.1</h5>
+                              <div class="row first-row">
+                                <div class="input-field col s12">
+                                  {{form2.titulo_211}}
+                                  <label class="active" for="text">Texto Título 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario211}}
+                                  <label class="active" for="textarea">Texto Secundario 1</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Empaque 1</span>
+                                  {{form2.imagen211}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Empaque 2</span>
+                                  {{form2.imagen212}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.titulo_212}}
+                                  <label class="active" for="text">Texto Título 2</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario212}}
+                                  <label class="active" for="textarea">Texto Secundario 2</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Empaque 1</span>
+                                  {{form2.imagen213}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Empaque 2</span>
+                                  {{form2.imagen214}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.titulo_213}}
+                                  <label class="active" for="text">Texto Título 3</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario213}}
+                                  <label class="active" for="textarea">Texto Secundario 3</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Empaque 1</span>
+                                  {{form2.imagen215}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Empaque 2</span>
+                                  {{form2.imagen216}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 2.2</h5>
+                              <div class="file-field input-field first-row">
+                                <div class="btn">
+                                  <span>Título Imagen Centro:</span>
+                                  {{form2.imagen221}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_220}}
+                                  <label class="active" for="text">OPCIÓN 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_221}}
+                                  <label class="active" for="text">OPCIÓN 2</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_222}}
+                                  <label class="active" for="text">OPCIÓN 3</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_223}}
+                                  <label class="active" for="text">OPCIÓN 4</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_224}}
+                                  <label class="active" for="text">OPCIÓN 5</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_225}}
+                                  <label class="active" for="text">OPCIÓN 6</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_226}}
+                                  <label class="active" for="text">OPCIÓN 7</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_227}}
+                                  <label class="active" for="text">OPCIÓN 8</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_228}}
+                                  <label class="active" for="text">OPCIÓN 9</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.empaque_229}}
+                                  <label class="active" for="text">OPCIÓN 10</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 1</span>
+                                  {{form2.empaque_img220}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 2</span>
+                                  {{form2.empaque_img221}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 3:</span>
+                                  {{form2.empaque_img222}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 4:</span>
+                                  {{form2.empaque_img223}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 5:</span>
+                                  {{form2.empaque_img224}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 6:</span>
+                                  {{form2.empaque_img225}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 7:</span>
+                                  {{form2.empaque_img226}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 8:</span>
+                                  {{form2.empaque_img227}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 9:</span>
+                                  {{form2.empaque_img228}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Imagen Empaque 10:</span>
+                                  {{form2.empaque_img229}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 2.3</h5>
+                              <div class="file-field input-field first-row">
+                                <div class="btn">
+                                  <span>IMAGEN FLECHA:</span>
+                                  {{form2.flecha}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN TITULO 1:</span>
+                                  {{form2.imagen231}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  1:</span>
+                                  {{form2.imagen232}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN TITULO 2:</span>
+                                  {{form2.imagen235}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  1:</span>
+                                  {{form2.imagen236}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 2.4</h5>
+                              <div class="row first-row">
+                                <div class="input-field col s12">
+                                  {{form2.titulo_241}}
+                                  <label class="active" for="text">Texto Título 1</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  TITULO 1:</span>
+                                  {{form2.imagen241}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  1:</span>
+                                  {{form2.imagen242}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.titulo_242}}
+                                  <label class="active" for="text">Texto Título 2</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  TITULO 2:</span>
+                                  {{form2.imagen243}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  1:</span>
+                                  {{form2.imagen244}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.titulo_243}}
+                                  <label class="active" for="text">Texto Título 3</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  TITULO 3:</span>
+                                  {{form2.imagen245}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  1:</span>
+                                  {{form2.imagen246}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+        <!-- seccion 5      --><h5>SECCIÓN 2.5</h5>
+                              <div class="row first-row">
+                                <div class="input-field col s12">
+                                  {{form2.titulo_251}}
+                                  <label class="active" for="text">Texto Título 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2501}}
+                                  <label class="active" for="textarea">Subtitulo 1</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2501}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2502}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2503}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2501}}
+                                  <label class="active" for="textarea">Texto Secundario 1</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2502}}
+                                  <label class="active" for="textarea">Subtitulo 2</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2504}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2505}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2506}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2502}}
+                                  <label class="active" for="textarea">Texto Secundario 2</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2503}}
+                                  <label class="active" for="textarea">Subtitulo 3</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2507}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2508}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2509}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2503}}
+                                  <label class="active" for="textarea">Texto Secundario 3</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2504}}
+                                  <label class="active" for="textarea">Subtitulo 4</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2510}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2511}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2512}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2504}}
+                                  <label class="active" for="textarea">Texto Secundario 4</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2505}}
+                                  <label class="active" for="textarea">Subtitulo 5</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2513}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2514}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2515}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2505}}
+                                  <label class="active" for="textarea">Texto Secundario 5</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2506}}
+                                  <label class="active" for="textarea">Subtitulo 6</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2516}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2517}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2518}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2506}}
+                                  <label class="active" for="textarea">Texto Secundario 6</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2507}}
+                                  <label class="active" for="textarea">Subtitulo 7</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2519}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2520}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2521}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2507}}
+                                  <label class="active" for="textarea">Texto Secundario 7</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2508}}
+                                  <label class="active" for="textarea">Subtitulo 8</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2522}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2523}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2524}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2508}}
+                                  <label class="active" for="textarea">Texto Secundario 8</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2509}}
+                                  <label class="active" for="textarea">Subtitulo 9</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2525}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2526}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2527}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2509}}
+                                  <label class="active" for="textarea">Texto Secundario 9</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2510}}
+                                  <label class="active" for="textarea">Subtitulo 10</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2528}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2529}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2530}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2510}}
+                                  <label class="active" for="textarea">Texto Secundario 10</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2511}}
+                                  <label class="active" for="textarea">Subtitulo 11</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2531}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2532}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2533}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2511}}
+                                  <label class="active" for="textarea">Texto Secundario 11</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2512}}
+                                  <label class="active" for="textarea">Subtitulo 12</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2534}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2535}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2536}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2512}}
+                                  <label class="active" for="textarea">Texto Secundario 12</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2513}}
+                                  <label class="active" for="textarea">Subtitulo 13</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2537}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2538}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2539}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2513}}
+                                  <label class="active" for="textarea">Texto Secundario 13</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2514}}
+                                  <label class="active" for="textarea">Subtitulo 14</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2540}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2541}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2542}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2514}}
+                                  <label class="active" for="textarea">Texto Secundario 14</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.subtitulo2515}}
+                                  <label class="active" for="textarea">Subtitulo 15</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 1:</span>
+                                  {{form2.imagen2543}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 2:</span>
+                                  {{form2.imagen2544}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN 3:</span>
+                                  {{form2.imagen2545}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form2.text_secundario2515}}
+                                  <label class="active" for="textarea">Texto Secundario 15</label>
+                                </div>
+    <!-- asdasdasd  -->      </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.boton_251}}
+                                <label class="active" for="text">Botón 1:</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.boton_252}}
+                                <label class="active" for="text">Botón 2:</label>
+                              </div>
+                            </div>
+                            <div class="file-field input-field">
+                              <div class="btn">
+                                <span>IMAGEN 1:</span>
+                                {{form2.imagen251}}
+                              </div>
+                              <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.cuestionario}}
+                                <label class="active" for="text">Título Cuestionario:</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.pregunta21}}
+                                <label class="active" for="text">Pregunta 1:</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.pregunta22}}
+                                <label class="active" for="text">Pregunta 2:</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.pregunta23}}
+                                <label class="active" for="text">Pregunta 3:</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.pregunta24}}
+                                <label class="active" for="text">Pregunta 4:</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {{form2.boton_253}}
+                                <label class="active" for="text">Botón 3:</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">TECNOLOGÍA</div>
+                        <div class="collapsible-body">
+                          <div class="container">
+                              <h5>SECCIÓN 3.0</h5>
+                              <div class="row first-row">
+                                <div class="input-field col s12">
+                                  {{form3.titulo_301}}
+                                  <label class="active" for="text">Texto Título 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario301}}
+                                  <label class="active" for="textarea">Texto Secundario 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.boton_301}}
+                                  <label class="active" for="text">BOTÓN 1:</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN FONDO 1:</span>
+                                  {{form3.fondo1}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  1:</span>
+                                  {{form3.imagen301}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN  2:</span>
+                                  {{form3.imagen302}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 3.1</h5>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.subtitulo311}}
+                                  <label class="active" for="text">Subtitulo 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario311}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario312}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 2</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario313}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 3</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario314}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 4</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN PAQUETE 1:</span>
+                                  {{form3.imagen311}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN PAQUETE 2:</span>
+                                  {{form3.imagen312}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN FONDO 2:</span>
+                                  {{form3.fondo2}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 3.1:</h5>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario315}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 5</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario316}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 6</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario317}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 7</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario318}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 8</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario319}}
+                                  <label class="active" for="textarea">CUADRO TEXTO 9</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN PAQUETES:</span>
+                                  {{form3.imagen313}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN FONDO 3:</span>
+                                  {{form3.fondo3}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <h5>SECCIÓN 3.2</h5>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN TRIANGULO ARRIBA:</span>
+                                  {{form3.tr_top}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.titulo_321}}
+                                  <label class="active" for="text">Texto Título 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form3.text_secundario321}}
+                                  <label class="active" for="textarea">Texto Secundario 1</label>
+                                </div>
+                              </div>
+                              <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>IMAGEN TRIANGULO ABAJO:</span>
+                                  {{form3.tr_bottom}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">NUESTROS CLIENTES</div>
+                        <div class="collapsible-body">
+                          <div class="container">
+                              <h5>SECCIÓN 1</h5>
+                              <div class="file-field input-field first-row">
+                                <div class="btn">
+                                  <span>IMAGEN FONDO:</span>
+                                  {{form4.imagen401}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">CONTÁCTANOS</div>
+                        <div class="collapsible-body">
+                          <div class="container">
+                              <h5>SECCIÓN 1</h5>
+                              <div class="row first-row">
+                                <div class="input-field col s12">
+                                  {{form5.titulo_501}}
+                                  <label class="active" for="text">Texto Título 1</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form5.pregunta51}}
+                                  <label class="active" for="text">PREGUNTA 1:</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form5.pregunta52}}
+                                  <label class="active" for="text">PREGUNTA 2:</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form5.pregunta53}}
+                                  <label class="active" for="text">PREGUNTA 3:</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form5.pregunta54}}
+                                  <label class="active" for="text">PREGUNTA 4:</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  {{form5.boton_501}}
+                                  <label class="active" for="text">BOTON 1:</label>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">FOOTER</div>
+                        <div class="collapsible-body">
+                          <div class="container">
+                            <div class="row first-row">
+                              <div class="input-field col s12">
+                                {{form6.titulo_601}}
+                                <label class="active" for="text">TEXTO FOOTER:</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <footer class="page-footer">
+                <div class="footer-copyright">
+                    <div class="container">
+                    © 2016 Copyright Emusa
+                    </div>
+                </div>
+            </footer>
+        </ul>
+            <div class="row">
+              <div class="col s12 center-align">
+              <input class="waves-effect waves-light btn-large"type="submit" value="Guardar">
+              </div>
+            </div>
+        </form>
+
+         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+          <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+          <script src="{% static 'js/plugins.js' %}"></script>
+          <script src="{% static 'js/materialize.min.js' %}"></script>
+          <script src="{% static 'js/main.js' %}"></script>
+
+      <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

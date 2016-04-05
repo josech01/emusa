@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -9,15 +9,16 @@ from django.utils import timezone
 LANGUAGES_CHOICES = (
     ('es', 'Español'),
     ('en', 'English'),
+    ('pt', 'Portugues'),
 )
-  		
+
 
 class index(models.Model):
 	idioma = models.CharField(blank=True, max_length=2, choices=LANGUAGES_CHOICES, default='es')
 	correo = models.EmailField(blank=True)
-	telf1 = models.CharField(blank=True, max_length=30)
-	telf2 = models.CharField(blank=True, max_length=30)
-	telf3 = models.CharField(blank=True, max_length=30)
+	telf1 = models.CharField(blank=True, max_length=50)
+	telf2 = models.CharField(blank=True, max_length=50)
+	telf3 = models.CharField(blank=True, max_length=50)
 	logo = models.ImageField(blank=True, upload_to = 'imgs')
 	menu1 = models.CharField(blank=True, max_length=40)
 	menu2 = models.CharField(blank=True, max_length=40)
@@ -25,7 +26,7 @@ class index(models.Model):
 	menu4 = models.CharField(blank=True, max_length=40)
 	menu5 = models.CharField(blank=True, max_length=40)
 	menu6 = models.CharField(blank=True, max_length=40)
-	
+
 	titulo_111 = models.CharField(blank=True, max_length=50)
 	text_secundario111 = models.TextField(blank=True, max_length=1000)
 	imagen111 = models.ImageField(blank=True, upload_to = 'imgs')
@@ -34,49 +35,50 @@ class index(models.Model):
 	imagen114 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen115 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen116 = models.ImageField(blank=True, upload_to = 'imgs')
-	
+
 	titulo_121 = models.CharField(blank=True, max_length=50)
 	text_secundario121 = models.TextField(blank=True, max_length=1000)
 	imagen121 = models.ImageField(blank=True, upload_to = 'imgs')
-	imagen122 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen122 = models.ImageField(blank=True, upload_to = 'imgs')#Quienes somos
 
 	titulo_131 = models.CharField(blank=True, max_length=50)
-	subtitulo131 = models.CharField(blank=True, max_length=80)
+        subtitulo131 = models.CharField(blank=True, max_length=80)
 	text_secundario131 = models.TextField(blank=True, max_length=1000)
 	subtitulo132 = models.CharField(blank=True, max_length=80)
 	text_secundario132 = models.TextField(blank=True, max_length=1000)
-	imagen131 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen131 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen132 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen133 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen134 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen135 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen136 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen137  = models.ImageField(blank=True, upload_to = 'imgs')
 
 	titulo_141 = models.CharField(blank=True, max_length=50)
 	text_secundario141 = models.TextField(blank=True, max_length=1000)
 	imagen141 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen142 = models.ImageField(blank=True, upload_to = 'imgs')
 
 	titulo_151 = models.CharField(blank=True, max_length=50)
+        imagen151 = models.ImageField(blank=True, upload_to = 'imgs')
 	text_secundario151 = models.TextField(blank=True, max_length=1000)
 	titulo_152 = models.CharField(blank=True, max_length=50)
+        imagen152 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen153 = models.ImageField(blank=True, upload_to = 'imgs')
 	text_secundario152 = models.TextField(blank=True, max_length=1000)
-	imagen151 = models.ImageField(blank=True, upload_to = 'imgs')
-	imagen152 = models.ImageField(blank=True, upload_to = 'imgs')
-	imagen153 = models.ImageField(blank=True, upload_to = 'imgs')
-	imagen154 = models.ImageField(blank=True, upload_to = 'imgs')
-	imagen155 = models.ImageField(blank=True, upload_to = 'imgs')
-	imagen156 = models.ImageField(blank=True, upload_to = 'imgs')
 	img_certificado= models.ImageField(blank=True, upload_to = 'imgs')
-	
+
 
 	def __unicode__(self):
 		return u'%d - %s'%(self.id, self.titulo_111)
 
 class emballage (models.Model):
 	titulo_201 = models.CharField(blank=True, max_length=50)
-	text_secundario201 = models.TextField(blank=True, max_length=1000)
+        imagen201 = models.ImageField(blank=True, upload_to = 'imgs')
+        text_secundario201 = models.TextField(blank=True, max_length=1000)
 	boton_201 = models.CharField(blank=True, max_length=30)
-	imagen201 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen202 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen203 = models.ImageField(blank=True, upload_to = 'imgs')
 
 	titulo_211 = models.CharField(blank=True, max_length=50)
 	text_secundario211 = models.TextField(blank=True, max_length=1000)
@@ -92,7 +94,8 @@ class emballage (models.Model):
 	imagen216 = models.ImageField(blank=True, upload_to = 'imgs')
 
 	titulo_221 = models.CharField(blank=True, max_length=50)
-	empaque_220 = models.CharField(blank=True, max_length=50)
+        empaque_220 = models.CharField(blank=True, max_length=50)
+        imagen221 = models.ImageField(blank=True, upload_to = 'imgs')
 	empaque_221 = models.CharField(blank=True, max_length=50)
 	empaque_222 = models.CharField(blank=True, max_length=50)
 	empaque_223 = models.CharField(blank=True, max_length=50)
@@ -113,21 +116,26 @@ class emballage (models.Model):
 	empaque_img228 = models.ImageField(blank=True, upload_to = 'imgs')
 	empaque_img229 = models.ImageField(blank=True, upload_to = 'imgs')
 
-	titulo_231 = models.CharField(blank=True, max_length=50)
-	imagen231 = models.ImageField(blank=True, upload_to = 'imgs')
-	imagen232 = models.ImageField(blank=True, upload_to = 'imgs')	
-	imagen233 = models.ImageField(blank=True, upload_to = 'imgs')	
-	titulo_232 = models.CharField(blank=True, max_length=50)
-	imagen234 = models.ImageField(blank=True, upload_to = 'imgs')	
-	imagen235 = models.ImageField(blank=True, upload_to = 'imgs')	
-	imagen236 = models.ImageField(blank=True, upload_to = 'imgs')	
+        flecha = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen231 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen232 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen233 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen234 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen235 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen236 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen237 = models.ImageField(blank=True, upload_to = 'imgs')
+	imagen238 = models.ImageField(blank=True, upload_to = 'imgs')
 	titulo_241 = models.CharField(blank=True, max_length=50)
-	imagen241 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen241 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen242 = models.ImageField(blank=True, upload_to = 'imgs')
 	titulo_242 = models.CharField(blank=True, max_length=50)
-	imagen242 = models.ImageField(blank=True, upload_to = 'imgs')
-	titulo_243 = models.CharField(blank=True, max_length=50)
-	imagen243 = models.ImageField(blank=True, upload_to = 'imgs')
-	
+        imagen243 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen244 = models.ImageField(blank=True, upload_to = 'imgs')
+        titulo_243 = models.CharField(blank=True, max_length=50)
+        imagen245 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen246 = models.ImageField(blank=True, upload_to = 'imgs')
+
+
 	titulo_251 = models.CharField(blank=True, max_length=50)
 	subtitulo2501 = models.CharField(blank=True, max_length=80)
 	imagen2501 = models.ImageField(blank=True, upload_to = 'imgs')
@@ -204,15 +212,16 @@ class emballage (models.Model):
 	imagen2544 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen2545 = models.ImageField(blank=True, upload_to = 'imgs')
 	text_secundario2515 = models.TextField(blank=True, max_length=1000)
-	
+
 	boton_251 = models.CharField(blank=True, max_length=20)
-	boton_252 = models.CharField(blank=True, max_length=20)
-	cuestionario = models.CharField(blank=True, max_length=50)
-	pregunta21 = models.CharField(blank=True, max_length=50)
-	pregunta22 = models.EmailField(blank=True, max_length=50) 
-	pregunta23 = models.CharField(blank=True, max_length=50)
-	pregunta24 = models.CharField(blank=True, max_length=50)
-	boton_253 = models.CharField(blank=True, max_length=50)
+	boton_252 = models.CharField(blank=True, max_length=30)
+        imagen251 = models.ImageField(blank=True, upload_to = 'imgs')
+        cuestionario = models.CharField(blank=True, max_length=50)
+    	pregunta21 = models.CharField(blank=True, max_length=50)
+    	pregunta22 = models.EmailField(blank=True, max_length=50)
+    	pregunta23 = models.CharField(blank=True, max_length=50)
+    	pregunta24 = models.CharField(blank=True, max_length=50)
+    	boton_253 = models.CharField(blank=True, max_length=50)
 
 	def __unicode__(self):
 		return u'%d - %s'%(self.id, self.titulo_201)
@@ -221,24 +230,29 @@ class tecnology(models.Model):
 	titulo_301 = models.CharField(blank=True, max_length=50)
 	text_secundario301 = models.TextField(blank=True, max_length=1000)
 	boton_301 = models.CharField(blank=True, max_length=30)
-	imagen301 = models.ImageField(blank=True, upload_to = 'imgs')
+        fondo1 = models.ImageField(blank=True, upload_to = 'imgs')
+        imagen301 = models.ImageField(blank=True, upload_to = 'imgs')
+    	imagen302 = models.ImageField(blank=True, upload_to = 'imgs')
 
 	subtitulo311 = models.CharField(blank=True, max_length=80)
 	text_secundario311 = models.TextField(blank=True, max_length=1000)
 	text_secundario312 = models.TextField(blank=True, max_length=1000)
 	text_secundario313 = models.TextField(blank=True, max_length=1000)
 	text_secundario314 = models.TextField(blank=True, max_length=1000)
-	imagen311 = models.ImageField(blank=True, upload_to = 'imgs')	
-	text_secundario315 = models.TextField(blank=True, max_length=1000)
-	text_secundario316 = models.TextField(blank=True, max_length=1000)
-	text_secundario317 = models.TextField(blank=True, max_length=1000)
-	text_secundario318 = models.TextField(blank=True, max_length=1000)
-	text_secundario319 = models.TextField(blank=True, max_length=1000)
+	imagen311 = models.ImageField(blank=True, upload_to = 'imgs')
 	imagen312 = models.ImageField(blank=True, upload_to = 'imgs')
-
-	titulo_321 = models.CharField(blank=True, max_length=50)
-	imagen321 = models.ImageField(blank=True, upload_to = 'imgs')
-	text_secundario321 = models.TextField(blank=True, max_length=1000)
+        fondo2 = models.ImageField(blank=True, upload_to = 'imgs')
+        text_secundario315 = models.TextField(blank=True, max_length=1000)
+    	text_secundario316 = models.TextField(blank=True, max_length=1000)
+    	text_secundario317 = models.TextField(blank=True, max_length=1000)
+    	text_secundario318 = models.TextField(blank=True, max_length=1000)
+    	text_secundario319 = models.TextField(blank=True, max_length=1000)
+    	imagen313 = models.ImageField(blank=True, upload_to = 'imgs')
+        fondo3 = models.ImageField(blank=True, upload_to = 'imgs')
+        tr_top = models.ImageField(blank=True, upload_to = 'imgs')
+    	titulo_321 = models.CharField(blank=True, max_length=50)
+        text_secundario321 = models.TextField(blank=True, max_length=1000)
+    	tr_bottom = models.ImageField(blank=True, upload_to = 'imgs')
 
 	def __unicode__(self):
 		return u'%d - %s'%(self.id, self.titulo_301)
@@ -253,10 +267,10 @@ class client(models.Model):
 class contact(models.Model):
 	titulo_501 = models.CharField(blank=True, max_length=50)
 	pregunta51 = models.CharField(blank=True, max_length=50)
-	pregunta52 = models.EmailField(blank=True, max_length=50) 
+	pregunta52 = models.EmailField(blank=True, max_length=50)
 	pregunta53 = models.CharField(blank=True, max_length=50)
 	pregunta54 = models.CharField(blank=True, max_length=50)
-	boton_501 = models.CharField(blank=True, max_length=50)	
+	boton_501 = models.CharField(blank=True, max_length=50)
 
 	def __unicode__(self):
 		return u'%d - %s'%(self.id, self.titulo_501)

@@ -42,7 +42,19 @@
                         </div>
                     </div>
                     <div class="col s4 m4 center-col">
-                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% endif %}</span>
+                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b>
+                        <!-- {% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% endif %} -->
+                        <!-- <b>IDIOMA: </b><a class='dropdown-button btn' href='#' data-activates='dropdown1'>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% elif "pt" == index.idioma  %}Portugues{% endif %}</a> -->
+
+                          <!-- Dropdown Structure -->
+                          <a class="dropdown-button btn" href="#" data-activates="dropdown1">Español</a>
+                          <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="index.html">Español</a></li>
+                            <li><a href="index_en.html">Ingles</a></li>
+                            <li><a href="index_pt.html">Portugues</a></li>
+                          </ul>
+
+                        </span>
                         <br>
                         <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">{{index.correo}}</a></span>
                     </div>
@@ -122,19 +134,19 @@
                 <div class="container">
                     <div class="row valign-wrapper">
                         <div class="col m4 push-m4 valign center-align">
-                            <img class="responsive-img" src="{% static 'img/assets/misionyvision.png' %}">
+                            <img class="responsive-img" src="{{index.imagen131.url}}">
                             
                         </div>
                         <div class="col m4 pull-m4 center-align">
                             <h3>{{index.subtitulo131}}</h3>
                             <p class="text-justify">{{index.text_secundario131}}</p>
-                            <img id="img-7" class="responsive-img" src="{{index.imagen131.url}}">
+                            <img id="img-7" class="responsive-img" src="{{index.imagen132.url}}">
                         </div>
                         
                         <div class="col m4 center-align">
                             <h3>{{index.subtitulo132}}</h3>
                             <p>{{index.text_secundario132}}</p>
-                            <img class="responsive-img" src="{{index.imagen134.url}}">
+                            <img class="responsive-img" src="{{index.imagen133.url}}">
                         </div>
                         
                     </div>
@@ -145,11 +157,11 @@
                 <div class="container">
                     <div class="row valign-wrapper">
                         <div class="col m8 center-align">
-                            <img class="responsive-img" src="{% static 'img/assets/donde.png' %}">
+                            <img class="responsive-img" src="{{index.imagen141.url}}">
                         </div>
                         
                         <div class="col m4 center-align valign">
-                            <img id="img-paises" class="responsive-img" src="{{index.imagen141.url}}">
+                            <img id="img-paises" class="responsive-img" src="{{index.imagen142.url}}">
                         </div>
                         
                     </div>
@@ -161,18 +173,21 @@
                     <div class="row valign-wrapper">
                         <div class="col m6 l4 center-align valign">
                             <h3>{{index.titulo_151}}</h3>
-                            <img class="responsive-img" src="{% static 'img/assets/text-calidad.png' %}">
-                            <p class="text-justify">{{index.text_secundario151}}
-                            </p>
+                            <img class="responsive-img" src="{{index.imagen151.url}}">
+                            
+                            <div class="text-justify">
+                            {{index.text_secundario151|linebreaks}}
+                            </div>
                             
                         </div>
                         <div class="col m6 l4 center-align valign hide-on-med-and-down">
-                            <img class="responsive-img" src="{% static 'img/assets/emp-10.png' %}">
+                            <img class="responsive-img" src="{{form1.imagen152.url}}">
                         </div>
                         
                         <div class="col m6 l4 center-align valign">
-                            <img class="responsive-img" src="{% static 'img/assets/text-certificacion.png' %}">
-                            <p class="text-justify">{{index.text_secundario152}}</p>
+                            <img class="responsive-img" src="{{form1.imagen153.url}}">
+                            <div class="text-justify">
+                            {{index.text_secundario152|linebreaks}}</div>
                             <img class="responsive-img" src="{{index.img_certificado.url}}">
                         </div>
                     </div>
@@ -191,7 +206,7 @@
         
          <!-- <script src="//{% static 'ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
          <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
-        <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
         <script src="{% static 'js/plugins.js' %}"></script>
         <script src="{% static 'js/materialize.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>

@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).ancestor(1)
 SECRET_KEY = '=zdq%$rta*)()ocdyoc9($8bx+c=2)nnk=r4rjn$#40f%z-$j7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -59,6 +59,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'emballages',
+    'emballages_en',
+    'emballages_pt',
     #'django_settings',
     #'rest_framework',
 )
@@ -116,3 +118,4 @@ STATICFILES_FINDERS = {
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 }
+

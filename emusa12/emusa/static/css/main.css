@@ -910,3 +910,35 @@ textarea.materialize-textarea {
         page-break-after: avoid;
     }
 }
+
+
+.dropdown-button{
+
+    background: #F2F2F2;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 1em;
+    
+}
+
+
+.dropdown-content>li{
+    padding-bottom: inherit;
+    padding: inherit;
+    min-height: 5px;
+    min-width: 5px;
+    line-height: 1.5em;
+    
+    
+}
+
+.dropdown-content>li>a{
+    font-size: 1em;
+    padding: 0em;
+    
+}
+
+a:hover{
+    background: #fff;
+    
+}

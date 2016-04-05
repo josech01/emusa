@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 from django import forms
 from .models import index, emballage, tecnology, client, contact, footer
@@ -17,7 +17,7 @@ class add_form1(forms.ModelForm):
 #        self.labels = getattr(options, 'labels', None)
 #        self.help_texts = getattr(options, 'help_texts', None)
 #        self.error_messages = getattr(options, 'error_messages', None)
- 	def __init__(self, *args, **kwargs):           
+ 	def __init__(self, *args, **kwargs):
         	super(add_form1, self).__init__(*args, **kwargs)
 	        if index.objects.last():
 	        	self.fields['correo'].widget.attrs['value'] = index.objects.last().correo
@@ -43,226 +43,143 @@ class add_form1(forms.ModelForm):
 	        	self.fields['text_secundario151'].initial = index.objects.last().text_secundario151
 	        	self.fields['text_secundario152'].initial = index.objects.last().text_secundario152
 
-								
+
 	class Meta:
 		model = index
 		fields = '__all__'
-		exclude = ('titulo_131', 'imagen132', 'imagen133', 'imagen135','titulo_141', 'text_secundario141', 'titulo_152', 'imagen152', 'imagen153', 'imagen154', 'imagen156')
+		
 		help_texts = {
-            'menu6': '<h2>1.1 INICIO</h2>',
-            'imagen116': '<h2>1.2 INICIO</h2>',
-            'imagen122': '<h2>1.3 INICIO</h2>',
-            'imagen136': '<h2>1.4 INICIO</h2>',
-            'imagen141': '<h2>1.5 INICIO</h2>',
-            'img_certificado': '<h2>2.0 EMPACATE</h2>',
         }
-		labels = {
-            'telf1': 'Teléfonos',
-            'telf2': '',
-            'telf3': '',
-            'menu1': 'Menú',
-            'menu2': '',
-            'menu3': '',
-            'menu4': '',
-            'menu5': '',
-            'menu6': '',
+		# labels = {
+  #           'telf1': 'Teléfonos',
+  #           'telf2': '',
+  #           'telf3': '',
+  #           'menu1': 'Menú',
+  #           'menu2': '',
+  #           'menu3': '',
+  #           'menu4': '',
+  #           'menu5': '',
+  #           'menu6': '',
 
-            'titulo_111': 'Texto Título',
-            'text_secundario111': 'Texto Secundario',
-            'imagen111': 'Empaque 1',
-            'imagen112': 'Empaque 2',
-            'imagen113': 'Empaque 3',
-            'imagen114': 'Empaque 4',
-            'imagen115': 'Empaque 5',
-            'imagen116': 'Empaque 6',
-            
-            'titulo_121': 'Texto Título',
-            'text_secundario121': 'Texto Secundario',
-            'imagen121': 'Imagen 1',
-            'imagen122': 'Imagen 2',
+  #           'titulo_111': 'Texto Título',
+  #           'text_secundario111': 'Texto Secundario',
+  #           'imagen111': 'Empaque 1',
+  #           'imagen112': 'Empaque 2',
+  #           'imagen113': 'Empaque 3',
+  #           'imagen114': 'Empaque 4',
+  #           'imagen115': 'Empaque 5',
+  #           'imagen116': 'Empaque 6',
 
-            'titulo_131': 'Texto Título',
-            'subtitulo131': 'Sub Título 1',
-            'text_secundario131': 'Texto Secundario 1',
-            'subtitulo132': 'Sub Título 2',
-            'text_secundario132': 'Texto Secundario 2',
-            'imagen131': 'Imagen 1',
-            'imagen132': '',
-      		'imagen133': '',
-            'imagen134': 'Imagen 2',
-      		'imagen135': '',
-            'imagen136': '',
+  #           'titulo_121': 'Texto Título',
+  #           'text_secundario121': 'Texto Secundario',
+  #           'imagen121': 'Imagen 1',
+  #           'imagen122': 'Imagen 2',
 
-            'titulo_141': 'Texto Título',
-            'text_secundario141': 'Texto Secundario',
-            'imagen141': 'INFOGRAFIA',
+  #           'titulo_131': 'Texto Título',
+  #           'subtitulo131': 'Sub Título 1',
+  #           'text_secundario131': 'Texto Secundario 1',
+  #           'subtitulo132': 'Sub Título 2',
+  #           'text_secundario132': 'Texto Secundario 2',
+  #           'imagen131': 'Imagen 1',
+  #           'imagen132': '',
+  #     		'imagen133': '',
+  #           'imagen134': 'Imagen 2',
+  #     		'imagen135': '',
+  #           'imagen136': '',
 
-            'titulo_151': 'Texto Título 1',
-            'text_secundario151': 'Texto Secundario 1',
-            'titulo_152': 'Texto Título 2',
-            'text_secundario152': 'Texto Secundario 2',
-            'imagen151': 'Imagen 1',
-            'imagen152': '',
-            'imagen153': '',
-            'imagen154': '',
-            'imagen155': '',
-            'imagen156': '',
-            'img_certificado': 'Certificado',
-        }
+  #           'titulo_141': 'Texto Título',
+  #           'text_secundario141': 'Texto Secundario',
+  #           'imagen141': 'INFOGRAFIA',
+
+  #           'titulo_151': 'Texto Título 1',
+  #           'text_secundario151': 'Texto Secundario 1',
+  #           'titulo_152': 'Texto Título 2',
+  #           'text_secundario152': 'Texto Secundario 2',
+  #           'imagen151': 'Imagen 1',
+  #           'imagen152': '',
+  #           'imagen153': '',
+  #           'imagen154': '',
+  #           'imagen155': '',
+  #           'imagen156': '',
+  #           'img_certificado': 'Certificado',
+        #}
 		widgets = {
-			 'logo' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
+			 'logo' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen111' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen112' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen113' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen114' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen115' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen116' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen121' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen122' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen131' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen132' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen133' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen134' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen135' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen136' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen137' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen141' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen142' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen151' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen152' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'imagen153' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			 'img_certificado' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
 
-			 'imagen111' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-
-			 'imagen112' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-
-			 'imagen113' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-
-			 'imagen114' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-
-			 'imagen115' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-
-			 'imagen116' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen121' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen122' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen131' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen132' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen133' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen134' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen135' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen136' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen141' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen151' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen152' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen153' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen154' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen155' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'imagen156' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-			 'img_certificado' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),
-
-
-			 'titulo_111' : forms.TextInput(attrs = 
+			 'titulo_111' : forms.TextInput(attrs =
 				{
 				'value' : 'john',
-				'class' : 'form-control', 
-				# 'placeholder' : 
+				'class' : 'form-control',
+				# 'placeholder' :
 				}),
-			 'text_secundario111' : forms.Textarea(attrs = 
+			 'text_secundario111' : forms.Textarea(attrs =
 				{
 				'cols' : 50,
 				'rows' : 4,
 				# 'size' : 100,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'text_secundario121' : forms.Textarea(attrs = 
+			 'text_secundario121' : forms.Textarea(attrs =
 				{
 				'cols' : 50,
 				'rows' : 5,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'text_secundario131' : forms.Textarea(attrs = 
+			 'text_secundario131' : forms.Textarea(attrs =
 				{
 				'cols' : 50,
 				'rows' : 3,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'text_secundario132' : forms.Textarea(attrs = 
+			 'text_secundario132' : forms.Textarea(attrs =
 				{
 				'cols' : 50,
 				'rows' : 5,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'text_secundario141' : forms.Textarea(attrs = 
+			 'text_secundario141' : forms.Textarea(attrs =
 				{
 				'cols' : 30,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'text_secundario151' : forms.Textarea(attrs = 
+			 'text_secundario151' : forms.Textarea(attrs =
 				{
 				'cols' : 50,
 				'rows' : 11,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'text_secundario152' : forms.Textarea(attrs = 
+			 'text_secundario152' : forms.Textarea(attrs =
 				{
 				'cols' : 50,
 				'rows' : 3,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
 		}
 
 class add_form2(forms.ModelForm):
-	def __init__(self, *args, **kwargs):           
+	def __init__(self, *args, **kwargs):
         	super(add_form2, self).__init__(*args, **kwargs)
 	        if emballage.objects.last():
 	        	self.fields['titulo_201'].widget.attrs['value'] = emballage.objects.last().titulo_201
@@ -286,52 +203,44 @@ class add_form2(forms.ModelForm):
 			self.fields['empaque_229'].widget.attrs['value'] = emballage.objects.last().empaque_229
 			self.fields['titulo_251'].widget.attrs['value'] = emballage.objects.last().titulo_251
 			self.fields['cuestionario'].widget.attrs['value'] = emballage.objects.last().cuestionario
-			self.fields['subtitulo2501'].initial = emballage.objects.last().subtitulo2501					        	
-			self.fields['subtitulo2502'].initial = emballage.objects.last().subtitulo2502					        	
-			self.fields['subtitulo2503'].initial = emballage.objects.last().subtitulo2503					        	
-			self.fields['subtitulo2504'].initial = emballage.objects.last().subtitulo2504					        	
-			self.fields['subtitulo2505'].initial = emballage.objects.last().subtitulo2505					        	
-			self.fields['subtitulo2506'].initial = emballage.objects.last().subtitulo2506					        	
-			self.fields['subtitulo2507'].initial = emballage.objects.last().subtitulo2507					        	
-			self.fields['subtitulo2508'].initial = emballage.objects.last().subtitulo2508					        	
-			self.fields['subtitulo2509'].initial = emballage.objects.last().subtitulo2509					        	
-			self.fields['subtitulo2510'].initial = emballage.objects.last().subtitulo2510					        	
-			self.fields['subtitulo2511'].initial = emballage.objects.last().subtitulo2511					        	
-			self.fields['subtitulo2512'].initial = emballage.objects.last().subtitulo2512					        	
-			self.fields['subtitulo2513'].initial = emballage.objects.last().subtitulo2513					        	
-			self.fields['subtitulo2514'].initial = emballage.objects.last().subtitulo2514					        	
+			self.fields['subtitulo2501'].initial = emballage.objects.last().subtitulo2501
+			self.fields['subtitulo2502'].initial = emballage.objects.last().subtitulo2502
+			self.fields['subtitulo2503'].initial = emballage.objects.last().subtitulo2503
+			self.fields['subtitulo2504'].initial = emballage.objects.last().subtitulo2504
+			self.fields['subtitulo2505'].initial = emballage.objects.last().subtitulo2505
+			self.fields['subtitulo2506'].initial = emballage.objects.last().subtitulo2506
+			self.fields['subtitulo2507'].initial = emballage.objects.last().subtitulo2507
+			self.fields['subtitulo2508'].initial = emballage.objects.last().subtitulo2508
+			self.fields['subtitulo2509'].initial = emballage.objects.last().subtitulo2509
+			self.fields['subtitulo2510'].initial = emballage.objects.last().subtitulo2510
+			self.fields['subtitulo2511'].initial = emballage.objects.last().subtitulo2511
+			self.fields['subtitulo2512'].initial = emballage.objects.last().subtitulo2512
+			self.fields['subtitulo2513'].initial = emballage.objects.last().subtitulo2513
+			self.fields['subtitulo2514'].initial = emballage.objects.last().subtitulo2514
 			self.fields['subtitulo2515'].initial = emballage.objects.last().subtitulo2515
-			self.fields['text_secundario201'].initial = emballage.objects.last().text_secundario201									  
-			self.fields['text_secundario211'].initial = emballage.objects.last().text_secundario211									  
-			self.fields['text_secundario212'].initial = emballage.objects.last().text_secundario212									  
-			self.fields['text_secundario2501'].initial = emballage.objects.last().text_secundario2501									  
-			self.fields['text_secundario2502'].initial = emballage.objects.last().text_secundario2502									  
-			self.fields['text_secundario2503'].initial = emballage.objects.last().text_secundario2503									  
-			self.fields['text_secundario2504'].initial = emballage.objects.last().text_secundario2504									  
-			self.fields['text_secundario2505'].initial = emballage.objects.last().text_secundario2505									  
-			self.fields['text_secundario2506'].initial = emballage.objects.last().text_secundario2506									  
-			self.fields['text_secundario2507'].initial = emballage.objects.last().text_secundario2507									  
-			self.fields['text_secundario2508'].initial = emballage.objects.last().text_secundario2508									  
-			self.fields['text_secundario2509'].initial = emballage.objects.last().text_secundario2509									  
-			self.fields['text_secundario2510'].initial = emballage.objects.last().text_secundario2510									  
-			self.fields['text_secundario2511'].initial = emballage.objects.last().text_secundario2511									  
-			self.fields['text_secundario2512'].initial = emballage.objects.last().text_secundario2512									  
-			self.fields['text_secundario2513'].initial = emballage.objects.last().text_secundario2513									  
-			self.fields['text_secundario2514'].initial = emballage.objects.last().text_secundario2514									  
+			self.fields['text_secundario201'].initial = emballage.objects.last().text_secundario201
+			self.fields['text_secundario211'].initial = emballage.objects.last().text_secundario211
+			self.fields['text_secundario212'].initial = emballage.objects.last().text_secundario212
+			self.fields['text_secundario2501'].initial = emballage.objects.last().text_secundario2501
+			self.fields['text_secundario2502'].initial = emballage.objects.last().text_secundario2502
+			self.fields['text_secundario2503'].initial = emballage.objects.last().text_secundario2503
+			self.fields['text_secundario2504'].initial = emballage.objects.last().text_secundario2504
+			self.fields['text_secundario2505'].initial = emballage.objects.last().text_secundario2505
+			self.fields['text_secundario2506'].initial = emballage.objects.last().text_secundario2506
+			self.fields['text_secundario2507'].initial = emballage.objects.last().text_secundario2507
+			self.fields['text_secundario2508'].initial = emballage.objects.last().text_secundario2508
+			self.fields['text_secundario2509'].initial = emballage.objects.last().text_secundario2509
+			self.fields['text_secundario2510'].initial = emballage.objects.last().text_secundario2510
+			self.fields['text_secundario2511'].initial = emballage.objects.last().text_secundario2511
+			self.fields['text_secundario2512'].initial = emballage.objects.last().text_secundario2512
+			self.fields['text_secundario2513'].initial = emballage.objects.last().text_secundario2513
+			self.fields['text_secundario2514'].initial = emballage.objects.last().text_secundario2514
 			self.fields['text_secundario2515'].initial = emballage.objects.last().text_secundario2515
-					
+
 	class Meta:
 		model = emballage
 		fields = '__all__'
 
-		help_texts = {
-            'imagen201': '<h2>2.1 EMPÁCATE</h2>',
-            'imagen216': '<h2>2.2 EMPÁCATE</h2>',
-            'empaque_img229': '<h2>2.3 EMPÁCATE</h2>',
-            'imagen236': '<h2>2.4 EMPÁCATE</h2>',
-            'imagen243': '<h2>2.5 EMPÁCATE</h2>',
-            'boton_253': '<h2>3.0 tecnología</h2>',
-        }
 		labels = {
             'titulo_201': 'Texto Título 1',
             'text_secundario201': 'Texto Secundario',
@@ -387,7 +296,7 @@ class add_form2(forms.ModelForm):
 			'imagen242' : 'Imagen 2',
 			'titulo_243' : 'Texto Título 3',
 			'imagen243' : 'Imagen 3',
-				
+
 			'titulo_251' : 'Texto Título 1',
 			'subtitulo2501' : 'SubTítulo 1',
 			'imagen2501' : 'Imagen 1',
@@ -464,7 +373,7 @@ class add_form2(forms.ModelForm):
 			'imagen2544' : '',
 			'imagen2545' : '',
 			'text_secundario2515' : 'Texto Secundario',
-				
+
 			'boton_251' : 'Botón 1',
 			'boton_252' : 'Botón 2',
 			'cuestionario' : 'cuestionario',
@@ -473,334 +382,312 @@ class add_form2(forms.ModelForm):
 			'pregunta23' : 'Pregunta 3',
 			'pregunta24' : 'Pregunta 4',
 			'boton_253' : 'Botón 3',
-
         }
 		widgets = {
-			 'text_secundario201' : forms.Textarea(attrs = 
+			'text_secundario201' : forms.Textarea(attrs =
 				{
 				'cols' : 50,
 				'rows' : 5,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			'image201' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'image211' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'image213' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'image215' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img220' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img221' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img222' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img223' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img224' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img225' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img226' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img227' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img228' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'empaque_img229' : forms.ClearableFileInput(attrs = 
-				{
-				'class' : 'form-control', 
-				}),	 
-			'imagen2501' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2502' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2503' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2504' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2505' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2506' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2507' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2508' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2509' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2510' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2511' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2512' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2513' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2514' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2515' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2516' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2517' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2518' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2519' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2520' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2521' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2522' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2523' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2524' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2525' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2526' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2527' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2528' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2529' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2530' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2531' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2532' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2533' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2534' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2535' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2536' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2537' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2538' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2539' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2540' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2541' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2542' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2543' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2544' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			'imagen2545' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
-			
-			 'text_secundario211' : forms.Textarea(attrs = 
+			'imagen201' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'imagen202' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'imagen203' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'imagen211' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'imagen213' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'imagen215' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'imagen221' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+
+            'flecha' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen231' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen232' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen233' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen234' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen235' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen236' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen237' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen238' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen241' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen242' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen243' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen244' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen245' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+            'imagen246' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+
+            'empaque_img220' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img221' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img222' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img223' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img224' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img225' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img226' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img227' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img228' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+			'empaque_img229' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
+
+			'imagen2501' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2502' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2503' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2504' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2505' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2506' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2507' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2508' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2509' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2510' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2511' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2512' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2513' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2514' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2515' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2516' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2517' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2518' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2519' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2520' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2521' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2522' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2523' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2524' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2525' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2526' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2527' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2528' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2529' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2530' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2531' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2532' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2534' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2535' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2536' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2537' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2538' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2539' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2540' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2541' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2542' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2543' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2544' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen2545' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+			'imagen251' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+
+			 'text_secundario211' : forms.Textarea(attrs =
 				{
 				'cols' : 50,
 				'rows' : 5,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'text_secundario212' : forms.Textarea(attrs = 
+			 'text_secundario212' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'text_secundario213' : forms.Textarea(attrs = 
+			 'text_secundario213' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2501' : forms.Textarea(attrs = 
+			 'subtitulo2501' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2501' : forms.Textarea(attrs = 
+
+			 'text_secundario2501' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2502' : forms.Textarea(attrs = 
+			 'subtitulo2502' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2502' : forms.Textarea(attrs = 
+
+			 'text_secundario2502' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2503' : forms.Textarea(attrs = 
+			 'subtitulo2503' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2503' : forms.Textarea(attrs = 
+
+			 'text_secundario2503' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2504' : forms.Textarea(attrs = 
+			 'subtitulo2504' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2504' : forms.Textarea(attrs = 
+
+			 'text_secundario2504' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2505' : forms.Textarea(attrs = 
+			 'subtitulo2505' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2505' : forms.Textarea(attrs = 
+
+			 'text_secundario2505' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2506' : forms.Textarea(attrs = 
+			 'subtitulo2506' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2506' : forms.Textarea(attrs = 
+
+			 'text_secundario2506' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2507' : forms.Textarea(attrs = 
+			 'subtitulo2507' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2507' : forms.Textarea(attrs = 
+
+			 'text_secundario2507' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2508' : forms.Textarea(attrs = 
+			 'subtitulo2508' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2508' : forms.Textarea(attrs = 
+
+			 'text_secundario2508' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2509' : forms.Textarea(attrs = 
+			 'subtitulo2509' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2509' : forms.Textarea(attrs = 
+
+			 'text_secundario2509' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2510' : forms.Textarea(attrs = 
+			 'subtitulo2510' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2510' : forms.Textarea(attrs = 
+
+			 'text_secundario2510' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2511' : forms.Textarea(attrs = 
+			 'subtitulo2511' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2511' : forms.Textarea(attrs = 
+
+			 'text_secundario2511' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2512' : forms.Textarea(attrs = 
+			 'subtitulo2512' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2512' : forms.Textarea(attrs = 
+
+			 'text_secundario2512' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2513' : forms.Textarea(attrs = 
+			 'subtitulo2513' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2513' : forms.Textarea(attrs = 
+
+			 'text_secundario2513' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2514' : forms.Textarea(attrs = 
+			 'subtitulo2514' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2514' : forms.Textarea(attrs = 
+
+			 'text_secundario2514' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 'subtitulo2515' : forms.Textarea(attrs = 
+			 'subtitulo2515' : forms.Textarea(attrs =
 				{
 				'cols' : 20,
 				'rows' : 1,
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				}),
-			 
-			 'text_secundario2515' : forms.Textarea(attrs = 
+
+			 'text_secundario2515' : forms.Textarea(attrs =
 				{
 				'cols' : 40,
 				'rows' : 2,
-	 			'class' : 'form-control', 
+	 			'class' : 'form-control',
 				}),
 			}
 
 class add_form3(forms.ModelForm):
-	def __init__(self, *args, **kwargs):           
+	def __init__(self, *args, **kwargs):
 	    	super(add_form3, self).__init__(*args, **kwargs)
 	        if tecnology.objects.last():
 		        self.fields['titulo_301'].widget.attrs['value'] = tecnology.objects.last().titulo_301
@@ -821,17 +708,11 @@ class add_form3(forms.ModelForm):
 
 
 
-			
+
 
 	class Meta:
 		model = tecnology
 		fields = '__all__'
-		help_texts = {
-            'imagen301': '<h2>3.1 Tecnología</h2>',
-            'imagen311': '<h2>3.1 Tecnología</h2>',
-            'imagen312': '<h2>3.2 Tecnología</h2>',
-            'text_secundario321': '<h2>4.0 Nuestros Clientes</h2>',
-        }
 
 		labels = {
 		'titulo_301' : 'Texto Título 1',
@@ -856,7 +737,17 @@ class add_form3(forms.ModelForm):
 		'text_secundario321' : 'Texto Secundario',
 		}
 		widgets = {
-		'imagen321' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
+		'fondo1' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'imagen301' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'imagen302' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'imagen311' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'imagen312' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'fondo2' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'imagen13' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'fondo3' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'tr_top' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'tr_bottom' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+
 		'text_secundario301': forms.Textarea(attrs={
 			'cols' : 40,
 			'rows' : 2,
@@ -917,18 +808,15 @@ class add_form4(forms.ModelForm):
 	class Meta:
 		model = client
 		fields = '__all__'
-		help_texts = {
-	        'imagen401': '<h2>5.0 Contáctanos</h2>',
-	    }
 		labels = {
 		'titulo_401' : 'Texto Título',
 		'imagen401' : 'Imagen Fondo',
 		}
 		widgets = {
-		'imagen401' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),	 
+		'imagen401' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
 		}
 class add_form5(forms.ModelForm):
-	def __init__(self, *args, **kwargs):           
+	def __init__(self, *args, **kwargs):
 	    	super(add_form5, self).__init__(*args, **kwargs)
 	        if contact.objects.last():
 		        self.fields['titulo_501'].widget.attrs['value'] = contact.objects.last().titulo_501
@@ -938,13 +826,10 @@ class add_form5(forms.ModelForm):
 		        self.fields['pregunta54'].widget.attrs['placeholder'] = "Escribe el mensaje"
 		        self.fields['boton_501'].widget.attrs['value'] = contact.objects.last().boton_501
 
-    
+
 	class Meta:
 		model = contact
 		fields = '__all__'
-		help_texts = {
-	        'boton_501': '<h2>Footer</h2>',
-	    }
 		labels = {
 		'titulo_501' : 'Texto Título 1',
 		'pregunta51' : 'Pregunta 1',
@@ -954,7 +839,7 @@ class add_form5(forms.ModelForm):
 		'boton_501' : 'Botón Enviar',
 		}
 class add_form6(forms.ModelForm):
-	def __init__(self, *args, **kwargs):           
+	def __init__(self, *args, **kwargs):
 	    	super(add_form6, self).__init__(*args, **kwargs)
 	        if footer.objects.last():
 	        	self.fields['titulo_601'].widget.attrs['value'] = footer.objects.last().titulo_601
@@ -971,20 +856,20 @@ class UserRegisterForm(forms.ModelForm):
 		model = User
 		fields = ('username', 'email', 'password')
 		widgets = {
-			'username' : forms.TextInput(attrs = 
+			'username' : forms.TextInput(attrs =
 				{
-				'class' : 'form-control', 
+				'class' : 'form-control',
 				'placeholder' : 'Ingresa un nombre de usuario',
 				'readonly':'readonly'
 				}),
-			'email' : forms.TextInput(attrs = 
+			'email' : forms.TextInput(attrs =
 				{
 				'type' : 'email',
 				'class' : 'form-control',
 				'placeholder' : 'Ingresa un email',
 				'readonly':'readonly'
 				}),
-			'password' : forms.TextInput(attrs = 
+			'password' : forms.TextInput(attrs =
 				{
 				'type' : 'password',
 				'class' : 'form-control',
@@ -995,7 +880,7 @@ class UserRegisterForm(forms.ModelForm):
 
 class LoginForm(forms.Form):
 
-	username = forms.CharField(max_length=30, 
+	username = forms.CharField(max_length=30,
 				widget = forms.TextInput(attrs = {
 					'class' : 'form-control',
 					'placeholder' : 'Ingresa un nombre de usuario',
@@ -1005,4 +890,4 @@ class LoginForm(forms.Form):
 	 				'type' : 'password',
 	 				'class' : 'form-control',
 	 				'placeholder' : 'Ingresa un password',
-	 				}))	 	 
+	 				}))

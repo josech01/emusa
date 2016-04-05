@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>    
+        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -42,8 +42,15 @@
                         </div>
                     </div>
                     <div class="col s4 m4 center-col">
-                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% endif %}</span>
-                        <br>
+                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon">
+                        <b>IDIOMA: </b><!-- <a class='dropdown-button btn' href='#' data-activates='dropdown1'>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% elif "pt" == index.idioma  %}Portugues{% endif %}</a> -->
+                         <a class="dropdown-button btn" href="#" data-activates="dropdown1">Español</a>
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="clientes.html">Español</a></li>
+                            <li><a href="clientes_en.html">Ingles</a></li>
+                            <li><a href="clientes_pt.html">Portugues</a></li>
+                          </ul>
+                          </span>
                         <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">{{index.correo}}</a></span>
                     </div>
                     <div class="col s5 m4" id="phones">
@@ -55,7 +62,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <nav>
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo"><img src="{{index.logo.url}}"></a>
@@ -102,7 +109,7 @@
             </footer>
         </main>
 
-        
+
          <!-- <script src="//{% static 'ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
          <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
         <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>

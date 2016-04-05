@@ -26,13 +26,13 @@
         <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>    
+        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-<div id="navbar-fixed">
+        <div id="navbar-fixed">
             <div class="container">
                 <div class="row" id="header">
                     <div class="col s3 m4 center-align" id="intranet">
@@ -42,8 +42,15 @@
                         </div>
                     </div>
                     <div class="col s4 m4 center-col">
-                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon"><b>IDIOMA:</b>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% endif %}</span>
-                        <br>
+                        <span><img src="{% static 'img/icons/lang.png' %}" class="lang-icon">
+                        <b>IDIOMA: </b><!-- <a class='dropdown-button btn' href='#' data-activates='dropdown1'>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% elif "pt" == index.idioma  %}Portugues{% endif %}</a> -->
+                         <a class="dropdown-button btn" href="#" data-activates="dropdown1">Español</a>
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="tecnologia.html">Español</a></li>
+                            <li><a href="tecnologia_en.html">Ingles</a></li>
+                            <li><a href="tecnologia_pt.html">Portugues</a></li>
+                          </ul>
+                          </span>
                         <span class="truncate"><img src="{% static 'img/icons/mail.png' %}" class="mail-icon"><a href="mailto:customerservice@emusa.com.pe">{{index.correo}}</a></span>
                     </div>
                     <div class="col s5 m4" id="phones">
@@ -55,7 +62,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <nav>
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo"><img src="{{index.logo.url}}"></a>
@@ -89,13 +96,13 @@
                             <a href="#tec1" class="waves-effect waves-light btn-large btn-start">{{tecnologys.boton_301}}</a>
                         </div>
                         <div class="col m6 pull-m6 l4 pull-l4 center-align balign">
-                            <img class="responsive-img" src="{% static 'img/assets/tec01.png' %}">
+                            <img class="responsive-img" src="{{tecnologys.imagen301.url}}">
                         </div>
-                        
+
                         <div class="col l4 center-align  balign hide-on-med-and-down">
-                            <img class="responsive-img" src="{% static 'img/assets/tec02.png' %}">
+                            <img class="responsive-img" src="{{tecnologys.imagen302.url}}">
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -147,13 +154,13 @@
                             </div>
                         </div>
                         <div class="col m6 pull-m6 l4 pull-l4 center-align balign">
-                            <img class="responsive-img" src="{% static 'img/assets/tec03.png' %}">
+                            <img class="responsive-img" src="{{tecnologys.imagen311.url}}">
                         </div>
-                        
+
                         <div class="col l4 center-align  balign hide-on-med-and-down">
-                            <img class="responsive-img" src="{% static 'img/assets/tec04.png' %}">
+                            <img class="responsive-img" src="{{tecnologys.imagen312.url}}">
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -214,7 +221,7 @@
                             </div>
                         </div>
                         <div class="col m6 pull-m6 l4 pull-l4 center-align balign">
-                            <img class="responsive-img" src="{% static 'img/assets/tec05.png' %}">
+                            <img class="responsive-img" src="{{tecnologys.imagen313.url}}">
                         </div>
                         <div class="col l4 center-align balign hide-on-med-and-down">
                         </div>
@@ -225,14 +232,14 @@
             <div class="section" id="responsabilidad">
                 <div class="container">
                     <div class="row center-align">
-                        <img class="responsive-img" src="{{tecnologys.imagen321.url}}">
-                        <h3>RESPONSABILIDAD SOCIAL</h3>
+                        <img class="responsive-img" src="{{tecnologys.tr_top.url}}">
+                        <h3>{{tecnologys.titulo_321}}</h3>
                         <div class="text-justify">
-                            <p>{{tecnologys.text_secundario321}}</p>
+                            {{tecnologys.text_secundario321|linebreaks}}
                         </div>
-                        <img class="responsive-img" src="{% static 'img/assets/rs-bottom.png' %}">
+                        <img class="responsive-img" src="{{tecnologys.tr_bottom.url}}">
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -246,7 +253,7 @@
             </footer>
         </main>
 
-        
+
          <!-- <script src="//{% static 'ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
          <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
         <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>
