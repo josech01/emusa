@@ -77,7 +77,7 @@ def add_new_form (request):
 			modelform4.save()
 			modelform5.save()
 			modelform6.save()
-			return redirect("/form/")
+			return redirect("/form.html")
 	else:
 		modelform1 = add_form1()
 		modelform2 = add_form2()

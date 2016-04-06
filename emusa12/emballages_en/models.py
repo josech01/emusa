@@ -64,12 +64,13 @@ class enindex(models.Model):
 	entext_secundario151 = models.TextField(blank=True, max_length=1000)
 	entitulo_152 = models.CharField(blank=True, max_length=50)
         enimagen152 = models.ImageField(blank=True, upload_to = 'imgs')
+        enimagen153 = models.ImageField(blank=True, upload_to = 'imgs')
 	entext_secundario152 = models.TextField(blank=True, max_length=1000)
 	enimg_certificado= models.ImageField(blank=True, upload_to = 'imgs')
 
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_111)
+		return u'%d - %s'%(self.id, self.entitulo_111)
 
 class enemballage (models.Model):
 	entitulo_201 = models.CharField(blank=True, max_length=50)
@@ -223,7 +224,7 @@ class enemballage (models.Model):
     	enboton_253 = models.CharField(blank=True, max_length=50)
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_201)
+		return u'%d - %s'%(self.id, self.entitulo_201)
 
 class entecnology(models.Model):
 	entitulo_301 = models.CharField(blank=True, max_length=50)
@@ -254,14 +255,14 @@ class entecnology(models.Model):
     	entr_bottom = models.ImageField(blank=True, upload_to = 'imgs')
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_301)
+		return u'%d - %s'%(self.id, self.entitulo_301)
 
 class enclient(models.Model):
 	entitulo_401 = models.CharField(blank=True, max_length=50)
 	enimagen401 = models.ImageField(blank=True, upload_to = 'imgs')
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_401)
+		return u'%d - %s'%(self.id, self.entitulo_401)
 
 class encontact(models.Model):
 	entitulo_501 = models.CharField(blank=True, max_length=50)
@@ -272,10 +273,10 @@ class encontact(models.Model):
 	enboton_501 = models.CharField(blank=True, max_length=50)
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_501)
+		return u'%d - %s'%(self.id, self.entitulo_501)
 
 class enfooter(models.Model):
 	entitulo_601 = models.CharField(blank=True,  max_length=50)
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_601)
+		return u'%d - %s'%(self.id, self.entitulo_601)

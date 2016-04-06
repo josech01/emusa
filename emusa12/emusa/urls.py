@@ -24,8 +24,8 @@ admin.autodiscover()
 
 
 urlpatterns = [
-    url(r'^form_pt.html', emba_views_pt.ptadd_new_form),
     url(r'^form_en.html', emba_views_en.enadd_new_form),
+    url(r'^form_pt.html', emba_views_pt.ptadd_new_form),
     url(r'^form', emba_views.add_new_form),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^clientes.html', emba_views.clientes),

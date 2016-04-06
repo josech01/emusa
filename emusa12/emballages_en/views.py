@@ -11,7 +11,7 @@ from django.db.models import Model
 # from .models import data_info, index, emballage, tecnology, client, contact, footer
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate,logout
-from .forms import enadd_form1, enadd_form2, enadd_form3, enadd_form4, enadd_form5, enadd_form6
+from emballages_en.forms import enadd_form1, enadd_form2, enadd_form3, enadd_form4, enadd_form5, enadd_form6
 from emballages_en import models
 # Create your views here.
 def enclientes (request):
@@ -76,7 +76,7 @@ def enadd_new_form (request):
 			modelform4.save()
 			modelform5.save()
 			modelform6.save()
-			return redirect("/form_en/")
+			return redirect("/form_en.html")
 	else:
 		modelform1 = enadd_form1()
 		modelform2 = enadd_form2()

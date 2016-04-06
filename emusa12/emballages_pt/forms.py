@@ -7,50 +7,39 @@ from django.contrib.auth.models import User
 
 class ptadd_form1(forms.ModelForm):
 
-# class ModelFormOptions(object):
-#    def __init__(self, options=None):
-#        self.model = ptgetattr(options, 'model', None)
-#        self.fields = getattr(options, 'fields', None)
-#        self.exclude = getattr(options, 'exclude', None)
-#        self.widgets = getattr(options, 'widgets', None)
-#        self.localized_fields = getattr(options, 'localized_fields', None)
-#        self.labels = getattr(options, 'labels', None)
-#        self.help_texts = getattr(options, 'help_texts', None)
-#        self.error_messages = getattr(options, 'error_messages', None)
  	def __init__(self, *args, **kwargs):
         	super(ptadd_form1, self).__init__(*args, **kwargs)
 	        if ptindex.objects.last():
-	        	self.fields['ptcorreo'].widget.attrs['value'] = index.objects.last().ptcorreo
-	        	self.fields['pttelf1'].widget.attrs['value'] = index.objects.last().pttelf1
-	        	self.fields['pttelf2'].widget.attrs['value'] = index.objects.last().pttelf2
-	        	self.fields['pttelf3'].widget.attrs['value'] = index.objects.last().pttelf3
-	        	self.fields['ptmenu1'].widget.attrs['value'] = index.objects.last().ptmenu1
-		        self.fields['ptmenu2'].widget.attrs['value'] = index.objects.last().ptmenu2
-		        self.fields['ptmenu3'].widget.attrs['value'] = index.objects.last().ptmenu3
-		        self.fields['ptmenu4'].widget.attrs['value'] = index.objects.last().ptmenu4
-		        self.fields['ptmenu5'].widget.attrs['value'] = index.objects.last().ptmenu5
-		        self.fields['ptmenu6'].widget.attrs['value'] = index.objects.last().ptmenu6
-	        	self.fields['pttitulo_111'].widget.attrs['value'] = index.objects.last().pttitulo_111
-	        	self.fields['pttext_secundario111'].initial = index.objects.last().pttext_secundario111
-	        	self.fields['pttitulo_121'].widget.attrs['value'] = index.objects.last().pttitulo_121
-	        	self.fields['pttext_secundario121'].initial = index.objects.last().pttext_secundario121
-	        	#self.fields['pttitulo_131'].widget.attrs['value'] = index.objects.last().pttitulo_131
-	        	self.fields['ptsubtitulo131'].widget.attrs['value'] = index.objects.last().ptsubtitulo131
-	        	self.fields['pttext_secundario131'].initial = index.objects.last().pttext_secundario131
-	        	self.fields['ptsubtitulo132'].widget.attrs['value'] = index.objects.last().ptsubtitulo132
-	        	self.fields['pttext_secundario132'].initial = index.objects.last().pttext_secundario132
-	        	self.fields['pttitulo_151'].widget.attrs['value'] = index.objects.last().pttitulo_151
-	        	self.fields['pttext_secundario151'].initial = index.objects.last().pttext_secundario151
-	        	self.fields['pttext_secundario152'].initial = index.objects.last().pttext_secundario152
+	        	self.fields['ptcorreo'].widget.attrs['value'] = ptindex.objects.last().ptcorreo
+	        	self.fields['pttelf1'].widget.attrs['value'] = ptindex.objects.last().pttelf1
+	        	self.fields['pttelf2'].widget.attrs['value'] = ptindex.objects.last().pttelf2
+	        	self.fields['pttelf3'].widget.attrs['value'] = ptindex.objects.last().pttelf3
+	        	self.fields['ptmenu1'].widget.attrs['value'] = ptindex.objects.last().ptmenu1
+		        self.fields['ptmenu2'].widget.attrs['value'] = ptindex.objects.last().ptmenu2
+		        self.fields['ptmenu3'].widget.attrs['value'] = ptindex.objects.last().ptmenu3
+		        self.fields['ptmenu4'].widget.attrs['value'] = ptindex.objects.last().ptmenu4
+		        self.fields['ptmenu5'].widget.attrs['value'] = ptindex.objects.last().ptmenu5
+		        self.fields['ptmenu6'].widget.attrs['value'] = ptindex.objects.last().ptmenu6
+	        	self.fields['pttitulo_111'].widget.attrs['value'] = ptindex.objects.last().pttitulo_111
+	        	self.fields['pttext_secundario111'].initial = ptindex.objects.last().pttext_secundario111
+	        	self.fields['pttitulo_121'].widget.attrs['value'] = ptindex.objects.last().pttitulo_121
+	        	self.fields['pttext_secundario121'].initial = ptindex.objects.last().pttext_secundario121
+	        	#self.fields['pttitulo_131'].widget.attrs['value'] = ptindex.objects.last().pttitulo_131
+	        	self.fields['ptsubtitulo131'].widget.attrs['value'] = ptindex.objects.last().ptsubtitulo131
+	        	self.fields['pttext_secundario131'].initial = ptindex.objects.last().pttext_secundario131
+	        	self.fields['ptsubtitulo132'].widget.attrs['value'] = ptindex.objects.last().ptsubtitulo132
+	        	self.fields['pttext_secundario132'].initial = ptindex.objects.last().pttext_secundario132
+	        	self.fields['pttitulo_151'].widget.attrs['value'] = ptindex.objects.last().pttitulo_151
+	        	self.fields['pttext_secundario151'].initial = ptindex.objects.last().pttext_secundario151
+	        	self.fields['pttext_secundario152'].initial = ptindex.objects.last().pttext_secundario152
 
 
 	class Meta:
 		model = ptindex
 		fields = '__all__'
-		exclude = ('pttitulo_131', 'ptimagen132', 'ptimagen133', 'ptimagen135','pttitulo_141', 'pttext_secundario141', 'pttitulo_152', 'ptimagen152', 'ptimagen153', 'ptimagen154', 'ptimagen156')
+		
 		help_texts = {
         }
-		
 		widgets = {
 			 'ptlogo' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
 			 'ptimagen111' : forms.ClearableFileInput(attrs = {'class' : 'form-control', }),
@@ -130,66 +119,65 @@ class ptadd_form2(forms.ModelForm):
 	def __init__(self, *args, **kwargs):
         	super(ptadd_form2, self).__init__(*args, **kwargs)
 	        if ptemballage.objects.last():
-	        	self.fields['pttitulo_201'].widget.attrs['value'] = emballage.objects.last().pttitulo_201
-	        	self.fields['pttext_secundario201'].initial = emballage.objects.last().pttext_secundario201
-	        	self.fields['ptboton_201'].widget.attrs['value'] = emballage.objects.last().ptboton_201
-    			self.fields['ptboton_251'].widget.attrs['value'] = emballage.objects.last().ptboton_251
-		    	self.fields['ptboton_252'].widget.attrs['value'] = emballage.objects.last().ptboton_252
-	    		self.fields['ptboton_253'].widget.attrs['value'] = emballage.objects.last().ptboton_253
-			self.fields['pttitulo_211'].widget.attrs['value'] = emballage.objects.last().pttitulo_211
-			self.fields['pttitulo_212'].widget.attrs['value'] = emballage.objects.last().pttitulo_212
-			self.fields['pttitulo_213'].widget.attrs['value'] = emballage.objects.last().pttitulo_213
-			self.fields['ptempaque_220'].widget.attrs['value'] = emballage.objects.last().ptempaque_220
-			self.fields['ptempaque_221'].widget.attrs['value'] = emballage.objects.last().ptempaque_221
-			self.fields['ptempaque_222'].widget.attrs['value'] = emballage.objects.last().ptempaque_222
-			self.fields['ptempaque_223'].widget.attrs['value'] = emballage.objects.last().ptempaque_223
-			self.fields['ptempaque_224'].widget.attrs['value'] = emballage.objects.last().ptempaque_224
-			self.fields['ptempaque_225'].widget.attrs['value'] = emballage.objects.last().ptempaque_225
-			self.fields['ptempaque_226'].widget.attrs['value'] = emballage.objects.last().ptempaque_226
-			self.fields['ptempaque_227'].widget.attrs['value'] = emballage.objects.last().ptempaque_227
-			self.fields['ptempaque_228'].widget.attrs['value'] = emballage.objects.last().ptempaque_228
-			self.fields['ptempaque_229'].widget.attrs['value'] = emballage.objects.last().ptempaque_229
-			self.fields['pttitulo_251'].widget.attrs['value'] = emballage.objects.last().pttitulo_251
-			self.fields['ptcuestionario'].widget.attrs['value'] = emballage.objects.last().ptcuestionario
-			self.fields['ptsubtitulo2501'].initial = emballage.objects.last().ptsubtitulo2501
-			self.fields['ptsubtitulo2502'].initial = emballage.objects.last().ptsubtitulo2502
-			self.fields['ptsubtitulo2503'].initial = emballage.objects.last().ptsubtitulo2503
-			self.fields['ptsubtitulo2504'].initial = emballage.objects.last().ptsubtitulo2504
-			self.fields['ptsubtitulo2505'].initial = emballage.objects.last().ptsubtitulo2505
-			self.fields['ptsubtitulo2506'].initial = emballage.objects.last().ptsubtitulo2506
-			self.fields['ptsubtitulo2507'].initial = emballage.objects.last().ptsubtitulo2507
-			self.fields['ptsubtitulo2508'].initial = emballage.objects.last().ptsubtitulo2508
-			self.fields['ptsubtitulo2509'].initial = emballage.objects.last().ptsubtitulo2509
-			self.fields['ptsubtitulo2510'].initial = emballage.objects.last().ptsubtitulo2510
-			self.fields['ptsubtitulo2511'].initial = emballage.objects.last().ptsubtitulo2511
-			self.fields['ptsubtitulo2512'].initial = emballage.objects.last().ptsubtitulo2512
-			self.fields['ptsubtitulo2513'].initial = emballage.objects.last().ptsubtitulo2513
-			self.fields['ptsubtitulo2514'].initial = emballage.objects.last().ptsubtitulo2514
-			self.fields['ptsubtitulo2515'].initial = emballage.objects.last().ptsubtitulo2515
-			self.fields['pttext_secundario201'].initial = emballage.objects.last().pttext_secundario201
-			self.fields['pttext_secundario211'].initial = emballage.objects.last().pttext_secundario211
-			self.fields['pttext_secundario212'].initial = emballage.objects.last().pttext_secundario212
-			self.fields['pttext_secundario2501'].initial = emballage.objects.last().pttext_secundario2501
-			self.fields['pttext_secundario2502'].initial = emballage.objects.last().pttext_secundario2502
-			self.fields['pttext_secundario2503'].initial = emballage.objects.last().pttext_secundario2503
-			self.fields['pttext_secundario2504'].initial = emballage.objects.last().pttext_secundario2504
-			self.fields['pttext_secundario2505'].initial = emballage.objects.last().pttext_secundario2505
-			self.fields['pttext_secundario2506'].initial = emballage.objects.last().pttext_secundario2506
-			self.fields['pttext_secundario2507'].initial = emballage.objects.last().pttext_secundario2507
-			self.fields['pttext_secundario2508'].initial = emballage.objects.last().pttext_secundario2508
-			self.fields['pttext_secundario2509'].initial = emballage.objects.last().pttext_secundario2509
-			self.fields['pttext_secundario2510'].initial = emballage.objects.last().pttext_secundario2510
-			self.fields['pttext_secundario2511'].initial = emballage.objects.last().pttext_secundario2511
-			self.fields['pttext_secundario2512'].initial = emballage.objects.last().pttext_secundario2512
-			self.fields['pttext_secundario2513'].initial = emballage.objects.last().pttext_secundario2513
-			self.fields['pttext_secundario2514'].initial = emballage.objects.last().pttext_secundario2514
-			self.fields['pttext_secundario2515'].initial = emballage.objects.last().pttext_secundario2515
+	        	self.fields['pttitulo_201'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_201
+	        	self.fields['pttext_secundario201'].initial = ptemballage.objects.last().pttext_secundario201
+	        	self.fields['ptboton_201'].widget.attrs['value'] = ptemballage.objects.last().ptboton_201
+    			self.fields['ptboton_251'].widget.attrs['value'] = ptemballage.objects.last().ptboton_251
+		    	self.fields['ptboton_252'].widget.attrs['value'] = ptemballage.objects.last().ptboton_252
+	    		self.fields['ptboton_253'].widget.attrs['value'] = ptemballage.objects.last().ptboton_253
+			self.fields['pttitulo_211'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_211
+			self.fields['pttitulo_212'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_212
+			self.fields['pttitulo_213'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_213
+			self.fields['ptempaque_220'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_220
+			self.fields['ptempaque_221'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_221
+			self.fields['ptempaque_222'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_222
+			self.fields['ptempaque_223'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_223
+			self.fields['ptempaque_224'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_224
+			self.fields['ptempaque_225'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_225
+			self.fields['ptempaque_226'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_226
+			self.fields['ptempaque_227'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_227
+			self.fields['ptempaque_228'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_228
+			self.fields['ptempaque_229'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_229
+			self.fields['pttitulo_251'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_251
+			self.fields['ptcuestionario'].widget.attrs['value'] = ptemballage.objects.last().ptcuestionario
+			self.fields['ptsubtitulo2501'].initial = ptemballage.objects.last().ptsubtitulo2501
+			self.fields['ptsubtitulo2502'].initial = ptemballage.objects.last().ptsubtitulo2502
+			self.fields['ptsubtitulo2503'].initial = ptemballage.objects.last().ptsubtitulo2503
+			self.fields['ptsubtitulo2504'].initial = ptemballage.objects.last().ptsubtitulo2504
+			self.fields['ptsubtitulo2505'].initial = ptemballage.objects.last().ptsubtitulo2505
+			self.fields['ptsubtitulo2506'].initial = ptemballage.objects.last().ptsubtitulo2506
+			self.fields['ptsubtitulo2507'].initial = ptemballage.objects.last().ptsubtitulo2507
+			self.fields['ptsubtitulo2508'].initial = ptemballage.objects.last().ptsubtitulo2508
+			self.fields['ptsubtitulo2509'].initial = ptemballage.objects.last().ptsubtitulo2509
+			self.fields['ptsubtitulo2510'].initial = ptemballage.objects.last().ptsubtitulo2510
+			self.fields['ptsubtitulo2511'].initial = ptemballage.objects.last().ptsubtitulo2511
+			self.fields['ptsubtitulo2512'].initial = ptemballage.objects.last().ptsubtitulo2512
+			self.fields['ptsubtitulo2513'].initial = ptemballage.objects.last().ptsubtitulo2513
+			self.fields['ptsubtitulo2514'].initial = ptemballage.objects.last().ptsubtitulo2514
+			self.fields['ptsubtitulo2515'].initial = ptemballage.objects.last().ptsubtitulo2515
+			self.fields['pttext_secundario201'].initial = ptemballage.objects.last().pttext_secundario201
+			self.fields['pttext_secundario211'].initial = ptemballage.objects.last().pttext_secundario211
+			self.fields['pttext_secundario212'].initial = ptemballage.objects.last().pttext_secundario212
+			self.fields['pttext_secundario2501'].initial = ptemballage.objects.last().pttext_secundario2501
+			self.fields['pttext_secundario2502'].initial = ptemballage.objects.last().pttext_secundario2502
+			self.fields['pttext_secundario2503'].initial = ptemballage.objects.last().pttext_secundario2503
+			self.fields['pttext_secundario2504'].initial = ptemballage.objects.last().pttext_secundario2504
+			self.fields['pttext_secundario2505'].initial = ptemballage.objects.last().pttext_secundario2505
+			self.fields['pttext_secundario2506'].initial = ptemballage.objects.last().pttext_secundario2506
+			self.fields['pttext_secundario2507'].initial = ptemballage.objects.last().pttext_secundario2507
+			self.fields['pttext_secundario2508'].initial = ptemballage.objects.last().pttext_secundario2508
+			self.fields['pttext_secundario2509'].initial = ptemballage.objects.last().pttext_secundario2509
+			self.fields['pttext_secundario2510'].initial = ptemballage.objects.last().pttext_secundario2510
+			self.fields['pttext_secundario2511'].initial = ptemballage.objects.last().pttext_secundario2511
+			self.fields['pttext_secundario2512'].initial = ptemballage.objects.last().pttext_secundario2512
+			self.fields['pttext_secundario2513'].initial = ptemballage.objects.last().pttext_secundario2513
+			self.fields['pttext_secundario2514'].initial = ptemballage.objects.last().pttext_secundario2514
+			self.fields['pttext_secundario2515'].initial = ptemballage.objects.last().pttext_secundario2515
 
 	class Meta:
 		model = ptemballage
 		fields = '__all__'
 
-		
 		widgets = {
 			'pttext_secundario201' : forms.Textarea(attrs =
 				{
@@ -497,25 +485,21 @@ class ptadd_form3(forms.ModelForm):
 	def __init__(self, *args, **kwargs):
 	    	super(ptadd_form3, self).__init__(*args, **kwargs)
 	        if pttecnology.objects.last():
-		        self.fields['pttitulo_301'].widget.attrs['value'] = tecnology.objects.last().pttitulo_301
-	        	self.fields['pttext_secundario301'].initial = tecnology.objects.last().pttext_secundario301
-	        	self.fields['ptboton_301'].widget.attrs['value'] = tecnology.objects.last().ptboton_301
-	        	self.fields['ptsubtitulo311'].initial = tecnology.objects.last().ptsubtitulo311
-	        	self.fields['pttext_secundario311'].initial = tecnology.objects.last().pttext_secundario311
-	        	self.fields['pttext_secundario312'].initial = tecnology.objects.last().pttext_secundario312
-	        	self.fields['pttext_secundario313'].initial = tecnology.objects.last().pttext_secundario313
-	        	self.fields['pttext_secundario314'].initial = tecnology.objects.last().pttext_secundario314
-	        	self.fields['pttext_secundario315'].initial = tecnology.objects.last().pttext_secundario315
-	        	self.fields['pttext_secundario316'].initial = tecnology.objects.last().pttext_secundario316
-	        	self.fields['pttext_secundario317'].initial = tecnology.objects.last().pttext_secundario317
-	        	self.fields['pttext_secundario318'].initial = tecnology.objects.last().pttext_secundario318
-	        	self.fields['pttext_secundario319'].initial = tecnology.objects.last().pttext_secundario319
-	        	self.fields['pttitulo_321'].widget.attrs['value'] = tecnology.objects.last().pttitulo_321
-	        	self.fields['pttext_secundario321'].initial = tecnology.objects.last().pttext_secundario321
-
-
-
-
+		        self.fields['pttitulo_301'].widget.attrs['value'] = pttecnology.objects.last().pttitulo_301
+	        	self.fields['pttext_secundario301'].initial = pttecnology.objects.last().pttext_secundario301
+	        	self.fields['ptboton_301'].widget.attrs['value'] = pttecnology.objects.last().ptboton_301
+	        	self.fields['ptsubtitulo311'].initial = pttecnology.objects.last().ptsubtitulo311
+	        	self.fields['pttext_secundario311'].initial = pttecnology.objects.last().pttext_secundario311
+	        	self.fields['pttext_secundario312'].initial = pttecnology.objects.last().pttext_secundario312
+	        	self.fields['pttext_secundario313'].initial = pttecnology.objects.last().pttext_secundario313
+	        	self.fields['pttext_secundario314'].initial = pttecnology.objects.last().pttext_secundario314
+	        	self.fields['pttext_secundario315'].initial = pttecnology.objects.last().pttext_secundario315
+	        	self.fields['pttext_secundario316'].initial = pttecnology.objects.last().pttext_secundario316
+	        	self.fields['pttext_secundario317'].initial = pttecnology.objects.last().pttext_secundario317
+	        	self.fields['pttext_secundario318'].initial = pttecnology.objects.last().pttext_secundario318
+	        	self.fields['pttext_secundario319'].initial = pttecnology.objects.last().pttext_secundario319
+	        	self.fields['pttitulo_321'].widget.attrs['value'] = pttecnology.objects.last().pttitulo_321
+	        	self.fields['pttext_secundario321'].initial = pttecnology.objects.last().pttext_secundario321
 
 	class Meta:
 		model = pttecnology
@@ -528,7 +512,7 @@ class ptadd_form3(forms.ModelForm):
 		'ptimagen311' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
 		'ptimagen312' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
 		'ptfondo2' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
-		'ptimagen13' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
+		'ptimagen313' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
 		'ptfondo3' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
 		'pttr_top' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
 		'pttr_bottom' : forms.ClearableFileInput(attrs = {'class' : 'form-control',}),
@@ -600,12 +584,12 @@ class ptadd_form5(forms.ModelForm):
 	def __init__(self, *args, **kwargs):
 	    	super(ptadd_form5, self).__init__(*args, **kwargs)
 	        if ptcontact.objects.last():
-		        self.fields['pttitulo_501'].widget.attrs['value'] = contact.objects.last().pttitulo_501
+		        self.fields['pttitulo_501'].widget.attrs['value'] = ptcontact.objects.last().pttitulo_501
 		        self.fields['ptpregunta51'].widget.attrs['placeholder'] = "Ingresa tu nombre"
 		        self.fields['ptpregunta52'].widget.attrs['placeholder'] = "Ingresa tu correo"
 		        self.fields['ptpregunta53'].widget.attrs['placeholder'] = "Ingresa tu número"
 		        self.fields['ptpregunta54'].widget.attrs['placeholder'] = "Escribe el mensaje"
-		        self.fields['ptboton_501'].widget.attrs['value'] = contact.objects.last().ptboton_501
+		        self.fields['ptboton_501'].widget.attrs['value'] = ptcontact.objects.last().ptboton_501
 
 
 	class Meta:
@@ -616,50 +600,49 @@ class ptadd_form6(forms.ModelForm):
 	def __init__(self, *args, **kwargs):
 	    	super(ptadd_form6, self).__init__(*args, **kwargs)
 	        if ptfooter.objects.last():
-	        	self.fields['pttitulo_601'].widget.attrs['value'] = footer.objects.last().pttitulo_601
+	        	self.fields['pttitulo_601'].widget.attrs['value'] = ptfooter.objects.last().pttitulo_601
 	class Meta:
 		model = ptfooter
 		fields = '__all__'
 
+class UserRegisterForm(forms.ModelForm):
 
-# class UserRegisterForm(forms.ModelForm):
+	class Meta:
+		model = User
+		fields = ('username', 'email', 'password')
+		widgets = {
+			'username' : forms.TextInput(attrs =
+				{
+				'class' : 'form-control',
+				'placeholder' : 'Ingresa un nombre de usuario',
+				'readonly':'readonly'
+				}),
+			'email' : forms.TextInput(attrs =
+				{
+				'type' : 'email',
+				'class' : 'form-control',
+				'placeholder' : 'Ingresa un email',
+				'readonly':'readonly'
+				}),
+			'password' : forms.TextInput(attrs =
+				{
+				'type' : 'password',
+				'class' : 'form-control',
+				'placeholder' : 'Ingresa un password',
+				'readonly':'readonly',
+				})
+		}
 
-# 	class Meta:
-# 		model = ptUser
-# 		fields = ('username', 'email', 'password')
-# 		widgets = {
-# 			'username' : forms.TextInput(attrs =
-# 				{
-# 				'class' : 'form-control',
-# 				'placeholder' : 'Ingresa un nombre de usuario',
-# 				'readonly':'readonly'
-# 				}),
-# 			'email' : forms.TextInput(attrs =
-# 				{
-# 				'type' : 'email',
-# 				'class' : 'form-control',
-# 				'placeholder' : 'Ingresa un email',
-# 				'readonly':'readonly'
-# 				}),
-# 			'password' : forms.TextInput(attrs =
-# 				{
-# 				'type' : 'password',
-# 				'class' : 'form-control',
-# 				'placeholder' : 'Ingresa un password',
-# 				'readonly':'readonly',
-# 				})
-# 		}
+class LoginForm(forms.Form):
 
-# class LoginForm(forms.Form):
-
-# 	username = forms.CharField(max_length=30,
-# 				widget = forms.TextInput(attrs = {
-# 					'class' : 'form-control',
-# 					'placeholder' : 'Ingresa un nombre de usuario',
-# 					}))
-# 	password = forms.CharField(max_length=30,
-# 	 			widget = forms.TextInput(attrs = {
-# 	 				'type' : 'password',
-# 	 				'class' : 'form-control',
-# 	 				'placeholder' : 'Ingresa un password',
-# 	 				}))
+	username = forms.CharField(max_length=30,
+				widget = forms.TextInput(attrs = {
+					'class' : 'form-control',
+					'placeholder' : 'Ingresa un nombre de usuario',
+					}))
+	password = forms.CharField(max_length=30,
+	 			widget = forms.TextInput(attrs = {
+	 				'type' : 'password',
+	 				'class' : 'form-control',
+	 				'placeholder' : 'Ingresa un password',
+	 				}))

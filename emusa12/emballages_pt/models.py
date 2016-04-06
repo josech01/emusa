@@ -64,12 +64,13 @@ class ptindex(models.Model):
 	pttext_secundario151 = models.TextField(blank=True, max_length=1000)
 	pttitulo_152 = models.CharField(blank=True, max_length=50)
         ptimagen152 = models.ImageField(blank=True, upload_to = 'imgs')
+        ptimagen153 = models.ImageField(blank=True, upload_to = 'imgs')
 	pttext_secundario152 = models.TextField(blank=True, max_length=1000)
 	ptimg_certificado= models.ImageField(blank=True, upload_to = 'imgs')
 
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_111)
+		return u'%d - %s'%(self.id, self.pttitulo_111)
 
 class ptemballage (models.Model):
 	pttitulo_201 = models.CharField(blank=True, max_length=50)
@@ -223,7 +224,7 @@ class ptemballage (models.Model):
     	ptboton_253 = models.CharField(blank=True, max_length=50)
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_201)
+		return u'%d - %s'%(self.id, self.pttitulo_201)
 
 class pttecnology(models.Model):
 	pttitulo_301 = models.CharField(blank=True, max_length=50)
@@ -254,14 +255,14 @@ class pttecnology(models.Model):
     	pttr_bottom = models.ImageField(blank=True, upload_to = 'imgs')
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_301)
+		return u'%d - %s'%(self.id, self.pttitulo_301)
 
 class ptclient(models.Model):
 	pttitulo_401 = models.CharField(blank=True, max_length=50)
 	ptimagen401 = models.ImageField(blank=True, upload_to = 'imgs')
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_401)
+		return u'%d - %s'%(self.id, self.pttitulo_401)
 
 class ptcontact(models.Model):
 	pttitulo_501 = models.CharField(blank=True, max_length=50)
@@ -272,10 +273,10 @@ class ptcontact(models.Model):
 	ptboton_501 = models.CharField(blank=True, max_length=50)
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_501)
+		return u'%d - %s'%(self.id, self.pttitulo_501)
 
 class ptfooter(models.Model):
 	pttitulo_601 = models.CharField(blank=True,  max_length=50)
 
 	def __unicode__(self):
-		return u'%d - %s'%(self.id, self.titulo_601)
+		return u'%d - %s'%(self.id, self.pttitulo_601)

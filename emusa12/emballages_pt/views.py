@@ -11,7 +11,7 @@ from django.db.models import Model
 # from .models import data_info, index, emballage, tecnology, client, contact, footer
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate,logout
-from .forms import ptadd_form1, ptadd_form2, ptadd_form3, ptadd_form4, ptadd_form5, ptadd_form6
+from emballages_pt.forms import ptadd_form1, ptadd_form2, ptadd_form3, ptadd_form4, ptadd_form5, ptadd_form6
 from emballages_pt import models
 # Create your views here.
 def ptclientes (request):
@@ -76,7 +76,7 @@ def ptadd_new_form (request):
 			modelform4.save()
 			modelform5.save()
 			modelform6.save()
-			return redirect("/form_pt/")
+			return redirect("/form_pt.html")
 	else:
 		modelform1 = ptadd_form1()
 		modelform2 = ptadd_form2()
