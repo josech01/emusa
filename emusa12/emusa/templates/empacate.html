@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -71,7 +71,7 @@
                        <li class="active"><a href="index.html">{{index.menu1}}</a></li>
                        <li><a href="empacate.html">{{index.menu2}}</a></li>
                        <li><a href="tecnologia.html">{{index.menu3}}</a></li>
-                       <li><a href="#">{{index.menu4}}</a></li>
+                       <li><a href="galeria.html">{{index.menu4}}</a></li>
                        <li><a href="clientes.html">{{index.menu5}}</a></li>
                        <li><a href="contactanos.html">{{index.menu6}}</a></li>
                     </ul>
@@ -79,8 +79,8 @@
                         <li><a href="index.html">{{index.menu1}}</a></li>
                        <li><a href="empacate.html">{{index.menu2}}</a></li>
                        <li><a href="tecnologia.html">{{index.menu3}}</a></li>
-                       <li><a href="#">{{index.menu4}}</a></li>
-                       <li><a href="clientes.html">{{index.menu4}}</a></li>
+                       <li><a href="galeria.html">{{index.menu4}}</a></li>
+                       <li><a href="clientes.html">{{index.menu5}}</a></li>
                        <li><a href="contactanos.html">{{index.menu6}}</a></li>
                        </ul>
                 </div>
@@ -91,8 +91,8 @@
                 <div class="container">
                     <div class="row balign-wrapper">
                         <div class="col m6 l4 push-m6 push-l4 center-align">
-                            <h3>{{empacar.titulo201}}</h3>
-                            <img class="responsive-img" src="{{index.imagen201.url}}">
+                            <h3>{{empacar.titulo_201}}</h3>
+                            <img class="responsive-img" src="{{empacar.imagen201.url}}">
                             <p class="text-justify mt30">{{empacar.text_secundario201}}</p>
                             <a href="#empaques" class="waves-effect waves-light btn-large btn-start">{{empacar.boton_201}}</a>
                         </div>
@@ -153,19 +153,19 @@
                         <div class="col m12 l4 pull-l4 center-align mini-img">
                             <div class="row">
                                 <a href="#elegir">
-                                    <div class="col s4 center-align">
+                                    <div id="chocolate" class="col s4 center-align">
                                         <h6>{{empacar.empaque_220}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img220.url}}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
-                                    <div class="col s4 center-align">
+                                    <div id="galleta" class="col s4 center-align">
                                         <h6>{{empacar.empaque_221}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img221.url}}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
-                                    <div class="col s4 center-align">
+                                    <div id="snacks" class="col s4 center-align">
                                         <h6>{{empacar.empaque_222}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img222.url}}">
                                     </div>
@@ -173,13 +173,13 @@
                             </div>
                             <div class="row">
                                 <a href="#elegir">
-                                    <div class="col s4 offset-s2 center-align">
+                                    <div id="aceite" class="col s4 offset-s2 center-align">
                                         <h6>{{empacar.empaque_223}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img223.url}}">
                                     </div>
                                 </a>
                                 <a href="##elegir">
-                                    <div class="col s4 center-align">
+                                    <div id="salsas" class="col s4 center-align">
                                         <h6>{{empacar.empaque_224}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img224.url}}">
                                     </div>
@@ -190,19 +190,19 @@
                         <div class="col m12 l4 center-align mini-img">
                             <div class="row">
                                 <a href="#elegir">
-                                    <div class="col s4 center-align">
+                                    <div id="golosinas" class="col s4 center-align">
                                         <h6>{{empacar.empaque_225}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img225.url}}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
-                                    <div class="col s4 center-align">
+                                    <div id="cereales" class="col s4 center-align">
                                         <h6>{{empacar.empaque_226}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img226.url}}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
-                                    <div class="col s4 center-align">
+                                    <div id="pastas" class="col s4 center-align">
                                         <h6>{{empacar.empaque_227}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img227.url}}">
                                     </div>
@@ -210,13 +210,13 @@
                             </div>
                             <div class="row">
                                 <a href="#elegir">
-                                    <div class="col s4 offset-s2 center-align">
+                                    <div id="granos" class="col s4 offset-s2 center-align">
                                         <h6>{{empacar.empaque_228}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img228.url}}">
                                     </div>
                                 </a>
                                 <a href="#elegir">
-                                    <div class="col s4 center-align">
+                                    <div id="polvos" class="col s4 center-align">
                                         <h6>{{empacar.empaque_229}}</h6>
                                         <img class="responsive-img" src="{{empacar.empaque_img229.url}}">
                                     </div>
@@ -231,7 +231,7 @@
             <div class="section notablet" id="nonfood">
                 <div class="container">
                     <a href="#elegir">
-                        <div class="row valign-wrapper">
+                        <div id="detergente" class="row valign-wrapper">
                             <div class="col m12 l4 valign center-align">
                                 <img class="responsive-img" src="{{empacar.imagen231.url}}">
                             </div>
@@ -245,7 +245,7 @@
                         </div>
                     </a>
                     <a href="#elegir">
-                        <div class="row valign-wrapper">
+                        <div id="aseo" class="row valign-wrapper">
                             <div class="col m12 l4 valign center-align">
                                 <img class="responsive-img" src="{{empacar.imagen235.url}}">
                             </div>
@@ -265,23 +265,23 @@
                 <div class="container">
                     <div class="row">
                         <a href="#elegir">
-                            <div class="col s12 m4 center-align">
+                            <div id="congelados" class="col s12 m4 center-align">
                                 <h5>{{empacar.titulo_241}}</h5>
                                 <img class="responsive-img" src="{{empacar.imagen241.url}}">
                                 <img class="responsive-img empaque-agro" src="{{empacar.imagen242.url}}">
                             </div>
                         </a>
                         <a href="#elegir">
-                             <div class="col s12 m4 center-align border-col">
+                             <div  id="microondables" class="col s12 m4 center-align border-col">
                                 <h5>{{empacar.titulo_242}}</h5>
-                                <img class="responsive-img" src="{{empacar.imagen243}}">
+                                <img class="responsive-img" src="{{empacar.imagen243.url}}">
                                 <img class="responsive-img empaque-agro" src="{{empacar.imagen244.url}}">
                             </div>
                         </a>
                         <a href="#elegir">
-                             <div class="col s12 m4 center-align">
+                             <div id="refrigerados" class="col s12 m4 center-align">
                                 <h5>{{empacar.titulo_243}}</h5>
-                                <img class="responsive-img" src="{{empacar.imagen245}}">
+                                <img class="responsive-img" src="{{empacar.imagen245.url}}">
                                 <img class="responsive-img empaque-agro" src="{{empacar.imagen246.url}}">
                             </div>
                         </a>
@@ -296,194 +296,78 @@
                     <div class="row valign-wrapper">
                         <a href="#">
                             <div class="col s12 m4 valign center-align">
-                                <h3>{{empacar.titulo_251}}</h3>
+                                <h3>EMPAQUE ELEGIDO</h3>
                                 <div class="elegido">
-                                    <h5>{{empacar.subtitulo2501}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2501 %}                    {{empacar.imagen2501.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2502 %}                    {{empacar.imagen2502.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2503 %}                    {{empacar.imagen2503.url}}
-                                    {% endif %}">
+                                    <h5 id="textochocolate" class="holas">{{empacar.subtitulo2501}}</h5>
+                                    <h5 id="textogalleta" class="holas">{{empacar.subtitulo2502}}</h5>
+                                    <h5 id="textosnacks" class="holas">{{empacar.subtitulo2503}}</h5>
+                                    <h5 id="textogolosinas" class="holas">{{empacar.subtitulo2504}}</h5>
+                                    <h5 id="textocereales" class="holas">{{empacar.subtitulo2505}}</h5>
+                                    <h5 id="textopastas" class="holas">{{empacar.subtitulo2506}}</h5>
+                                    <h5 id="textoaceite" class="holas">{{empacar.subtitulo2507}}</h5>
+                                    <h5 id="textosalsas" class="holas">{{empacar.subtitulo2508}}</h5>
+                                    <h5 id="textogranos" class="holas">{{empacar.subtitulo2509}}</h5>
+                                    <h5 id="textopolvos" class="holas">{{empacar.subtitulo2510}}</h5>
+                                    <h5 id="textodetergente" class="holas">{{empacar.subtitulo2511}}</h5>
+                                    <h5 id="textoaseo" class="holas">{{empacar.subtitulo2512}}</h5>
+                                    <h5 id="textocongelados" class="holas">{{empacar.subtitulo2513}}</h5>
+                                    <h5 id="textomicroondables" class="holas">{{empacar.subtitulo2514}}</h5>
+                                    <h5 id="textorefrigerados" class="holas">{{empacar.subtitulo2515}}</h5>
                                     <p class="text-justify">{{empacar.text_secundario2501}}</p>
                                 </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2502}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2504 %}                    {{empacar.imagen2504.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2505 %}                    {{empacar.imagen2505.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2506 %}                    {{empacar.imagen2506.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2502}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2503}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2507 %}                    {{empacar.imagen2507.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2508 %}                    {{empacar.imagen2508.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2509 %}                    {{empacar.imagen2509.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2503}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2504}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2510 %}                    {{empacar.imagen2510.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2511 %}                    {{empacar.imagen2511.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2512 %}                    {{empacar.imagen2512.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2504}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2505}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2513 %}                    {{empacar.imagen2513.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2514 %}                    {{empacar.imagen2514.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2515 %}                    {{empacar.imagen2515.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2505}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2506}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2516 %}                    {{empacar.imagen2516.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2517 %}                    {{empacar.imagen2517.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2518 %}                    {{empacar.imagen2518.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2506}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2507}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2519 %}                    {{empacar.imagen2519.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2520 %}                    {{empacar.imagen2520.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2521 %}                    {{empacar.imagen2521.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2507}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2508}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2522 %}                    {{empacar.imagen2522.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2523 %}                    {{empacar.imagen2523.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2524 %}                    {{empacar.imagen2524.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2508}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2509}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2525 %}                    {{empacar.imagen2525.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2526 %}                    {{empacar.imagen2526.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2527 %}                    {{empacar.imagen2527.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2509}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2510}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2528 %}                    {{empacar.imagen2528.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2529 %}                    {{empacar.imagen2529.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2530 %}                    {{empacar.imagen2530.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2510}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2511}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2531 %}                    {{empacar.imagen2531.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2532 %}                    {{empacar.imagen2532.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2533 %}                    {{empacar.imagen2533.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2511}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2512}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2534 %}                    {{empacar.imagen2534.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2535 %}                    {{empacar.imagen2535.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2536 %}                    {{empacar.imagen2536.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2512}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2513}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2537 %}                    {{empacar.imagen2537.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2538 %}                    {{empacar.imagen2538.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2539 %}                    {{empacar.imagen2539.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2513}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2514}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2540 %}                    {{empacar.imagen2540.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2541 %}                    {{empacar.imagen2541.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2542 %}                    {{empacar.imagen2542.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2514}}</p>
-                                </div>
-                                <div class="elegido">
-                                    <h5>{{empacar.subtitulo2515}}</h5>
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2543 %}                    {{empacar.imagen2543.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2544 %}                    {{empacar.imagen2544.url}}
-                                    {% endif %}">
-                                    <img class="responsive-img empaque-agro" src="{% if empacar.imagen2545 %}                    {{empacar.imagen2545.url}}
-                                    {% endif %}">
-                                    <p class="text-justify">{{empacar.text_secundario2515}}</p>
-                                </div>
                                 <a class="waves-effect waves-light btn-large" id="visit-us">{{empacar.boton_251}}</a>
-                                <a class="waves-effect waves-light btn-large" id="visit-you">{{empacar.boton_252}}</a>
+                                <a class="waves-effect waves-light btn-large" id="visit-you">{{empacar.boton_252 |linebreaks}}</a>
                             </div>
                              <div class="col s12 m4 valign center-align">
-                                <img class="responsive-img" src="{{empacar.imagen251.url}}">
+                                <img class="holas responsive-img" src="{% if empacar.imagen251 %}{{empacar.imagen251.url}}{% endif %}">
+                                <img id="imagenchocolate" class="holas responsive-img" src="{% if empacar.imagen2501 %}{{empacar.imagen2501.url}}{% endif %}">
+                                <img id="imagengalleta" class="holas responsive-img" src="{% if empacar.imagen2504 %}{{empacar.imagen2504.url}}{% endif %}">
+                                <img id="imagensnacks" class="holas responsive-img" src="{% if empacar.imagen2507 %}{{empacar.imagen2507.url}}{% endif %}">
+                                <img id="imagengolosinas" class="holas responsive-img" src="{% if empacar.imagen2510 %}{{empacar.imagen2510.url}}{% endif %}">
+                                <img id="imagencereales" class="holas responsive-img" src="{% if empacar.imagen2513 %}{{empacar.imagen2513.url}}{% endif %}">
+                                <img id="imagenpastas" class="holas responsive-img" src="{% if empacar.imagen2516 %}{{empacar.imagen2516.url}}{% endif %}">
+                                <img id="imagenaceite" class="holas responsive-img" src="{% if empacar.imagen2519 %}{{empacar.imagen2519.url}}{% endif %}">
+                                <img id="imagensalsas" class="holas responsive-img" src="{% if empacar.imagen2522 %}{{empacar.imagen2522.url}}{% endif %}">
+                                <img id="imagengranos" class="holas responsive-img" src="{% if empacar.imagen2525 %}{{empacar.imagen2525.url}}{% endif %}">
+                                <img id="imagenpolvos" class="holas responsive-img" src="{% if empacar.imagen2528 %}{{empacar.imagen2528.url}}{% endif %}">
+                                <img id="imagendetergente" class="holas responsive-img" src="{% if empacar.imagen2531 %}{{empacar.imagen2531.url}}{% endif %}">
+                                <img id="imagenaseo" class="holas responsive-img" src="{% if empacar.imagen2534 %}{{empacar.imagen2534.url}}{% endif %}">
+                                <img id="imagencongelados" class="holas responsive-img" src="{% if empacar.imagen2537 %}{{empacar.imagen2537.url}}{% endif %}">
+                                <img id="imagenmicroondables" class="holas responsive-img" src="{% if empacar.imagen2540 %}{{empacar.imagen2540.url}}{% endif %}">
+                                <img id="imagenrefrigerados" class="holas responsive-img" src="{% if empacar.imagen2543 %}{{empacar.imagen2543.url}}{% endif %}">
                             </div>
                              <div class="col s12 m4 valign center-align">
                                 <div class="row">
                                     <h3>{{empacar.cuestionario}}</h3>
-                                    <form class="col s12">
+                                      <form class="col s12" action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
                                       <div class="row">
                                         <div class="input-field col s12">
-                                          <input id="name" type="text" class="validate">
+                                          <input name="name" id="name" type="text" class="validate" required>
                                           <label for="name">Ingresa tu nombre</label>
                                         </div>
                                       </div>
                                       <div class="row">
                                         <div class="input-field col s12">
-                                          <input id="email" type="email" class="validate">
+                                          <input name="email" id="email" type="email" class="validate" required>
                                           <label for="email">Ingresa tu correo</label>
                                         </div>
                                       </div>
                                       <div class="row">
                                         <div class="input-field col s12">
-                                          <input id="number" type="tel" class="validate">
+                                          <input name="number" id="number" type="tel" class="validate" required>
                                           <label for="number">Ingresa tu número</label>
                                         </div>
                                       </div>
                                       <div class="row">
                                         <div class="input-field col s12">
-                                          <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                          <textarea name="textarea1" id="textarea1" class="materialize-textarea" required></textarea>
                                           <label for="textarea1">Escribe el mensaje</label>
                                         </div>
                                       </div>
                                       <div class="row">
                                         <div class="col s12 mt30">
-                                            <a class="waves-effect waves-light btn-large">{{empacar.boton_253}}</a>
+                                        <input class="waves-effect waves-light btn-large"type="submit" value="{{empacar.boton_253}}">
+                                            <!-- <a class="waves-effect waves-light btn-large">{{contacts.boton_501}}</a> -->
                                         </div>
                                       </div>
                                     </form>
@@ -491,7 +375,7 @@
                             </div>
                         </a>
                     </div>
-
+                    
                 </div>
 
             </div>
@@ -507,8 +391,8 @@
 
 
          <!-- <script src="//{% static 'ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-         <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
-        <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>
+         <script>window.jQuery || document.write('<script src="{% static 'js/jquery-1.11.2.min.js"><\/script>')</script> -->
+        <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
         <script src="{% static 'js/plugins.js' %}"></script>
         <script src="{% static 'js/materialize.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>

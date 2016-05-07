@@ -137,6 +137,9 @@ class enadd_form2(forms.ModelForm):
 			self.fields['enempaque_227'].widget.attrs['value'] = enemballage.objects.last().enempaque_227
 			self.fields['enempaque_228'].widget.attrs['value'] = enemballage.objects.last().enempaque_228
 			self.fields['enempaque_229'].widget.attrs['value'] = enemballage.objects.last().enempaque_229
+			self.fields['entitulo_241'].widget.attrs['value'] = enemballage.objects.last().entitulo_241
+			self.fields['entitulo_242'].widget.attrs['value'] = enemballage.objects.last().entitulo_242
+			self.fields['entitulo_243'].widget.attrs['value'] = enemballage.objects.last().entitulo_243
 			self.fields['entitulo_251'].widget.attrs['value'] = enemballage.objects.last().entitulo_251
 			self.fields['encuestionario'].widget.attrs['value'] = enemballage.objects.last().encuestionario
 			self.fields['ensubtitulo2501'].initial = enemballage.objects.last().ensubtitulo2501
@@ -157,6 +160,7 @@ class enadd_form2(forms.ModelForm):
 			self.fields['entext_secundario201'].initial = enemballage.objects.last().entext_secundario201
 			self.fields['entext_secundario211'].initial = enemballage.objects.last().entext_secundario211
 			self.fields['entext_secundario212'].initial = enemballage.objects.last().entext_secundario212
+			self.fields['entext_secundario213'].initial = enemballage.objects.last().entext_secundario213
 			self.fields['entext_secundario2501'].initial = enemballage.objects.last().entext_secundario2501
 			self.fields['entext_secundario2502'].initial = enemballage.objects.last().entext_secundario2502
 			self.fields['entext_secundario2503'].initial = enemballage.objects.last().entext_secundario2503

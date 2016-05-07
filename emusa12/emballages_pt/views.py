@@ -13,6 +13,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate,logout
 from emballages_pt.forms import ptadd_form1, ptadd_form2, ptadd_form3, ptadd_form4, ptadd_form5, ptadd_form6
 from emballages_pt import models
+from django.core.mail import EmailMessage
 # Create your views here.
 def ptclientes (request):
 	if request.method == 'GET':
@@ -23,7 +24,19 @@ def ptclientes (request):
 		return render(request, 'clientes_pt.html', context_data)
 
 def ptcontactanos (request):
-	if request.method == 'GET':
+	if request.method == 'POST':
+		formulario = ptadd_form5(request.POST)
+		if formulario.is_valid():
+			asunto = 'Mensaje de página Web Emusa'
+			nombre = request.POST['name']
+			email = request.POST['email']
+			numero = request.POST['number']
+			mensaje = request.POST['textarea1']
+			body = "Nombre:  %s \nNumero:  %s \nEmail:   %s \nMensaje: %s" %(nombre, numero, email, mensaje)
+			mail = EmailMessage(asunto, body, to=['customerservice@emusa.com.pe'])
+			mail.send()
+		return redirect("/contactanos_pt.html")
+	else:
 		index = models.ptindex.objects.last()
 		contacts = models.ptcontact.objects.last()
 		footer = models.ptfooter.objects.last()
@@ -39,13 +52,30 @@ def ptindex (request):
 
 
 def ptempacate (request):
-	if request.method == 'GET':
+	if request.method == 'POST':
+		formulario = ptadd_form5(request.POST)
+		if formulario.is_valid():
+			asunto = 'Este es un mensaje de un usuario en emusa.com.pe'
+			nombre = request.POST['name']
+			email = request.POST['email']
+			numero = request.POST['number']
+			mensaje = request.POST['textarea1']
+			body = "Nombre:  %s \nNumero:  %s \nEmail:   %s \nMensaje: %s" %(nombre, numero, email, mensaje)
+			mail = EmailMessage(asunto, body, to=['customerservice@emusa.com.pe'])
+			mail.send()
+		return redirect("/empacate_pt.html")
+	else:
 		index = models.ptindex.objects.last()
 		empacar = models.ptemballage.objects.last()
 		footer = models.ptfooter.objects.last()
 		context_data = {'index': index, 'empacar': empacar,'footer': footer}
 		return render(request, 'empacate_pt.html',context_data)
 
+def ptgaleria (request):
+	if request.method == 'GET':
+		index = models.ptindex.objects.last()
+		context_data = {'index': index}
+		return render(request, 'galeria_pt.html', context_data)
 
 def pttecnologia (request):
 	if request.method == 'GET':

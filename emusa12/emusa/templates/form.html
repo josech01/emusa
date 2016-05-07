@@ -37,8 +37,10 @@
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
                     <ul class="right">
-                       <li class="active"><a href="index.html">EDITAR</a></li>
-                       <li><a href="#logout">SALIR</a></li>
+                       <!-- <li class="active"><a href="index.html">EDITAR</a></li>
+                       <li><a href="#logout">SALIR</a></li> -->
+                    <li style="line-height: 50px;"><p>Bienvenido,<br> {{ user.username|capfirst }}</p></li>
+                    <li><a href="{% url 'logout' %}">Salir</a></li>
                     </ul>
                 </div>
             </nav>
@@ -445,7 +447,7 @@
                                   <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
                                 </div>
                               </div>
-                              <div class="file-field input-field">
+                              <!-- <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Empaque 2</span>
                                   {{form2.imagen212}}
@@ -453,7 +455,7 @@
                                 <div class="file-path-wrapper">
                                   <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="row">
                                 <div class="input-field col s12">
                                   {{form2.titulo_212}}
@@ -475,7 +477,7 @@
                                   <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
                                 </div>
                               </div>
-                              <div class="file-field input-field">
+                              <!-- <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Empaque 2</span>
                                   {{form2.imagen214}}
@@ -483,7 +485,7 @@
                                 <div class="file-path-wrapper">
                                   <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="row">
                                 <div class="input-field col s12">
                                   {{form2.titulo_213}}
@@ -505,7 +507,7 @@
                                   <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
                                 </div>
                               </div>
-                              <div class="file-field input-field">
+                              <!-- <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Empaque 2</span>
                                   {{form2.imagen216}}
@@ -513,7 +515,7 @@
                                 <div class="file-path-wrapper">
                                   <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
                                 </div>
-                              </div>
+                              </div> -->
                               <h5>SECCIÓN 2.2</h5>
                               <div class="file-field input-field first-row">
                                 <div class="btn">
@@ -721,13 +723,13 @@
                                 </div>
                               </div>
                               <h5>SECCIÓN 2.4</h5>
-                              <div class="row first-row">
+                              <!-- <div class="row first-row">
                                 <div class="input-field col s12">
                                   {{form2.titulo_241}}
                                   <label class="active" for="text">Texto Título 1</label>
                                 </div>
-                              </div>
-                              <div class="file-field input-field">
+                              </div> -->
+                              <div class="file-field input-field first-row">
                                 <div class="btn">
                                   <span>IMAGEN  TITULO 1:</span>
                                   {{form2.imagen241}}
@@ -745,12 +747,12 @@
                                   <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
                                 </div>
                               </div>
-                              <div class="row">
+                              <!-- <div class="row">
                                 <div class="input-field col s12">
                                   {{form2.titulo_242}}
                                   <label class="active" for="text">Texto Título 2</label>
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="file-field input-field">
                                 <div class="btn">
                                   <span>IMAGEN  TITULO 2:</span>
@@ -769,12 +771,12 @@
                                   <input class="file-path validate" type="text" placeholder="Sube una imagen en formato PNG o JPG">
                                 </div>
                               </div>
-                              <div class="row">
+                              <!-- <div class="row">
                                 <div class="input-field col s12">
                                   {{form2.titulo_243}}
                                   <label class="active" for="text">Texto Título 3</label>
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="file-field input-field">
                                 <div class="btn">
                                   <span>IMAGEN  TITULO 3:</span>

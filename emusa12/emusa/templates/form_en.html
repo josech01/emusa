@@ -37,8 +37,10 @@
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo"><img src="{% static 'img/logo.png' %}"></a>
                     <ul class="right">
-                       <li class="active"><a href="index.html">EDIT</a></li>
-                       <li><a href="#logout">CLOSE</a></li>
+                       <!-- <li class="active"><a href="index.html">EDITAR</a></li>
+                       <li><a href="#logout">SALIR</a></li> -->
+                    <li style="line-height: 50px;"><p>Bienvenido,<br> {{ user.username|capfirst }}</p></li>
+                    <li><a href="{% url 'logout' %}">Salir</a></li>
                     </ul>
                 </div>
             </nav>
@@ -51,7 +53,7 @@
                   <div class="input-field col s12">
                     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" class="browser-default">
                       <option value="" disabled selected>Choose the language</option>
-                      <option value="form">Spanish</option>
+                      <option value="form.html">Spanish</option>
                       <option value="form_en.html">English</option>
                       <option value="form_pt.html">Portugues</option>
                     </select>
@@ -444,7 +446,7 @@
                                   <input class="file-path validate" type="text" placeholder="Choose an Image in format PNG or JPG">
                                 </div>
                               </div>
-                              <div class="file-field input-field">
+                              <!-- <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Emballage 2</span>
                                   {{form2.enimagen212}}
@@ -452,7 +454,7 @@
                                 <div class="file-path-wrapper">
                                   <input class="file-path validate" type="text" placeholder="Choose an Image in format PNG or JPG">
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="row">
                                 <div class="input-field col s12">
                                   {{form2.entitulo_212}}
@@ -474,7 +476,7 @@
                                   <input class="file-path validate" type="text" placeholder="Choose an Image in format PNG or JPG">
                                 </div>
                               </div>
-                              <div class="file-field input-field">
+                              <!-- <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Emballage 2</span>
                                   {{form2.enimagen214}}
@@ -482,7 +484,7 @@
                                 <div class="file-path-wrapper">
                                   <input class="file-path validate" type="text" placeholder="Choose an Image in format PNG or JPG">
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="row">
                                 <div class="input-field col s12">
                                   {{form2.entitulo_213}}
@@ -504,7 +506,7 @@
                                   <input class="file-path validate" type="text" placeholder="Choose an Image in format PNG or JPG">
                                 </div>
                               </div>
-                              <div class="file-field input-field">
+                              <!-- <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Emballage 2</span>
                                   {{form2.enimagen216}}
@@ -512,7 +514,7 @@
                                 <div class="file-path-wrapper">
                                   <input class="file-path validate" type="text" placeholder="Choose an Image in format PNG or JPG">
                                 </div>
-                              </div>
+                              </div> -->
                               <h5>SECTION 2.2</h5>
                               <div class="file-field input-field first-row">
                                 <div class="btn">
@@ -720,13 +722,13 @@
                                 </div>
                               </div>
                               <h5>SECTION 2.4</h5>
-                              <div class="row first-row">
+                              <!-- <div class="row first-row">
                                 <div class="input-field col s12">
                                   {{form2.entitulo_241}}
                                   <label class="active" for="text">Text Title 1</label>
                                 </div>
-                              </div>
-                              <div class="file-field input-field">
+                              </div> -->
+                              <div class="file-field input-field first-row">
                                 <div class="btn">
                                   <span>Image  Title1:</span>
                                   {{form2.enimagen241}}
@@ -744,12 +746,12 @@
                                   <input class="file-path validate" type="text" placeholder="Choose an Image in format PNG or JPG">
                                 </div>
                               </div>
-                              <div class="row">
+                              <!-- <div class="row">
                                 <div class="input-field col s12">
                                   {{form2.entitulo_242}}
                                   <label class="active" for="text">Text Title 2</label>
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Image  Title2:</span>
@@ -768,12 +770,12 @@
                                   <input class="file-path validate" type="text" placeholder="Choose an Image in format PNG or JPG">
                                 </div>
                               </div>
-                              <div class="row">
+                              <!-- <div class="row">
                                 <div class="input-field col s12">
                                   {{form2.entitulo_243}}
                                   <label class="active" for="text">Text Title 3</label>
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Image  Title3:</span>
@@ -1733,7 +1735,7 @@
             </footer>
 
          <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+         <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script> -->
           <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
           <script src="{% static 'js/plugins.js' %}"></script>
           <script src="{% static 'js/materialize.min.js' %}"></script>

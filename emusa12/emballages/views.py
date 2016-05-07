@@ -11,9 +11,11 @@ from django.db.models import Model
 # from .models import data_info, index, emballage, tecnology, client, contact, footer
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate,logout
+from django.contrib.auth.decorators import login_required
 from .forms import add_form1, add_form2, add_form3, add_form4, add_form5, add_form6, UserRegisterForm, LoginForm
 from .functions import LogIn
 from emballages import models
+from django.core.mail import EmailMessage
 # Create your views here.
 def clientes (request):
 	if request.method == 'GET':
@@ -24,11 +26,25 @@ def clientes (request):
 		return render(request, 'clientes.html', context_data)
 
 def contactanos (request):
-	if request.method == 'GET':
+	if request.method == 'POST':
+		formulario = add_form5(request.POST)
+		if formulario.is_valid():
+			asunto = 'Mensaje de página Web Emusa'
+			nombre = request.POST['name']
+			# nombre = formulario.cleaned_data['pregunta51']
+			email = request.POST['email']
+			numero = request.POST['number']
+			mensaje = request.POST['textarea1']
+			body = "Nombre:  %s \nNumero:  %s \nEmail:   %s \nMensaje: %s" %(nombre, numero, email, mensaje)
+			mail = EmailMessage(asunto, body, to=['customerservice@emusa.com.pe'])
+			mail.send()
+		return redirect("/contactanos.html")
+	else:
 		index = models.index.objects.last()
+		empacar = models.emballage.objects.last()
 		contacts = models.contact.objects.last()
 		footer = models.footer.objects.last()
-		context_data = {'index': index, 'contacts': contacts,'footer': footer}
+		context_data = {'index': index,'empacar': empacar, 'contacts': contacts,'footer': footer}
 		return render(request, 'contactanos.html', context_data)
 
 def index (request):
@@ -40,7 +56,20 @@ def index (request):
 
 
 def empacate (request):
-	if request.method == 'GET':
+	if request.method == 'POST':
+		formulario = add_form5(request.POST)
+		if formulario.is_valid():
+			asunto = 'Este es un mensaje de un usuario en emusa.com.pe'
+			nombre = request.POST['name']
+			# nombre = formulario.cleaned_data['pregunta51']
+			email = request.POST['email']
+			numero = request.POST['number']
+			mensaje = request.POST['textarea1']
+			body = "Nombre:  %s \nNumero:  %s \nEmail:   %s \nMensaje: %s" %(nombre, numero, email, mensaje)
+			mail = EmailMessage(asunto, body, to=['customerservice@emusa.com.pe'])
+			mail.send()
+		return redirect("/empacate.html")
+	else:
 		index = models.index.objects.last()
 		empacar = models.emballage.objects.last()
 		footer = models.footer.objects.last()
@@ -56,6 +85,13 @@ def tecnologia (request):
 		context_data = {'index': index, 'tecnologys': tecnologys,'footer': footer}
 		return render(request, 'tecnologia.html', context_data)
 
+def galeria (request):
+	if request.method == 'GET':
+		index = models.index.objects.last()
+		context_data = {'index': index}
+		return render(request, 'galeria.html', context_data)
+
+@login_required
 def add_new_form (request):
 	if request.method == "POST":
 		instance1 = models.index.objects.last()
@@ -139,7 +175,7 @@ def userlogin(request):
 			if login_form.is_valid():
 				LogIn(request, login_form.cleaned_data['username'],
 						login_form.cleaned_data['password'])
-				return redirect('/')
+				return redirect('/form.html')
 	else:
 		user_register = UserRegisterForm()
 		login_form = LoginForm()
@@ -149,4 +185,4 @@ def userlogin(request):
 
 def LogOut(request):
 	logout(request)
-	return redirect('/')
+	return redirect('/login')

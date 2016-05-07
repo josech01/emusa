@@ -138,6 +138,9 @@ class add_form2(forms.ModelForm):
 			self.fields['empaque_227'].widget.attrs['value'] = emballage.objects.last().empaque_227
 			self.fields['empaque_228'].widget.attrs['value'] = emballage.objects.last().empaque_228
 			self.fields['empaque_229'].widget.attrs['value'] = emballage.objects.last().empaque_229
+			self.fields['titulo_241'].widget.attrs['value'] = emballage.objects.last().titulo_241
+			self.fields['titulo_242'].widget.attrs['value'] = emballage.objects.last().titulo_242
+			self.fields['titulo_243'].widget.attrs['value'] = emballage.objects.last().titulo_243
 			self.fields['titulo_251'].widget.attrs['value'] = emballage.objects.last().titulo_251
 			self.fields['cuestionario'].widget.attrs['value'] = emballage.objects.last().cuestionario
 			self.fields['subtitulo2501'].initial = emballage.objects.last().subtitulo2501
@@ -158,6 +161,7 @@ class add_form2(forms.ModelForm):
 			self.fields['text_secundario201'].initial = emballage.objects.last().text_secundario201
 			self.fields['text_secundario211'].initial = emballage.objects.last().text_secundario211
 			self.fields['text_secundario212'].initial = emballage.objects.last().text_secundario212
+			self.fields['text_secundario213'].initial = emballage.objects.last().text_secundario213
 			self.fields['text_secundario2501'].initial = emballage.objects.last().text_secundario2501
 			self.fields['text_secundario2502'].initial = emballage.objects.last().text_secundario2502
 			self.fields['text_secundario2503'].initial = emballage.objects.last().text_secundario2503

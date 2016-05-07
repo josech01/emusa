@@ -138,6 +138,9 @@ class ptadd_form2(forms.ModelForm):
 			self.fields['ptempaque_227'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_227
 			self.fields['ptempaque_228'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_228
 			self.fields['ptempaque_229'].widget.attrs['value'] = ptemballage.objects.last().ptempaque_229
+			self.fields['pttitulo_241'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_241
+			self.fields['pttitulo_242'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_242
+			self.fields['pttitulo_243'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_243
 			self.fields['pttitulo_251'].widget.attrs['value'] = ptemballage.objects.last().pttitulo_251
 			self.fields['ptcuestionario'].widget.attrs['value'] = ptemballage.objects.last().ptcuestionario
 			self.fields['ptsubtitulo2501'].initial = ptemballage.objects.last().ptsubtitulo2501
@@ -158,6 +161,7 @@ class ptadd_form2(forms.ModelForm):
 			self.fields['pttext_secundario201'].initial = ptemballage.objects.last().pttext_secundario201
 			self.fields['pttext_secundario211'].initial = ptemballage.objects.last().pttext_secundario211
 			self.fields['pttext_secundario212'].initial = ptemballage.objects.last().pttext_secundario212
+			self.fields['pttext_secundario213'].initial = ptemballage.objects.last().pttext_secundario213
 			self.fields['pttext_secundario2501'].initial = ptemballage.objects.last().pttext_secundario2501
 			self.fields['pttext_secundario2502'].initial = ptemballage.objects.last().pttext_secundario2502
 			self.fields['pttext_secundario2503'].initial = ptemballage.objects.last().pttext_secundario2503

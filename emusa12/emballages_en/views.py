@@ -13,6 +13,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate,logout
 from emballages_en.forms import enadd_form1, enadd_form2, enadd_form3, enadd_form4, enadd_form5, enadd_form6
 from emballages_en import models
+from django.core.mail import EmailMessage
 # Create your views here.
 def enclientes (request):
 	if request.method == 'GET':
@@ -23,7 +24,19 @@ def enclientes (request):
 		return render(request, 'clientes_en.html', context_data)
 
 def encontactanos (request):
-	if request.method == 'GET':
+	if request.method == 'POST':
+		formulario = enadd_form5(request.POST)
+		if formulario.is_valid():
+			asunto = 'Mensaje de página Web Emusa'
+			nombre = request.POST['name']
+			email = request.POST['email']
+			numero = request.POST['number']
+			mensaje = request.POST['textarea1']
+			body = "Nombre:  %s \nNumero:  %s \nEmail:   %s \nMensaje: %s" %(nombre, numero, email, mensaje)
+			mail = EmailMessage(asunto, body, to=['customerservice@emusa.com.pe'])
+			mail.send()
+		return redirect("/contactanos_en.html")
+	else:
 		index = models.enindex.objects.last()
 		contacts = models.encontact.objects.last()
 		footer = models.enfooter.objects.last()
@@ -39,13 +52,30 @@ def enindex (request):
 
 
 def enempacate (request):
-	if request.method == 'GET':
+	if request.method == 'POST':
+		formulario = enadd_form5(request.POST)
+		if formulario.is_valid():
+			asunto = 'Este es un mensaje de un usuario en emusa.com.pe'
+			nombre = request.POST['name']
+			email = request.POST['email']
+			numero = request.POST['number']
+			mensaje = request.POST['textarea1']
+			body = "Nombre:  %s \nNumero:  %s \nEmail:   %s \nMensaje: %s" %(nombre, numero, email, mensaje)
+			mail = EmailMessage(asunto, body, to=['customerservice@emusa.com.pe'])
+			mail.send()
+		return redirect("/empacate_en.html")
+	else:
 		index = models.enindex.objects.last()
 		empacar = models.enemballage.objects.last()
 		footer = models.enfooter.objects.last()
 		context_data = {'index': index, 'empacar': empacar,'footer': footer}
 		return render(request, 'empacate_en.html',context_data)
 
+def engaleria (request):
+	if request.method == 'GET':
+		index = models.enindex.objects.last()
+		context_data = {'index': index}
+		return render(request, 'galeria_en.html', context_data)
 
 def entecnologia (request):
 	if request.method == 'GET':

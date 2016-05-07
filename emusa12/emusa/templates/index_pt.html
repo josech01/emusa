@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -47,10 +47,10 @@
                         <b>IDIOMA: </b><!-- <a class='dropdown-button btn' href='#' data-activates='dropdown1'>{% if "es" == index.idioma  %}Español{% elif "en" == index.idioma  %}Inglés{% elif "pt" == index.idioma  %}Portugues{% endif %}</a> -->
 
                           <!-- Dropdown Structure -->
-                           <a class="dropdown-button btn" href="#" data-activates="dropdown1">Portugues</a>
-                          <ul id='dropdown1' class='dropdown-content'>
-                            <li><a href="index.html">Español</a></li>
-                            <li><a href="index_en.html">Ingles</a></li>
+                            <a class="dropdown-button btn" href="#" data-activates="dropdown1">Portugues</a>
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="index.html">Espanhol</a></li>
+                            <li><a href="index_en.html">Inglês</a></li>
                             <li><a href="index_pt.html">Portugues</a></li>
                           </ul>
                         
@@ -73,10 +73,10 @@
                     <a href="#!" class="brand-logo"><img src="{{index.ptlogo.url}}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                       <li class="active"><a href="index.html">{{index.ptmenu1}}</a></li>
+                       <li class="active"><a href="index_pt.html">{{index.ptmenu1}}</a></li>
                        <li><a href="empacate_pt.html">{{index.ptmenu2}}</a></li>
                        <li><a href="tecnologia_pt.html">{{index.ptmenu3}}</a></li>
-                       <li><a href="#">{{index.ptmenu4}}</a></li>
+                       <li><a href="galeria_pt.html">{{index.ptmenu4}}</a></li>
                        <li><a href="clientes_pt.html">{{index.ptmenu5}}</a></li>
                        <li><a href="contactanos_pt.html">{{index.ptmenu6}}</a></li>
                     </ul>
@@ -84,8 +84,8 @@
                         <li><a href="index_pt.html">{{index.ptmenu1}}</a></li>
                        <li><a href="empacate_pt.html">{{index.ptmenu2}}</a></li>
                        <li><a href="tecnologia_pt.html">{{index.ptmenu3}}</a></li>
-                       <li><a href="#">{{index.ptmenu4}}</a></li>
-                       <li><a href="clientes_pt.html">{{index.ptmenu4}}</a></li>
+                       <li><a href="galeria_pt.html">{{index.ptmenu4}}</a></li>
+                       <li><a href="clientes_pt.html">{{index.ptmenu5}}</a></li>
                        <li><a href="contactanos_pt.html">{{index.ptmenu6}}</a></li>
                        </ul>
                 </div>
@@ -205,7 +205,7 @@
 
         
          <!-- <script src="//{% static 'ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-         <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+         <script>window.jQuery || document.write('<script src="{% static 'js/jquery-1.11.2.min.js"><\/script>')</script> -->
         <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
         <script src="{% static 'js/plugins.js' %}"></script>
         <script src="{% static 'js/materialize.min.js' %}"></script>

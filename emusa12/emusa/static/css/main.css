@@ -532,7 +532,29 @@ textarea.materialize-textarea {
 .map-col {
     margin-right: 5%;
 }
-    
+
+/* ==========================================================================
+   Form
+   ========================================================================== */
+.collapsible li {
+    padding-bottom: 0;
+}
+
+.collapsible-body {
+    padding: 0.5em 0 1em;
+}
+
+.collapsible-body .row {
+    margin: 2.5em 0;
+}
+
+.collapsible-body .row label {
+    font-weight: bold;
+}
+
+.first-row {
+    margin-top: 0.5em !important;
+}
 
 /* ==========================================================================
    Media Queries
@@ -910,7 +932,6 @@ textarea.materialize-textarea {
         page-break-after: avoid;
     }
 }
-
 
 .dropdown-button{
 

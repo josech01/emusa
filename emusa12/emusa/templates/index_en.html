@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -48,10 +48,10 @@
 
                           <!-- Dropdown Structure -->
                            <a class="dropdown-button btn" href="#" data-activates="dropdown1">English</a>
-                          <ul id='dropdown1' class='dropdown-content'>
-                            <li><a href="index.html">Español</a></li>
-                            <li><a href="index_en.html">Ingles</a></li>
-                            <li><a href="index_pt.html">Portugues</a></li>
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="index.html">Spanish</a></li>
+                            <li><a href="index_en.html">English</a></li>
+                            <li><a href="index_pt.html">Portuguese</a></li>
                           </ul>
 
                         </span>
@@ -73,10 +73,10 @@
                     <a href="#!" class="brand-logo"><img src="{{index.enlogo.url}}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                       <li class="active"><a href="index.html">{{index.enmenu1}}</a></li>
+                       <li class="active"><a href="index_en.html">{{index.enmenu1}}</a></li>
                        <li><a href="empacate_en.html">{{index.enmenu2}}</a></li>
                        <li><a href="tecnologia_en.html">{{index.enmenu3}}</a></li>
-                       <li><a href="#">{{index.enmenu4}}</a></li>
+                       <li><a href="galeria_en.html">{{index.enmenu4}}</a></li>
                        <li><a href="clientes_en.html">{{index.enmenu5}}</a></li>
                        <li><a href="contactanos_en.html">{{index.enmenu6}}</a></li>
                     </ul>
@@ -84,8 +84,8 @@
                         <li><a href="index_en.html">{{index.enmenu1}}</a></li>
                        <li><a href="empacate_en.html">{{index.enmenu2}}</a></li>
                        <li><a href="tecnologia_en.html">{{index.enmenu3}}</a></li>
-                       <li><a href="#">{{index.enmenu4}}</a></li>
-                       <li><a href="clientes_en.html">{{index.enmenu4}}</a></li>
+                       <li><a href="galeria_en.html">{{index.enmenu4}}</a></li>
+                       <li><a href="clientes_en.html">{{index.enmenu5}}</a></li>
                        <li><a href="contactanos_en.html">{{index.enmenu6}}</a></li>
                        </ul>
                 </div>
@@ -205,7 +205,7 @@
 
         
          <!-- <script src="//{% static 'ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-         <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+         <script>window.jQuery || document.write('<script src="{% static 'js/jquery-1.11.2.min.js"><\/script>')</script> -->
         <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
         <script src="{% static 'js/plugins.js' %}"></script>
         <script src="{% static 'js/materialize.min.js' %}"></script>

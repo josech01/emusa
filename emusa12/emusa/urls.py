@@ -26,11 +26,14 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^form_en.html', emba_views_en.enadd_new_form),
     url(r'^form_pt.html', emba_views_pt.ptadd_new_form),
-    url(r'^form', emba_views.add_new_form),
+    url(r'^form.html', emba_views.add_new_form),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^clientes.html', emba_views.clientes),
     url(r'^contactanos.html', emba_views.contactanos),
     url(r'^empacate.html', emba_views.empacate),
+    url(r'^galeria.html', emba_views.galeria),
+    url(r'^galeria_en.html', emba_views_en.engaleria),
+    url(r'^galeria_pt.html', emba_views_pt.ptgaleria),
     url(r'^tecnologia.html', emba_views.tecnologia),
     url(r'^index.html', emba_views.index),
     url(r'^clientes_en.html', emba_views_en.enclientes),
@@ -45,6 +48,8 @@ urlpatterns = [
     url(r'^index_pt.html', emba_views_pt.ptindex),
     url(r'^$', emba_views.index),
     url(r'^login/$', emba_views.userlogin, name="login"),
+    # url(r"^logout/$", "django.contrib.auth.views.logout_then_login",
+    # name="logout"),
     url(r'^salir/$', emba_views.LogOut, name = 'logout'),
     
 ]
